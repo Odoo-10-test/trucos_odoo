@@ -228,47 +228,53 @@ class rrhh_afp(models.Model):
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 {
-    'name': 'Payroll Chile MFH',
+    'name': 'Base Chilean location MFH',
     'version': '10.0.0.1.0',
-    'author': "Falcón Solutions, Marlon Falcón",
+    'author': "Falcón Solutions, Luis Torres...",
     'maintainer': 'Falcon Solutions',
     'website': 'http://www.falconsolutions.cl',
     'license': 'AGPL-3',
-    'category': 'Settings',
-    'summary': 'Localización de Recursos Humanos Chile RR.HH',
-    'depends': ['hr_payroll'],
+    'category': 'Localization/Chile',
+    'summary': 'Chilean location: Load basic data.',
+    'depends': [
+                'base',
+                'base_vat',
+                'product',
+                'account_accountant',
+                ],
+    'external_dependencies': {
+                'python': [
+                            'M2Crypto',
+                            'elaphe',
+                            'cchardet',
+                            'rsa'
+                            ],
+     },
     'description': """
-Recursos Humanos Chile con Previred
+Módulo basado en localización Chilena
 =====================================================
-* Agregado campos para trabajar con la nómina Chilena
-* Plantilla de datos de Previred
-* Genera Archivo de Previred
-        """,
+1-. Add SII Economical Activities.\n
+2.- Load data Counties.\n
+3.- Load default value in the country field in view of company and partners.\n
+4.- Add Ubication field in view of company and partners.\n
+5.- Incorporate a field with the RUT (VAT) formatted according chilean customs.\n
+6.- This module validates the RUT directly.\n
+""",
     'data': [
-
-        'views/hr_employee_view.xml',
-        'views/hr_salary_rule_view.xml',
-
-        'views/rrhh_view.xml',
-        'views/rrhh_isapre_view.xml',
-        'views/rrhh_indicators_view.xml',
-        'views/hr_payslip_view.xml',
-        'views/rrhh_afp_view.xml',
-        'views/hr_contract_view.xml',
-
-        'data/rrhh_isapre_data.xml',
-        'data/rrhh_afp_data.xml',
-        'data/hr_salary_rule_category_data.xml',
-        'data/hr_contract_type_data.xml',
-        'data/hr_contribution_register_data.xml',
-        'data/rrhh_indicators_data.xml',
-
-    ],
+            'views/base_view.xml',
+            'views/economical_activities.xml',
+            'report/report_invoice.xml',
+            'data/email_template.xml',
+            'views/res_partner.xml',
+            'data/uom_data.xml',
+            ],
+    'demo': [],
+    'test': [],
     'installable': True,
     'auto_install': False,
-    'demo': ['demo/hr_employee_data.xml'],
-    'test': [],
+
 }
 ```
 
