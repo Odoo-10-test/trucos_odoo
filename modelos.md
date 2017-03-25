@@ -47,3 +47,18 @@ class AModel(models.Model):
         search='_search_function'        # Custom search function mainly used with compute
     )
 ```
+
+
+# Funcion OnChange
+```
+    partner_id = fields.Many2one('res.partner','Socio')
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        partner_id = self.partner_id
+        if partner_id:
+            self.first_name = partner_id.name
+            if not partner_id.country_id:
+                raise UserError(_('Error 0001: No existe el pais'))
+            self.birth_country = partner_id.country_id.id
+```
+
