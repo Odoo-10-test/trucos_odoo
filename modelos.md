@@ -100,4 +100,89 @@ class LibreDTEResCompany(models.Model):
 </odoo>
 ```
 
+# Clase Inicial Modelo
+```
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+from odoo import api, fields, models
+
+
+class rrhh_afp(models.Model):
+    _description = "AFP Fondo de Pension"
+    _name = 'rrhh.afp'
+
+    codigo = fields.Char('Codigo', required=True)
+    name = fields.Char('Name', translate=True)
+    rut = fields.Char('Rut', translate=True)
+    tasa = fields.Float('Tasa', required=True)
+    sis = fields.Float('Aporte Empresa', required=True)
+    independiente = fields.Float('Independientes', required=True)
+```
+
+# Clase Inicial Vista
+```
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+
+    <record id="view_form_rrhh_afp" model="ir.ui.view">
+             <field name="name">view.form.rrhh.afp</field>
+             <field name="model">rrhh.afp</field>
+             <field name="arch" type="xml">
+                <form string="Listado de AFP">
+                  <sheet>
+                    <legend>AFP</legend>
+                       <group>
+                          <group>
+                             <field name="rut"/>
+                             <field name="name"/>
+                             <field name="codigo"/>
+                             <field name="tasa"/>
+                             <field name="sis"/>
+                             <field name="independiente"/>
+                          </group>
+                       </group>
+                   </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record id="view_tree_rrhh_afp" model="ir.ui.view">
+             <field name="name">view.tree.rrhh.afp</field>
+             <field name="model">rrhh.afp</field>
+             <field name="arch" type="xml">
+                <tree>
+                             <field name="rut"/>
+                             <field name="name"/>
+                             <field name="codigo"/>
+                </tree>
+            </field>
+    </record>
+
+    <record id="action_rrhh_afp" model="ir.actions.act_window">
+            <field name="name">AFP</field>
+            <field name="res_model">rrhh.afp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Presione para crear nuevo Registro</p>
+           </field>
+    </record>
+
+    <menuitem id="rrhh_afp_menu"
+        name="AFP"
+        parent="menu_payroll_config"
+        sequence="31"
+        action="action_rrhh_afp" />
+
+     </data>
+</odoo>
+```
+
+
+
+
+
 
