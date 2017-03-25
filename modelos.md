@@ -73,8 +73,8 @@ from datetime import datetime
 class LibreDTEResCompany(models.Model):
     _inherit = "res.company"
     libredte_hash = fields.Char('LibreDTE hash', help="Code from LibreDTE")
-    dte_preliminar = fields.Boolean('DTE Preliminar', help='Si esta activo enviará el dte de forma preliminar')
-    online_mode = fields.Boolean('Online Mode', help='Si esta activo enviará el dte, si no está activo solo contabiliza', default='True')
+    dte_preliminar = fields.Boolean('DTE Preliminar', help='Si')
+    online_mode = fields.Boolean('Online Mode', help='Si', default='True')
 ```
 
 
