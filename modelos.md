@@ -100,6 +100,28 @@ class LibreDTEResCompany(models.Model):
 </odoo>
 ```
 
+# Herencia de campo
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_instructor_form_view">
+            <field name="name">partner.instructor</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml"> 
+               <field name="category_id" position="after" >          
+                    <field name="rut" string="RUC:" placeholder="00000000" />
+                    <field name="mail" string="Correo"/> 
+               </field>                       
+            </field>
+        </record>
+    </data>
+</odoo>
+
+```
+
 # Clase Inicial Modelo
 ```
 # -*- coding: utf-8 -*-
