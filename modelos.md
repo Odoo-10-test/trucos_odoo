@@ -1,0 +1,1 @@
+# trucos con los modelos
