@@ -62,7 +62,7 @@ class AModel(models.Model):
             self.birth_country = partner_id.country_id.id
 ```
 
-# Clase
+# Clase Inicial Modelo Herencia
 ```
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
@@ -75,6 +75,29 @@ class LibreDTEResCompany(models.Model):
     libredte_hash = fields.Char('LibreDTE hash', help="Code from LibreDTE")
     dte_preliminar = fields.Boolean('DTE Preliminar', help='Si')
     online_mode = fields.Boolean('Online Mode', help='Si', default='True')
+```
+
+# Clase Inicial Modelo Herencia
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="webfactura_view_company_inherit_form">
+        <field name="name">webfactura.view.company.inherit.form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="LibreDTE">
+                    <group cols="4">
+                        <field name="libredte_hash" password="True" class="oe_inline" required="1"/>
+                        <field name="dte_preliminar" />
+                        <field name="online_mode" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
 ```
 
 
