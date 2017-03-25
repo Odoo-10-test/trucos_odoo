@@ -1,5 +1,29 @@
 # trucos con los modelos
 
+# Tipos de campos en Odoo
+
+```
+folio = fields.Integer(string='Folio:', size=10)
+name = fields.Char(string='New Value', size=64, required=True)
+online_mode = fields.Boolean('Online Mode', help='Si esta activo', default='True')
+
+doc_type = fields.Selection(
+            [('D','RUT Chile'),
+            ('P','Pasaportes'),
+            ('C ','Permiso de conducir Chile '),
+            ('I','Carta o documento de identidad'),
+            ('X','Permiso de residencia UE'),
+            ('N','Permiso de residencia Chile ')],
+            'Tipo de Documento', size=1)
+            
+gender = fields.Selection([('F','Femenino'),('M','Masculino')],'Sexo',size=1)
+  
+company_id = fields.Many2one('res.company', string='Compañía', change_default=True, readonly=True,
+            default=lambda self: self.env['res.company']._company_default_get('traveler.register'))
+            
+entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime.today()) 
+```
+
 # Opciones en los campos básicos en Odoo
 
 ```
