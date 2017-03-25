@@ -1,4 +1,4 @@
-# trucos con los modelos
+# Trucos con los modelos
 
 # Tipos de campos en Odoo
 
