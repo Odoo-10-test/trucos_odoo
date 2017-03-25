@@ -27,10 +27,16 @@ Lo agrego en otra posición
 # Hacer un campo solo lectura
 ```
 <field name="street" position="replace">
-    <field name="street" required="1"/>
+    <field name="street" readonly="1"/>
 </field>
 ```
 
+# Hacer un campo obligatorio
+```
+<field name="street" position="replace">
+    <field name="street" required="1"/>
+</field>
+```
 
 
 # Subir data
