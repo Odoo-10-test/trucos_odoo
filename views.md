@@ -31,6 +31,11 @@ Lo agrego en otra posición
 </field>
 ```
 
+# Redondear y colocar moneda
+```
+<field name="tax_price" widget="monetary" digits="(14,0)"  options="{'currency_field': 'currency_id'}"/>
+```
+
 # Hacer un campo obligatorio
 ```
 <field name="street" position="replace">
