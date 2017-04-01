@@ -300,6 +300,12 @@ Módulo basado en localización Chilena
 }
 ```
 
+# Campo Many2one
+"""
+functional_area_id = fields.Many2one('functional.area', 'Areas Funcionales')
+"""
+
+
 
 
 
