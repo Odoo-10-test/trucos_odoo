@@ -305,6 +305,23 @@ Módulo basado en localización Chilena
 functional_area_id = fields.Many2one('functional.area', 'Areas Funcionales')
 ```
 
+# Ocultar campo en la vista que depende de otro
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="stock_picking_inherit_form">
+        <field name="name">stock.picking.inherit.form</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after" >
+                    <field name="electronic_picking" />
+                      <field name="patente" placeholder="AA0000" attrs="{'invisible': ['|',('electronic_picking', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>
+```
 
 
 
