@@ -323,6 +323,12 @@ functional_area_id = fields.Many2one('functional.area', 'Areas Funcionales')
 </odoo>
 ```
 
+# Conocer el ID
+```
+var = self.env['res.country'].search([('name','=','Chile')])
+        self.fax = var.id
+```
+
 
 
 
