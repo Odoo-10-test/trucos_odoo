@@ -59,6 +59,7 @@ Lo agrego en otra posición
     </record>
 ```
 # Guia de Luis
+```
 1. (0, 0, {valores}) enlace a un nuevo registro que debe crearse con el Diccionario de valores dados
 2. (1, ID, {valores}) actualizar el expediente vinculado con id = ID (escribir * valores * en él)
 3. (2, ID) quitar y borrar el archivo vinculado con id = ID (llamadas desvinculación en ID, que se eliminará completamente el objeto, y el enlace a él así)
@@ -70,6 +71,7 @@ Lo agrego en otra posición
 
 One2mnay: usar puntos 1,2,3 y para Many2many usaremos todos los puntos.
 Para campo many2one sólo necesitamos poner grabar ID.
+```
 
 
 
