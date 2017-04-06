@@ -50,6 +50,12 @@ Lo agrego en otra posición
 
 ```
 
+#  Atributos condicionales en la vista
+```
+<field name="name" attrs="{'invisible': [('condition', '=', False)]}"/>
+<field name="name2" attrs="{'readonly': [('condition', '=', False)]}"/>
+<field name="name3" attrs="{'required': [('condition', '=', False)]}"/> 
+```
 
 # Subir data
 ```
