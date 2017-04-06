@@ -329,6 +329,20 @@ var = self.env['res.country'].search([('name','=','Chile')])
         self.fax = var.id
 ```
 
+# Campos relacionados
+```
+online_mode_f = fields.Boolean('Online', related='company_id.online_mode')
+```
+
+```
+ <field name="team_id" position="after" >
+    <field name="online_mode_f" invisible="1" />
+    <field name="number_folio" attrs="{'invisible':[('online_mode_f','=', True)]}"/>
+</field>
+```
+
+
+
 
 
 
