@@ -43,6 +43,13 @@ Lo agrego en otra posición
 </field>
 ```
 
+# Atributos dinámicos
+```
+<field name="cod_nacionalidad" placeholder="Country code"
+                attrs="{'required':[('country_id','!=',47)]}" />
+
+```
+
 
 # Subir data
 ```
