@@ -341,6 +341,15 @@ online_mode_f = fields.Boolean('Online', related='company_id.online_mode')
 </field>
 ```
 
+# Log odoo
+```
+import logging
+```
+
+```
+_logger.info('Not be found data to update the currency %s!',currency.name)
+```
+
 
 
 
