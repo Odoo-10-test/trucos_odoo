@@ -1,5 +1,20 @@
 # Trucos con los data
 
+# Cargar Datos Masivos
+```
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="001" model="tipo.comprobante">
+             <field name="name">FACTURA A</field>
+             <field name="codigo">001</field>
+             <field name="desc">A</field>
+             <field name="permitido_venta">True</field>
+        </record>
+    </data>
+</odoo>
+```
+
 # Importar un campo many2one
 
 ```
