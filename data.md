@@ -4,7 +4,7 @@
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <record id="001" model="tipo.comprobante">
              <field name="name">FACTURA A</field>
              <field name="codigo">001</field>
@@ -20,7 +20,6 @@
 ```
 <?xml version="1.0" encoding="utf-8"?>
   <odoo>
-     <data noupdate="1">
      <data noupdate="0">
           <record id="R1" model="condicion.venta">
                <field name="name">IVA Responsable Inscripto</field>
