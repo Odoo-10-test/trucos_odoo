@@ -351,10 +351,28 @@ _logger.info('Not be found data to update the currency %s!',currency.name)
 ```
 
 
-
-
-
-
-
-
-
+# Exportación TXT
+```
+@api.multi
+    def download_txt(self):
+        res = {}
+        op = self.operation == 'sale' and 'VENTAS' or 'COMPRAS'
+        fname = '%s_%s_%s_Comprobantes.txt' %(self.company_id.cuit,self.period.replace('-','_'),op)
+        path = '/tmp/' + fname
+        txtFile = open(path, 'wb')
+        for invoice in self.invoice_ids:
+            line = ''
+            partner = invoice.partner_id.parent_id and invoice.partner_id.parent_id or invoice.partner_id
+            line+= invoice.date_invoice.replace("-", '') #fecha factura
+            txtFile.write(self.clean_accents(line)+'\n')
+        txtFile.close()
+        data = base64.encodestring(open(path, 'r').read())
+        attach_vals = {'name': fname, 'datas': data, 'datas_fname': fname}
+        doc_id = self.env['ir.attachment'].create(attach_vals)
+        res['type'] = 'ir.actions.act_url'
+        res['target'] = 'new'
+        res['url'] = "web/content/?model=ir.attachment&id=" + str(
+            doc_id.id) + "&filename_field=datas_fname&field=datas&download=true&filename=" + str(doc_id.name)
+        return res
+```
+  
