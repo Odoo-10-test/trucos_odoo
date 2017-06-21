@@ -374,5 +374,18 @@ _logger.info('Not be found data to update the currency %s!',currency.name)
         res['url'] = "web/content/?model=ir.attachment&id=" + str(
             doc_id.id) + "&filename_field=datas_fname&field=datas&download=true&filename=" + str(doc_id.name)
         return res
+`
+
+# Campo autocalculados
+
 ```
+    estimado = fields.Float('Estimado')
+    pagado = fields.Float('Pagado')
+    restante = fields.Float(compute='calcular_restante')
+
+    @api.one
+    @api.depends('estimado','pagado')
+    def calcular_restante(self):
+        self.restante = self.estimado - self.pagado
+ ```
   
