@@ -1,7 +1,11 @@
 Hola en esta entrada veremos el paso a paso de como instalar Odoo 10 CE
 
 1- Actualizamos de la versión 14.04 a la 16```
-``` 
+Hola en esta entrada veremos el paso a paso de como instalar Odoo 10 CE
+
+1- Actualizamos de la versión 14.04 a la 16
+```
+sudo apt-get update
 
 sudo apt-get upgrade
 
@@ -13,121 +17,121 @@ sudo do-release-upgrade
 ```
 2- Actualizamos el sistema
 ```
- class="prettyprint">apt-get update &amp;&amp; apt-get upgrade
+ apt-get update &amp;&amp; apt-get upgrade
  ```
 3- Creamos el usuario Odoo
 ```
- class="prettyprint">adduser --system --home=/opt/odoo --group odoo
+ adduser --system --home=/opt/odoo --group odoo
  ```
 4- Instalación de PostgreSQL
 
 creamos el archivo pgdg.list
 ```
- class="prettyprint">nano /etc/apt/sources.list.d/pgdg.list
+ nano /etc/apt/sources.list.d/pgdg.list
  ```
 5- insertamos el siguiente código
 ```
- class="prettyprint">deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
+ deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
  ```
 6- Importamos la llave del repositorio anterior, actualizamos e instalamos postgresql
 ```
- class="prettyprint">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
   sudo apt-key add -
 sudo apt-get update
 apt-get install postgresql postgresql-server-dev-9.6
 ```
 7- Reiniciamos postgres, iniciamos sesión en postgres y creamos el usuario postgres
 ```
- class="prettyprint">service postgresql restart
+ service postgresql restart
 su - postgres
 createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo
 ```
 8- Luego de ingresar la clave, salimos de la sesión de postgres
 ```
- class="prettyprint">exit
+ exit
  ```
 9- Descargamos Odoo, Instalamos unzip
 ```
- class="prettyprint">apt-get install unzip
+ apt-get install unzip
  ```
 10- Ingresamos en la carpeta /opt/odoo y descargamos la fuente para la versión comunity
 ```
- class="prettyprint">cd /opt/odoo/
+ cd /opt/odoo/
 wget https://github.com/odoo/odoo/archive/10.0.zip
 unzip 10.0.zip
 ```
 11- Renombramos la carpeta odoo-10.0 a server y le damos permisos al usuario odoo sobre esa carpeta
 ```
- class="prettyprint">mv odoo-10.0 server
+ mv odoo-10.0 server
 chown -R odoo: server
 ```
 12- Instalación de librerias, actualizamos pip e instalamos dependencias python de Odoo
 ```
- class="prettyprint">apt install python-pip libcups2-dev python-ldap libxml2-dev libxslt-dev node-less libsasl2-dev libldap2-dev python-lxml
+ apt install python-pip libcups2-dev python-ldap libxml2-dev libxslt-dev node-less libsasl2-dev libldap2-dev python-lxml
 pip install --upgrade pip
 pip install -r /opt/odoo/server/requirements.txt
 ```
 13- Creando un directorio para almacenar el archivo de logs
 ```
- class="prettyprint">mkdir /var/log/odoo/
+ mkdir /var/log/odoo/
 chown odoo:root /var/log/odoo
 ```
 14- Configurando Odoo Server
 ```
- class="prettyprint">mkdir /etc/odoo
+ mkdir /etc/odoo
 cp /opt/odoo/server/debian/odoo.conf /etc/odoo/odoo.conf
 chown odoo: /etc/odoo/odoo.conf
 chmod 640 /etc/odoo/odoo.conf
 ```
 15- Creamos la carpeta de los ExtraAddons
 ```
- class="prettyprint">mkdir /opt/odoo/server/extra-addons
+ mkdir /opt/odoo/server/extra-addons
 chown odoo: /opt/odoo/ -R
 ```
 16- Editamos el archivo odoo.conf
 ```
- class="prettyprint">nano /etc/odoo/odoo.conf
+ nano /etc/odoo/odoo.conf
  ```
 17- Modificamos y/o agregamos lo siguiente y guardamos el archivo, si no tienes módulo en estra-addons no coloque la ruta sino te dará problemas.
 ```
- class="prettyprint">db_user = odoo
+ db_user = odoo
 db_password = CLAVE DEL USUARIO  ODOO EN POSTGRES
 addons_path = /opt/odoo/server/addons,/opt/odoo/server/extra-addons
 logfile = /var/log/odoo/odoo-server.log
 ```
 18- Script de inicio automático de Odoo-Server en Ubuntu 16
 ```
- class="prettyprint">cp /opt/odoo/server/debian/init /etc/init.d/odoo
+ cp /opt/odoo/server/debian/init /etc/init.d/odoo
 chmod 755 /etc/init.d/odoo
 chown root: /etc/init.d/odoo
 ```
 19-  Editamos el archivo:
 ```
- class="prettyprint">nano /etc/init.d/odoo
+ nano /etc/init.d/odoo
  ```
 *Modificamos los siguientes valores, y guardamos el archivo:
 ```
- class="prettyprint">DAEMON=/opt/odoo/server/odoo-bin
+ DAEMON=/opt/odoo/server/odoo-bin
  ```
 20- Haciendo que Odoo se inicie automáticamente cuando reiniciemos nuestro servidor:
 ```
- class="prettyprint">update-rc.d odoo defaults
+ update-rc.d odoo defaults
  ```
 20a -  Haciendo que Postgresql se inicie automáticamente cuando reiniciemos nuestro servidor :
 ```
- class="prettyprint">update-rc.d postgresql enable
+ update-rc.d postgresql enable
  ```
 21-  Manipulamos el servicio
 ```
- class="prettyprint">/etc/init.d/odoo start|stop|restart
+ /etc/init.d/odoo start|stop|restart
  ```
 22- Editar archivo de configuración de postgres pg_hba.conf
 ```
- class="prettyprint">nano /etc/postgresql/9.6/main/pg_hba.conf
+ nano /etc/postgresql/9.6/main/pg_hba.conf
  ```
 Editamos la siguiente linea
 ```
- class="prettyprint">local   all             all        peer
+ local   all             all        peer
 
 *Sustituimos por:
 
@@ -136,12 +140,12 @@ local   all             all       trust
 ```
 23- Reiniciamos servicio de postgresql y odoo
 ```
- class="prettyprint">service postgresql restart
+ service postgresql restart
 /etc/init.d/odoo restart
 ```
 24- Instalar Libreria wkhtmltopdf
 ```
- class="prettyprint">sudo apt-get -f install
+ sudo apt-get -f install
 sudo apt-get install libxrender1 fontconfig xvfb libjpeg-turbo8
 cd /opt
 sudo wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
@@ -151,26 +155,26 @@ sudo cp /usr/local/bin/wkhtmltopdf /usr/bin/wkhtmltopdf
 ```
 25- Reiniciamos
 ```
- class="prettyprint">/etc/init.d/odoo restart
+ /etc/init.d/odoo restart
  ```
 26- Vemos el Log
 ```
- class="prettyprint">tail -f /var/log/odoo/odoo-server.log
+ tail -f /var/log/odoo/odoo-server.log
  ```
 27- Actualizamos la Zona horaria desde la consola de ubuntu
 ```
- class="prettyprint">tzselect
+ tzselect
  ```
 28 - Actualizamos la hora
 ```
- class="prettyprint">date --set "2007-05-27 17:27"
+ date --set "2007-05-27 17:27"
 hwclock --set --date="2007-05-27 17:27"
 hwclock
 date
 ```
 29- Por seguridad le ponemos un pass a Postgre
 ```
- class="prettyprint">sudo -u postgres psql postgres
+ sudo -u postgres psql postgres
 \password postgres
 Enter new password:
 ```
@@ -180,7 +184,7 @@ Hasta aquí la instalación.... los siguientes comandos son para configuración 
 
 K1 - revision de version 8
 ```
- class="prettyprint">/etc/init.d/o +Tab
+ /etc/init.d/o +Tab
 /etc/init.d/odoov8 restart
 tail -f /var/log/odoo/odoo-server.log
 ```
@@ -188,30 +192,31 @@ Otros Comando Importante
 
 k2- Actualizar pass de Postgres
 ```
- class="prettyprint">sudo -su postgres
+ sudo -su postgres
 psql
 alter role odoo with password 'odoo';
 ```
 k3- Filtrar por base de datos en el fichero conf
 ```
- class="prettyprint">dbfilter = db10_*
+ dbfilter = db10_*
  ```
 k4 Configuracion de PyCharm
 
+<img class="alignnone size-full wp-image-2322" src="http://falconsolutions.cl/wp-content/uploads/2017/04/Screenshot-from-2017-05-24-00-16-08.png" alt="" width="1366" height="768" />
 ```
- class="prettyprint">/home/marlon/odoo/odoo_10/odoo-bin
+ /home/marlon/odoo/odoo_10/odoo-bin
 --config=/home/marlon/odoo/odoo_10/odoo.conf
 /home/marlon/odoo/odoo_10
 ```
 k5 - Actualizar pass de una carpeta
 ```
- class="prettyprint">sudo chown marlon: -R odoo_10/
+ sudo chown marlon: -R odoo_10/
  ```
 K6
 
 /home/marlon/odoo/odoo_10/odoo.conf
 ```
- class="prettyprint">[options]
+ [options]
 ; This is the password that allows database operations:
 ; admin_passwd = admin
 db_host = localhost
@@ -222,14 +227,14 @@ addons_path = /home/marlon/odoo/odoo_10/addons
 ```
 K7 - Descargando Odoo
 ```
- class="prettyprint">git clone https://github.com/odoo/odoo.git --branch 10.0 --single-branch odoo_10
+ git clone https://github.com/odoo/odoo.git --branch 10.0 --single-branch odoo_10
  ```
 K8 - Configuracion de Pycharm
 ```
- class="prettyprint">/home/marlon/Documentos/odoo-apt/odoo-10.0/odoo-bin
+ /home/marlon/Documentos/odoo-apt/odoo-10.0/odoo-bin
  ```
 ```
- class="prettyprint">--config=/home/marlon/Documentos/odoo-apt/odoo-10.0/debian/odoo.conf
+ --config=/home/marlon/Documentos/odoo-apt/odoo-10.0/debian/odoo.conf
  ```
 K9 - Acceso SSH con un fichero ppk
 ```
