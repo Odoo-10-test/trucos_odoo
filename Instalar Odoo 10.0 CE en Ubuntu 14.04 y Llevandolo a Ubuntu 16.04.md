@@ -199,7 +199,6 @@ k3- Filtrar por base de datos en el fichero conf
  ```
 k4 Configuracion de PyCharm
 
-<img class="alignnone size-full wp-image-2322" src="http://falconsolutions.cl/wp-content/uploads/2017/04/Screenshot-from-2017-05-24-00-16-08.png" alt="" width="1366" height="768" />
 ```
  class="prettyprint">/home/marlon/odoo/odoo_10/odoo-bin
 --config=/home/marlon/odoo/odoo_10/odoo.conf
