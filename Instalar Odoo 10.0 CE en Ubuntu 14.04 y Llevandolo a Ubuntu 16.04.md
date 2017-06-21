@@ -1,8 +1,5 @@
 Hola en esta entrada veremos el paso a paso de como instalar Odoo 10 CE
 
-1- Actualizamos de la versión 14.04 a la 16```
-Hola en esta entrada veremos el paso a paso de como instalar Odoo 10 CE
-
 1- Actualizamos de la versión 14.04 a la 16
 ```
 sudo apt-get update
