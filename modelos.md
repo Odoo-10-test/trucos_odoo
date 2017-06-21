@@ -378,7 +378,7 @@ _logger.info('Not be found data to update the currency %s!',currency.name)
 
 ```
 # Campo autocalculados
-
+```
     estimado = fields.Float('Estimado')
     pagado = fields.Float('Pagado')
     restante = fields.Float(compute='calcular_restante')
