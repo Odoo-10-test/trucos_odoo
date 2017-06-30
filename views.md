@@ -80,6 +80,33 @@ Para campo many2one sólo necesitamos poner grabar ID.
 ```
 
 
+# Crear una Secuencia
+En el modelo
+```
+name = fields.Char('Código', translate=True, default="Nuevo")
+@api.model
+    def create(self, vals):
+        if vals.get('name', "Nuevo") == "Nuevo":
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.haberesydesc') or "Nuevo"
+        return super(hr_haberesydesc, self).create(vals)
+```
+En data
+```
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_hr_haberesydesc" model="ir.sequence">
+            <field name="name">Haberes y Descuentos</field>
+            <field name="code">hr.haberesydesc</field>
+            <field name="prefix">HD</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
+```
+
+
 
 
 
