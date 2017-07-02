@@ -416,4 +416,13 @@ En data
     </data>
 </odoo>
 ```
+
+# Crear valores por defecto en Campos
+
+```
+pass_cert = fields.Char('Llave Privada', help="Ruta absoluta del archivo que contiene la llave privada (.key)",
+                                default="/opt/odoo/certificados/ghf.key")
+```
+                                
+                                
   
