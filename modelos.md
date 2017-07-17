@@ -439,6 +439,17 @@ from odoo.exceptions import ValidationError
         if len(self.name) < 4:
             raise ValidationError("El Punto de Venta tiene que tener 4 dígitos")
 ```
+
+# Recorrer un campo many2one
+```
+    @api.onchange('rh_cargas_ids')
+    def onchange_cargas(self):
+        c_familiar = 0
+        for cargas in self.rh_cargas_ids:
+            if cargas.list_tipo == '1':
+                c_familiar = c_familiar + 1
+        self.cant_carga_familiar = c_familiar
+```
             
             
             
