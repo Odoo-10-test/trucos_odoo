@@ -76,7 +76,23 @@ Lo agrego en otra posición
 One2mnay: usar puntos 1,2,3 y para Many2many usaremos todos los puntos.
 Para campo many2one sólo necesitamos poner grabar ID.
 ```
-
+# Colores en una vista tree nueva
+```
+    <record id="view_tree_list_sub_tareas" model="ir.ui.view">
+             <field name="name">view.tree.list.sub.tareas</field>
+             <field name="model">list.sub.tareas</field>
+             <field name="arch" type="xml">
+                <tree colors="red:finalizado == False;">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="user_id"/>
+                    <field name="comprobante_01"  filename="comprobante_01_name"/>
+                    <field name="finalizado"/>
+                    <field name="task_id"/>
+                </tree>
+            </field>
+    </record>
+```
 
 
 
