@@ -450,6 +450,16 @@ from odoo.exceptions import ValidationError
                 c_familiar = c_familiar + 1
         self.cant_carga_familiar = c_familiar
 ```
+
+# Validar antes de guardar
+```
+
+@api.constrains('name')
+    def _check_codigo_point_sales(self):
+        if len(self.name) < 4:
+            raise ValidationError("El Punto de Venta tiene que tener 4 dígitos")
+            
+```
             
             
             
