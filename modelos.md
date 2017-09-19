@@ -460,6 +460,23 @@ from odoo.exceptions import ValidationError
             raise ValidationError("El Punto de Venta tiene que tener 4 dígitos")
             
 ```
+
+# LLamar a un metodo de otro modelo 
+```
+ self.env['modelo.llamar']._metodomodelo()
+            
+```
+# LLamar a un metodo si cargamos una vista
+```
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+        self.env['maintenance.work.order']._check_work_order_id()
+        print "Hello"
+        return super(maintenance_tree, self).fields_view_get(view_id=view_id, view_type=view_type, toolbar=toolbar,
+                                                        submenu=submenu)
+            
+```
+
             
             
             
