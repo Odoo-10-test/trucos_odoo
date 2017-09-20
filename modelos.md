@@ -477,6 +477,13 @@ from odoo.exceptions import ValidationError
             
 ```
 
+# LLamar a compañia          
+```
+company_id = fields.Many2one('res.company', string="Company", required=True,
+                                 default=lambda self: self.env.user.company_id.id)
+                                             
+```
+
             
             
             
