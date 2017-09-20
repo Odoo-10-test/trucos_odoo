@@ -483,6 +483,13 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
                                  default=lambda self: self.env.user.company_id.id)
                                              
 ```
+# LLamar a logo en qweb        
+```
+
+<img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo"
+                                style="max-height:170px; width:auto; margin:10px;"/>
+                                
+                                ```
 
             
             
