@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Acciones de reporte -->
+        <report
+            id="action_maintenance_work_order"
+            model="maintenance.work.order"
+            string="Reporte de Orden de Trabajo"
+            report_type="qweb-pdf"
+            name="l10n_ar_maintenance_management.report_work_order"
+            file="l10n_ar_maintenance_management.report_work_order"
+        />
+
+        <record id="action_maintenance_work_order" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_euro_aitic"/>
+        </record>
+
+
+    </data>
+</odoo>

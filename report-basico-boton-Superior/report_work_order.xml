@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <data>
+  <template id="report_work_order_register_document">
+      <t t-call="report.external_layout">
+
+          <t t-set="o" t-value="o.with_context({'lang':o.user_id.lang})" />
+          <div class="page">
+
+
+
+
+              <p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h2 align="center"><b>REPORTE DE ORDEN DE TRABAJO</b></h2>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<tr valign="top">
+		<td colspan="2" width="50%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>ORDEN DE TRABAJO: </b><span t-field="o.name"/></p>
+		</td>
+		<td rowspan="2" colspan="2" width="50%" style="border: 1px solid #000000; padding: 0.1cm">
+			<p align="right"><b>FECHA: </b><span t-field="o.entry_date"/>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>TITULO: </b><span t-field="o.desc"/></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>SECTOR : </b><span t-field="o.sector_name"/></p>
+		</td>
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>UBICACIÓN EN EL SECTOR : </b><span t-field="o.sector_name_ubicacion"/></p>
+		</td>
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>RESPONSABLE DE AREA : </b><span t-field="o.user_id"/></p>
+		</td>
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>RESPONSABLE SUPERVISIÓN DE ORDEN : </b><span t-field="o.user_id_r"/></p>
+		</td>
+		<td colspan="2" width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><b>DESCRIPCIÓN : </b>
+			</p>
+			<p><br/>
+                <span t-field="o.texto"/>
+			</p>
+			<p><br/>
+
+			</p>
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>TAREA </b><b>: </b>
+			</p>
+		</td>
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>RESPONSABLE</b><b>: </b>
+			</p>
+		</td>
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><b>TIEMPO</b><b>:</b></p>
+		</td>
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><b>TIEMPO REAL</b><b>:</b></p>
+		</td>
+	</tr>
+
+    <tr t-foreach="o.list_task_ids" t-as="t">
+
+	<tr valign="top">
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><span t-field="t.task_id.name"/></p>
+		</td>
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><span t-field="t.employee_id.name"/></p>
+		</td>
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p><span t-field="t.hh"/></p>
+		</td>
+		<td width="25%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p></p>
+		</td>
+	</tr>
+
+    </tr>
+
+
+	<tr>
+		<td colspan="4" width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p><b>OBSERVACIONES</b><b> : </b>
+			</p>
+			<p><br/>
+
+			</p>
+			<p><br/>
+
+			</p>
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+
+</p>
+
+          </div>
+
+      </t>
+
+  </template>
+
+
+     <template id="report_work_order">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="l10n_ar_maintenance_management.report_work_order_register_document" />
+        </t>
+    </t>
+    </template>
+
+ </data>
+</odoo>
