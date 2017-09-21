@@ -490,7 +490,20 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
                                 style="max-height:170px; width:auto; margin:10px;"/>
                                 
                                 ```
-
+                                
+# Cambiar Nombre
+```
+@api.multi
+    def name_get(self):
+        res = super(res_partner, self).name_get()
+        result = []
+        for element in res:
+            partner_id = element[0]
+            rut = self.browse(partner_id).document_number
+            name = rut and '[%s] %s'%(rut,element[1]) or '%s'%element[1]
+            result.append((partner_id,name))
+        return result
+```
             
             
             
