@@ -489,7 +489,7 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
 <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo"
                                 style="max-height:170px; width:auto; margin:10px;"/>
                                 
-                                ```
+```
                                 
 # Cambiar Nombre
 ```
