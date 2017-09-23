@@ -511,8 +511,39 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
         for id in invoice_obj_out_invoice:
             iva_debito_fiscal = iva_debito_fiscal + id.amount_tax
  ```
+ 
+ 
+ # Uso de periodos de fechas y recorrerlos
+ ```
+ 
+        invoice_obj = self.env['account.invoice']
+
+        date = datetime.strptime(self.date, '%Y-%m-%d')
+        end_of_month = monthrange(date.year, date.month)[1]
+        start_period = '%s-%s-01' % (date.year, date.month)
+        end_period = '%s-%s-%s' % (date.year, date.month, end_of_month)
+
+        invoice_obj_out_invoice= invoice_obj.search([
+            ('state', 'in', ['open', 'paid']),
+            ('type', '=', 'out_invoice'),
+            ('date_invoice', '>=', start_period),
+            ('date_invoice', '<=', end_period)
+        ])
+
+        invoice_obj_in_invoice = invoice_obj.search([
+            ('state', 'in', ['open', 'paid']),
+            ('type', '=', 'in_invoice'),
+            ('date_invoice', '>=', start_period),
+            ('date_invoice', '<=', end_period)
+        ])
+
+
+        # Facturas de Ventas
+        # invoice_obj_out_invoice = self.env['account.invoice'].search([('type','=','out_invoice')])
+        for id in invoice_obj_out_invoice:
+            iva_debito_fiscal = iva_debito_fiscal + id.amount_tax
             
-            
+        ```    
             
                                 
                                 
