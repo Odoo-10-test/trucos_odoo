@@ -504,6 +504,13 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
             result.append((partner_id,name))
         return result
 ```
+
+# Recorrer Modelos Ejemplo Facturas
+```
+        invoice_obj_out_invoice = self.env['account.invoice'].search([('type','=','out_invoice')])
+        for id in invoice_obj_out_invoice:
+            iva_debito_fiscal = iva_debito_fiscal + id.amount_tax
+ ```
             
             
             
