@@ -95,6 +95,16 @@ Para campo many2one sólo necesitamos poner grabar ID.
 ```
 
 
+# Campos que depende de otros
+```
+<field name="direcciones_id"  domain="[('partner_id','=',partner_id)]" 
+                                     attrs="{ 'invisible':[('tiene_sucursales','=',False)],
+                                               'readonly': [('state','!=','draft')]}" />
+                <field name="tiene_sucursales" invisible="1"/>
+                
+```
+
+
 
 
 
