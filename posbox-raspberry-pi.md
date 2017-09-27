@@ -16,3 +16,7 @@ De todos los escáneres de códigos de barras, recomendamos Honeywell Eclipse l�
 1
 ```
 
+# Links:
+Información de HardWare
+https://www.odoo.com/es_ES/page/point-of-sale-hardware
+
