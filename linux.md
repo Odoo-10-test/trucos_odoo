@@ -18,6 +18,8 @@ passwd
 sudo rm -R carpeta
 ```
 
+# Actualizamos una base de datos de odoo
+
 ## paramos el proceso
 ```
 /etc/init.d/odoo stop
