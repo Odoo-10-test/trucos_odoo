@@ -544,6 +544,12 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
             iva_debito_fiscal = iva_debito_fiscal + id.amount_tax
             
         ```    
+        
+# Crear log
+ ```    
+self.message_post(body=_("Se ha enviado un mensaje a " + cto + ": " + ctext))
+
+```
             
                                 
                                 
