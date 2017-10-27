@@ -546,7 +546,7 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
         ```    
         
 # Crear log
- ```    
+ ``` 
 self.message_post(body=_("Se ha enviado un mensaje a " + cto + ": " + ctext))
 
 ```
