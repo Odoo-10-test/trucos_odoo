@@ -1,12 +1,15 @@
+# Mensajes en Odoo
+
+```
 # -*- coding: utf-8 -*-
 from odoo import api, models, fields, _
 from odoo.exceptions import UserError, AccessError, ValidationError
 from odoo.tools.misc import formatLang
 import odoo.addons.decimal_precision as dp
 from datetime import datetime
+```
 
-
-
+```
 @api.onchange('discount')
     def onchange_discount_order_line(self):
         res = {}
@@ -21,3 +24,4 @@ from datetime import datetime
         if self.price_unit < self.product_id.standard_price:
                 raise UserError('El precio del producto no puede ser menor que el costo')
         return res
+```
