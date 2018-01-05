@@ -1,3 +1,6 @@
+fechas Chile
+
+```
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
@@ -23,3 +26,4 @@ class AccountInvoice(models.Model):
             if i.date_due:
                 days = datetime.strptime(i.date_due, '%Y-%m-%d') - datetime.strptime(time_now(), '%Y-%m-%d')
                 i.number_days = days.days
+```
