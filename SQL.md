@@ -2,7 +2,7 @@
 ```
 obj_stock_move = self.env['stock.move'].search([('state', '=', 'confirmed')])
         for id in obj_stock_move:
-            # print id.name
+                print id.name
 ```
 
 
