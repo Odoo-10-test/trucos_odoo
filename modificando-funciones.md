@@ -22,3 +22,17 @@
 
         return res
  ```
+ # Modificando las Función de Stock
+  ```
+ class StockPickingSii(models.Model):
+    _inherit = 'stock.picking'
+
+    @api.model
+    def create(self, values):
+        Company = self.env['res.company'].browse(values['company_id'])
+        if Company.auto_gde:
+            values['electronic_picking'] = True
+            values['direccion_origen_id'] = Company.partner_id.id
+            values['direccion_despacho_id'] = values['partner_id']
+        res = super(StockPickingSii, self).create(values)
+```
