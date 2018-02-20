@@ -24,7 +24,7 @@
  ```
  # Modificando la Función Crear de Stock
   ```
- class StockPickingSii(models.Model):
+class StockPickingSii(models.Model):
     _inherit = 'stock.picking'
 
     @api.model
@@ -35,4 +35,20 @@
             values['direccion_origen_id'] = Company.partner_id.id
             values['direccion_despacho_id'] = values['partner_id']
         res = super(StockPickingSii, self).create(values)
+        if values['origin']:
+            sale = self.env['sale.order'].search([('name','=',values['origin'])])
+            if sale:
+                if sale.ot_cliente:
+                    doc_class_id = self.env['sii.document.class'].search([('sii_code','=','801')],limit=1)
+                    references = {
+                        'list_name': doc_class_id.id,
+                        'list_folio': sale.ot_cliente,
+                        'list_fecha':sale.odc_date,
+                        #'list_tipo': sale.ot_cliente,
+                        'invoice_c_id': False
+                        }
+                    res['referencias_ids'] = [(0, 0, references)]
+                    res['note'] = str(sale.ot_cliente)+' ('+str(sale.odc_date)+')'
+                    #DIRECCION DE ENTREGA: '+str(self.direccion_despacho_id.city)+' - '+str(self.direccion_despacho_id.city_id.name)
+        return res
 ```
