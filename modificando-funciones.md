@@ -22,7 +22,7 @@
 
         return res
  ```
- # Modificando las Función de Stock
+ # Modificando la Función Crear de Stock
   ```
  class StockPickingSii(models.Model):
     _inherit = 'stock.picking'
