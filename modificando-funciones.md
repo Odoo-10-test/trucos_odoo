@@ -1,4 +1,4 @@
-# Modificando las funcion de factura cuando se valida
+# Modificando las Función de Factura cuando se valida
 ```
 @api.multi
     def action_invoice_open(self):
