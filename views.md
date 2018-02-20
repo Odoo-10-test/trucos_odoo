@@ -18,7 +18,13 @@ Lo agrego en otra posición
 <field name="vat" position="attributes">
        <attribute name="attrs">{'invisible':1}</attribute>
   </field>
-```      
+```   
+
+# No permitir crear un campo seleccionable
+```
+<field name="direccion_despacho_id"  options='{"no_create": 1, "no_open": 1}' attrs="{'invisible': [('electronic_picking', '=', False)],
+                                                                                'required': [('electronic_picking','!=',False)]}"/>
+```                                                                                
 
 
 
