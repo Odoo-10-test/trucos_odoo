@@ -1,3 +1,5 @@
+# Modificando las funcion de factura cuando se valida
+```
 @api.multi
     def action_invoice_open(self):
         ''' Herencia de metodo original de validacion de facturas.'''
@@ -19,3 +21,4 @@
                 self.sale_xml_email_send()
 
         return res
+ ```
