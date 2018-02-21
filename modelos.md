@@ -22,7 +22,14 @@ company_id = fields.Many2one('res.company', string='Compañía', change_default=
             default=lambda self: self.env['res.company']._company_default_get('traveler.register'))
             
 entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime.today()) 
+
+
 ```
+
+# Cadenas
+```
+ cadena = u" Dir. Intermediaria: %s, %s \n Dir. Final: %s, %s "%(direccion_1,ciudad,direccion_2,ciudad2)
+ ```
 
 # Opciones en los campos básicos en Odoo
 
