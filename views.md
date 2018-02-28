@@ -26,7 +26,12 @@ Lo agrego en otra posición
                                                                                 'required': [('electronic_picking','!=',False)]}"/>
 ```                                                                                
 
-
+# Agregando help en la vista
+```
+<field name="code" position="attributes">
+            <attribute name="help">kkkkkkkkkkkkkkkkkkkk</attribute>
+        </field>
+```
 
 # Hacer un campo solo lectura
 ```
