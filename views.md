@@ -13,6 +13,12 @@ Lo agrego en otra posición
 </field>
 ```
 
+# Separadores
+```
+<separator string="Total" colspan="2"/>
+<field name="total"/>
+```
+
 # Otra forma de agregar atributos
 ```
 <field name="vat" position="attributes">
