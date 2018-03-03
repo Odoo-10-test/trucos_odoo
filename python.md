@@ -5,6 +5,8 @@ int_rut = int_rut.replace("-", '')
 
 # Manejo de Excepciones
 ```
+#-*- coding: utf-8 -*-
+
 dividendo = 5
 divisor = 0
 try:
@@ -14,7 +16,7 @@ except:
     print "No se permite la division por cero"
 ```
 
-# Manejo de Excepciones
+# Manejo de Excepciones Capturando el Tipo
 ```
 try:
     # aquí ponemos el código que puede lanzar excepciones
