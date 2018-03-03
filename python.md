@@ -31,3 +31,8 @@ except:
     # una excepción que no corresponda a ninguno
     # de los tipos especificados en los except previos
 ```
+
+# Codificando un caracter
+```
+vals['name'] = field['RAZON SOCIAL'].decode("latin-1").encode("utf-8")
+```
