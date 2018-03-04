@@ -57,3 +57,22 @@ cr.dictfetchone() will give you {'reg_no': 123}.
 cr.fetchall() will give you '[(123),(543)]'.
 cr.fetchone() will give you '(123)'.
 ```
+
+# Ejemplo de busqueda con actualización
+```
+@api.multi
+    def run_sii_partner_update(self, exe, alias=None):
+        tiempo_inicial = time()
+        _logger.info('Se ha Iniciado el Proceso de Actualizacion de Contribuyente')
+        contador = 1
+        obj_partner = self.env['res.partner'].search([('active', '=', 'True')])
+        if obj_partner:
+            for id in obj_partner:
+                contador = contador + 1
+                if id.document_number:
+                    print str(contador) + "-" +  id.document_number
+                    obj_partner_sii = self.env['sii.partner'].search([('document_number', '=', id.document_number)])
+                    if obj_partner_sii:
+                        for id_sii in obj_partner_sii:
+                            id.dte_email = id_sii.dte_email
+```
