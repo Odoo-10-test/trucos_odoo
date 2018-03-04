@@ -52,3 +52,13 @@ class StockPickingSii(models.Model):
                     #DIRECCION DE ENTREGA: '+str(self.direccion_despacho_id.city)+' - '+str(self.direccion_despacho_id.city_id.name)
         return res
 ```
+
+# Heredando una función Existente
+```
+@api.model
+    def cron_asign_vacation_days(self):
+        res = super(HolidaysSettingsVP, self).cron_asign_vacation_days()
+        u""" Asigna las vacaciones pendientes a cada empleado """
+        print "-----------"
+        return res
+```
