@@ -69,6 +69,17 @@ class AModel(models.Model):
             self.birth_country = partner_id.country_id.id
 ```
 
+
+# Calculado comision en la factura
+```
+total = 0
+for line in self.invoice_line_ids:
+    if line.product_id:
+        total += (line.product_id.sale_commission or 0.0) / 100.0 * line.price_unit * line.quantity
+self.sale_commission = total
+```
+
+
 # Clase Inicial Modelo Herencia
 ```
 # -*- coding: utf-8 -*-
