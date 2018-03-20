@@ -30,6 +30,11 @@ entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime
 ```
  cadena = u" Dir. Intermediaria: %s, %s \n Dir. Final: %s, %s "%(direccion_1,ciudad,direccion_2,ciudad2)
  ```
+ # Redondear con mas decimales
+```
+ 
+ monto = fields.Float('Monto', digits=(10, 4))
+ ```
 
 # Opciones en los campos básicos en Odoo
 
