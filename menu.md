@@ -1,5 +1,5 @@
 
-# Creando Menu Sdicional con Filtros
+# Creando Menu Adicional con Filtros
 
 ```
 <record id="action_invoice_rejected_sii" model="ir.actions.act_window">
