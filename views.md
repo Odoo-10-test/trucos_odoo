@@ -24,6 +24,14 @@ Lo agrego en otra posición
 <field name="vat" position="attributes">
        <attribute name="attrs">{'invisible':1}</attribute>
   </field>
+```  
+
+
+# Otra forma de agregar atributos
+```
+<field name="comment" position="attributes">
+                    <attribute name="placeholder">Observaciones</attribute>
+            </field>
 ```   
 
 # No permitir crear un campo seleccionable
