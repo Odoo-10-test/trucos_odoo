@@ -26,6 +26,15 @@ entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime
 
 ```
 
+# Colocando Valores por defecto
+
+```
+@api.model
+    def create(self, vals):
+        vals['property_payment_term_id'] = 1
+        return super(res_partner_cnp, self).create(vals)
+  ```      
+
 # Cadenas
 ```
  cadena = u" Dir. Intermediaria: %s, %s \n Dir. Final: %s, %s "%(direccion_1,ciudad,direccion_2,ciudad2)
