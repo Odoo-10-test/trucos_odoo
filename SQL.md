@@ -76,3 +76,18 @@ cr.fetchone() will give you '(123)'.
                         for id_sii in obj_partner_sii:
                             id.dte_email = id_sii.dte_email
 ```
+
+
+
+# Orden
+```
+obj_stock_move = self.env['stock.move'].search([('picking_type_id', '=', 4), ('state', 'in', ['confirmed', 'assigned'])]).sorted('date_expected')
+
+# ('id desc')
+
+            consecutivo_linea_so = 1
+
+            for id in obj_stock_move:
+                if id.state == 'confirmed' or id.state == 'assigned':
+                
+   ``` 
