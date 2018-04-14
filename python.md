@@ -45,5 +45,5 @@ res = res + 1
 
 # Limpiar cadena espacio
 ```
-s = 'wwwthisisasstringooo' s.strip()
+s.strip()
 ```
