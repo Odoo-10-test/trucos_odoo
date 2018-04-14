@@ -42,3 +42,8 @@ vals['name'] = field['RAZON SOCIAL'].decode("latin-1").encode("utf-8")
 res += 1
 res = res + 1
 ```
+
+# Limpiar cadena espacio
+```
+s = 'wwwthisisasstringooo' s.strip()
+```
