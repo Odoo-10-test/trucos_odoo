@@ -36,3 +36,9 @@ except:
 ```
 vals['name'] = field['RAZON SOCIAL'].decode("latin-1").encode("utf-8")
 ```
+
+# Suma
+```
+res += 1
+res = res + 1
+```
