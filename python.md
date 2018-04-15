@@ -43,7 +43,16 @@ res += 1
 res = res + 1
 ```
 
+# Extraer una cadena
+```
+# -- coding: utf-8 --
+var = "PO00002"
+print var[0:2]
+```
+
 # Limpiar cadena espacio
 ```
 s.strip()
 ```
+
+
