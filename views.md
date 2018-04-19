@@ -1,3 +1,12 @@
+# Adicionando Header
+```
+<xpath expr="/form/*" position="before">
+    <header>
+         <button name="export_pricelist"  type="object" class="oe_highlight" string="Exportar Tarifa"/>
+     </header>
+</xpath>
+ ```
+
 # Remplazar de posicion un campo
 
 Quito el campo de la vista
