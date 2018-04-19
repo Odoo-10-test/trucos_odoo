@@ -54,5 +54,10 @@ print var[0:2]
 ```
 s.strip()
 ```
-
+# Redondea si es entero
+```
+value_p = id.fixed_price
+            if (value_p % 1) == 0 or value_p.is_integer():
+                value_p =  int(value_p)
+```
 
