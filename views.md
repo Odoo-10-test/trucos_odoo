@@ -1,3 +1,8 @@
+# Colores en la vista Tree
+```
+<tree colors="Red:total_presupuesto==0; Blue:estado=='3'; Green:estado=='5';" decoration-muted="estado=='8'">
+``` 
+    
 # Adicionando Header
 ```
 <xpath expr="/form/*" position="before">
