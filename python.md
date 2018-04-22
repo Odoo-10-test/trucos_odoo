@@ -3,6 +3,13 @@
 int_rut = int_rut.replace("-", '')
 ```
 
+# Evaluar funcion
+```
+largo = 12
+ancho = 13
+print eval('largo*ancho')
+```
+
 # Manejo de Excepciones
 ```
 #-*- coding: utf-8 -*-
