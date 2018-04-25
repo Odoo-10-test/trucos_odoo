@@ -12,3 +12,10 @@
         <field name="search_view_id" ref="account.view_account_invoice_filter"/>
     </record>
 ```
+
+
+# Remplazando permiso a un menu
+
+```
+<menuitem action="stock.action_inventory_form" id="stock.menu_action_inventory_form" parent="stock.menu_stock_inventory_control" sequence="30"
+            groups="maryun_setup.picking_seller_group"/>
