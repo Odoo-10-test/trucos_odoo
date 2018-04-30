@@ -68,3 +68,9 @@ value_p = id.fixed_price
                 value_p =  int(value_p)
 ```
 
+
+# Comparación y Asignacion en una Línea
+```
+self.amount = total_advance > 0 and total_advance or self.sale_id.residual
+```
+
