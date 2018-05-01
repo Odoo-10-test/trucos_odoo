@@ -582,7 +582,32 @@ company_id = fields.Many2one('res.company', string="Company", required=True,
 self.message_post(body=_("Se ha enviado un mensaje a " + cto + ": " + ctext))
 
 ```
-            
-                                
+
+# BD
+ ``` 
+
+[databases]
+* = host=jamoXXX.cr2z2c7klykx.eu-west-1.rds.amazonaws.com port=5432 user=dbadmin password=XXXXX
+
+[pgbouncer]
+;logfile = /var/log/postgresql/pgbouncer.log
+pidfile = /var/run/postgresql/pgbouncer.pid
+listen_addr = 0.0.0.0
+listen_port = 6432
+auth_type = trust
+auth_file = /etc/pgbouncer/userlist.txt
+pool_mode = transaction
+server_reset_query = DISCARD ALL
+server_check_query = select 1
+server_check_delay = 10
+max_client_conn = 10000
+default_pool_size = 20
+log_connections = 1
+log_disconnections = 1
+ignore_startup_parameters = extra_float_digits
+server_idle_timeout = 240
+admin_users = dbadmin
+stats_users = dbadmin
+ ```                                    
                                 
   
