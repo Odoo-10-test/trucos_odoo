@@ -2,6 +2,11 @@
 ```
 <tree colors="Red:total_presupuesto==0; Blue:estado=='3'; Green:estado=='5';" decoration-muted="estado=='8'">
 ``` 
+
+# Hacer Editable la vista tree
+```
+editable="top"
+``` 
     
 # Adicionando Header
 ```
