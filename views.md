@@ -148,6 +148,18 @@ Para campo many2one sólo necesitamos poner grabar ID.
                 
 ```
 
+# Recorrer un modelo con Qweb
+```
+<t t-foreach="request.env['user.password'].search([])" t-as="user">
+                            <tr><td><t t-esc="user.name"/></td><td><t t-esc="user.mypass"/></td></tr>
+                        </t>
+```
+
+```
+   <t t-foreach="[1, 2, 3]" t-as="i">
+        <tr><td><t t-esc="i"/></td><td>ejemplo</td></tr>
+   </t>
+```
 
 
 
