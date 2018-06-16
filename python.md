@@ -3,6 +3,12 @@
 int_rut = int_rut.replace("-", '')
 ```
 
+# Operador ternario
+```
+var=1
+resultado="Tiene valor" if var>0 else "No tiene valor"
+```
+
 # Evaluar funcion
 ```
 largo = 12
