@@ -38,6 +38,17 @@ Lo agrego en otra posición
 <field name="total"/>
 ```
 
+# Mensajes de Alertas
+```
+</header>
+                <div class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
+                    You have <bold><a class="alert-link" href="#outstanding" role="button">outstanding payments</a></bold> for this customer. You can allocate them to mark this invoice as paid.
+                </div>
+                <field name="has_outstanding" invisible="1"/>
+                <sheet string="Invoice"
+  ```              
+                
+
 # Otra forma de agregar atributos
 ```
 <field name="vat" position="attributes">
