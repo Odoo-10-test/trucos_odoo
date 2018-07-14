@@ -1,5 +1,11 @@
 # Trucos con los modelos
 
+
+# Obtener datos desde la compañía
+```
+self.env.user.company_id.name
+```
+
 # Tipos de campos en Odoo
 
 ```
