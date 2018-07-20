@@ -6,28 +6,6 @@
 self.env.user.company_id.name
 ```
 
-# Recorrer
-```
-obj_product_product = self.env['product.product'].search([('active', '=', True)])
-        for id in obj_product_product:
-            # print id.name
-            default_code = "-"
-            if id.default_code:
-                default_code = id.default_code
-
-            barcode = ""
-            if id.barcode:
-                barcode = id.barcode
-            color = ""
-            numero = ""
-            talla = ""
-            if id.attribute_value_ids:
-                # print id.attribute_value_ids
-                for att in id.attribute_value_ids:
-                    if att.attribute_id.name == "Color" or att.attribute_id.name == "color" or att.attribute_id.name == "COLOR":
-                        color = att.name
-```
-
 # Stock de un producto
 ```
 stock = sum(id.stock_quant_ids.mapped('qty'))
