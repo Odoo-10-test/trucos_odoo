@@ -8,5 +8,5 @@ dbfilter = ^%d$
 
 # Filtrando por dominio
 ```
-"^%h$"
+dbfilter = ^%h$
 ```
