@@ -1,6 +1,12 @@
 # Trucos con los modelos
 
-
+# Herencia en el modelo
+```
+class SaleOrderNotCopy(models.Model):
+    _inherit = "sale.order"
+    user_id = fields.Many2one('res.users', copy=False)
+ ```   
+    
 # Obtener datos desde la compañía
 ```
 self.env.user.company_id.name
@@ -46,6 +52,11 @@ entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime
         vals['property_payment_term_id'] = 1
         return super(res_partner_cnp, self).create(vals)
   ```      
+
+# Salto de linea
+```
+'comment': note and note_sale+'\n'+note or note_sale
+```
 
 # Cadenas
 ```
