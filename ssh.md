@@ -12,3 +12,9 @@ cat .ssh/id_rsa.pub
 ```
 cat ~/.ssh/id_rsa.pub
 ```
+
+# Como clonamos desede Bitbucket
+```
+git clone git@bitbucket.org:marlonodoo/odoo_general.git
+```
+
