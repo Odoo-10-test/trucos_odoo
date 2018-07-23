@@ -1,4 +1,19 @@
-# Remplazar Cadena
+# Buenas practicas
+```
+lista = []
+
+for elemento in elementos:
+    lista.append(elemento.nombre)
+
+
+lista = [elemento.nombre for elemento in elementos]
+
+diccionario = {llave: valor for llave, valor in elementos.items()}
+
+i += 1
+```
+
+# Codigos Lindos
 ```
 int_rut = int_rut.replace("-", '')
 ```
