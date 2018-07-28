@@ -3,6 +3,13 @@
 <tree colors="Red:total_presupuesto==0; Blue:estado=='3'; Green:estado=='5';" decoration-muted="estado=='8'">
 ``` 
 
+# Mensajes
+```
+<div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                    Crea un fichero <strong>import.csv</strong>, con las columnas: <strong>code,quantity</strong> o <strong>barcode,quantity</strong>
+</div>
+``` 
+
 # Hacer Editable la vista tree
 ```
 editable="top"
