@@ -6,16 +6,7 @@ class SaleOrderNotCopy(models.Model):
     _inherit = "sale.order"
     user_id = fields.Many2one('res.users', copy=False)
  ```  
- 
- # Creando Valores
-```
-  vals = {
-                        'product_id': id,
-                        'price_list_id': pricelist_report_id.id,
-                        }
 
-                insert = self.env['list.product.report'].create(vals)
- ```
     
 # Obtener datos desde la compañía
 ```
