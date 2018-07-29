@@ -5,6 +5,16 @@ obj_stock_move = self.env['stock.move'].search([('state', '=', 'confirmed')])
                 print id.name
 ```
 
+ # Creando Valores
+```
+  vals = {
+           'product_id': id,
+           'price_list_id': pricelist_report_id.id,
+          }
+
+  insert = self.env['list.product.report'].create(vals)
+ ```
+
 
 # Ejemplo de consulta SQL en Odoo
 
