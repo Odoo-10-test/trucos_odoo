@@ -1,5 +1,14 @@
 # Trucos con los modelos
 
+# Tratando de Importar una libreria
+```
+try:
+    import pysftp
+except ImportError:
+    raise ImportError('This module needs pysftp to automaticly write backups to the FTP through SFTP. Please install pysftp on your system. (sudo pip install pysftp)')
+ ```  
+ 
+ 
 # Herencia en el modelo
 ```
 class SaleOrderNotCopy(models.Model):
