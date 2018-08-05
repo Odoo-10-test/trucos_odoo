@@ -1,0 +1,120 @@
+/*
+	MAIN STYLE
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,vietnamese);
+
+body, html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.body_login {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.body_login:before {
+	content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.o_database_list {
+	display: inline-block;
+    vertical-align: middle;
+    padding: 50px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    float: none;
+    background-color: #FFF;
+    opacity: 0.9;
+}
+
+#background-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	-webkit-filter: blur(0px);
+	z-index: -1;
+}
+
+.o_database_list input,
+.o_database_list select {
+	background-color: transparent !important;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 1px solid #CCC;
+	border-radius: 0px;
+	color: #de3907;
+	font-size: 18px;
+	font-weight: 300;
+	transition: border-color 0.7s ease;
+	box-shadow: none!important;
+	text-align: center;
+}
+
+.o_database_list select option {
+	background-color: #95A5A6;
+}
+
+.o_database_list input:focus,
+.o_database_list select:focus {
+	border-bottom: 1px solid #e0953e;
+	outline: 0 none;
+}
+
+a.btn-select {
+    background-color: #BBB;
+    border-radius: 5px !important;
+    color: #EEE;
+}
+
+.o_database_list .btn-primary {
+	color: #FFF;
+  	background-color: #BBB;
+  	border: 1px solid #CCC;
+  	text-transform: uppercase;
+  	transition: background-color 0.5s ease;
+}
+
+.o_database_list .btn-primary:hover,
+a.btn-select:hover {
+	background-color: #f05a24;
+	color: #FFF;
+}
+
+.form-control {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+}
+
+.o_database_list .company_logo {
+	margin-bottom: 50px;
+	max-width: 100%;
+    height: auto;
+}
+
+.oe_login_buttons {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}

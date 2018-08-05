@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+    	<record id="login_form_disable_footer" model="ir.config_parameter">
+            <field name="key">login_form_disable_footer</field>
+            <field name="value">False</field>
+        </record>
+        
+        <record id="login_form_disable_database_manager" model="ir.config_parameter">
+            <field name="key">login_form_disable_database_manager</field>
+            <field name="value">False</field>
+        </record>
+        
+        <record id="login_form_change_background_by_hour" model="ir.config_parameter">
+            <field name="key">login_form_change_background_by_hour</field>
+            <field name="value">True</field>
+        </record>
+        
+        <record id="login_form_change_background_timezone" model="ir.config_parameter">
+            <field name="key">login_form_change_background_timezone</field>
+            <field name="value">Etc/GMT-7</field>
+        </record>
+        
+        <record id="login_form_background_default" model="ir.config_parameter">
+            <field name="key">login_form_background_default</field>
+            <field name="value">/odoo_web_login/static/src/img/background_login_2.png</field>
+        </record>
+        <record id="login_form_background_dawn" model="ir.config_parameter">
+            <field name="key">login_form_background_dawn</field>
+            <field name="value">/odoo_web_login/static/src/img/background_login_1.png</field>
+        </record>
+        <record id="login_form_background_day" model="ir.config_parameter">
+            <field name="key">login_form_background_day</field>
+            <field name="value">/odoo_web_login/static/src/img/background_login_2.png</field>
+        </record>
+        <record id="login_form_background_dusk" model="ir.config_parameter">
+            <field name="key">login_form_background_dusk</field>
+            <field name="value">/odoo_web_login/static/src/img/background_login_3.png</field>
+        </record>
+        <record id="login_form_background_night" model="ir.config_parameter">
+            <field name="key">login_form_background_night</field>
+            <field name="value">/odoo_web_login/static/src/img/background_login_4.png</field>
+        </record>
+    </data>
+</openerp>

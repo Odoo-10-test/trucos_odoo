@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+   	 <template id="assets_login" inherit_id="web.assets_frontend">
+   	 	<xpath expr="." position="inside">
+   	 		<link rel="stylesheet" href="/odoo_web_login/static/src/css/web_login_style.css"/>
+   	 	</xpath>
+    </template>
+    
+   	<template id="login_layout" inherit_id="web.login_layout" name="Login Layout Inherit">
+   		<xpath expr="//t[@t-set='body_classname']" position="replace">
+   			<t t-set="body_classname" t-value="''"/>
+   		</xpath>
+   		
+   		<xpath expr="//div[@class='row']" position="attributes">
+   			<attribute name="class">body_login</attribute>
+   		</xpath>
+   		
+   		<xpath expr="//div[@class='col-md-6 col-md-offset-3 o_database_list']" position="before">
+   			<div id="background-wrapper"
+   				t-attf-style="background-image: url('#{background_src}');"></div>
+   		</xpath>
+   		
+   		<xpath expr="//div[@class='col-md-6 col-md-offset-3 o_database_list']" position="attributes">
+   			<attribute name="class">col-lg-3 col-md-4 col-sm-4 col-xs-11 o_database_list</attribute>
+   		</xpath>
+   		
+   		<xpath expr="//div[@class='text-center']/img" position="attributes">
+   			<attribute name="class">company_logo</attribute>
+   		</xpath>
+   	</template>
+   	
+   	<template id="login" inherit_id="web.login" name="Login Inherit">
+   		<xpath expr="//label[@for='db']" position="replace" />
+		<xpath expr="//label[@for='login']" position="replace" />
+		<xpath expr="//label[@for='password']" position="replace" />
+		
+		<xpath expr="//input[@name='login']" position="attributes">
+			<attribute name="placeholder">Email ...</attribute>
+			<attribute name="autocomplete">off</attribute>
+			<attribute name="autocorrect">off</attribute>
+		</xpath>
+		
+		<xpath expr="//input[@name='password']" position="attributes">
+			<attribute name="placeholder">Password ...</attribute>
+		</xpath>
+		
+		<xpath expr="//span[@class='input-group-btn']/a[@href='/web/database/selector']" position="replace">
+			<a href="/web/database/selector" class="btn btn-default btn-select"><i class="fa fa-database"></i></a>
+		</xpath>
+	</template>
+
+</odoo>
