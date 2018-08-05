@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--     
+	Copyright (C) 2017 MuK IT GmbH
+	
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+-->
+
+<odoo>
+
+<template id="snippet_particles_opt" name="Snippet Particles Options"
+	inherit_id="website.snippet_options">
+	<xpath expr="//div[@data-js='colorpicker']" position="after">
+		<div data-js="snippet_particles_options" data-selector=".snippet_particles">
+			<li class="dropdown-submenu">
+				<a href="#">
+					<i class="fa fa-circle-o"></i>
+					Particles
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<div class="muk_particle_options">
+							<div class="muk_particle_title">Particle Options</div>
+							<div class="muk_particle_sections">
+								<ul class="nav nav-pills muk_particle_section_menu">
+								</ul>
+								<div class="tab-content muk_particle_section_tabs">
+									<div class="muk_particle_section tab-pane"
+										data-name="number" data-icon-class="fa fa-circle-o">
+										<label class="muk_particles-slider-label muk_particles-label">Number</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-number-value muk_particles-slider" type="range" value="80" min="0" max="600" />
+										  <span class="muk_particles-slider-value">80</span>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-number-density-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Enable Density</label>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Density Value Area</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-number-density-value_area muk_particles-slider" type="range" value="800" min="0" max="10000" />
+										  <span class="muk_particles-slider-value">800</span>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="color"
+										data-icon-class="fa fa-paint-brush">
+										<label class="muk_particles-color-label muk_particles-label">Color</label>
+										<div class="muk_color-picker">
+											<input class="muk_particles-color-value muk_particles-color-picker" type="color" value="#ffffff"/>
+											<span class="muk_particles-color-picker-value">#ffffff</span>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="shape"
+										data-icon-class="fa fa-cubes">
+										<label class="muk_particles-slider-label muk_particles-label">Stroke Width</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-shape-stroke-width muk_particles-slider" type="range" value="0" min="0" max="20" />
+										  <span class="muk_particles-slider-value">0</span>
+										</div>
+										<label class="muk_particles-color-label muk_particles-label">Stroke Color</label>
+										<div class="muk_color-picker">
+											<input class="muk_particles-shape-stroke-color muk_particles-color-picker" type="color" value="#000000"/>
+											<span class="muk_particles-color-picker-value">#000000</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Polygon Sides</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-shape-polygon-nb_sides muk_particles-slider" type="range" value="5" min="0" max="12" />
+										  <span class="muk_particles-slider-value">5</span>
+										</div>
+										<label class="muk_particles-image-label muk_particles-label">Image</label>
+										<div class="muk_image-button">
+											<button class="muk_particles-shape-image-src muk_particles-image-button" type="button">Select</button>
+											<button class="muk_particles-shape-image-src-delete muk_particles-image-button" type="button">Delete</button>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Image Width</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-shape-image-width muk_particles-slider" type="range" value="100" min="0" max="500" />
+										  <span class="muk_particles-slider-value">100</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Image Height</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-shape-image-height muk_particles-slider" type="range" value="100" min="0" max="500" />
+										  <span class="muk_particles-slider-value">100</span>
+										</div>
+										<label class="muk_particles-select-label muk_particles-label">Shape</label>
+										<div class="muk_select">
+											<select class="muk_particles-shape-type muk_particles-select">
+											  <option value="circle">Circle</option>
+											  <option value="edge">Edge</option>
+											  <option value="triangle">Triangle</option>
+											  <option value="polygon">Polygon</option>
+											  <option value="star">Star</option>
+											  <option value="image">Image</option>
+											</select>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="size"
+										data-icon-class="fa fa-cube">
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-size-anim-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Size Animation</label>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Animation Speed</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-size-anim-speed muk_particles-slider" type="range" value="40" min="0" max="300" />
+										  <span class="muk_particles-slider-value">400</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Animation Min. Size</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-size-anim-size_min muk_particles-slider" type="range" value="0.1" step='0.1' min="0" max="100" />
+										  <span class="muk_particles-slider-value">0.1</span>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-size-anim-sync muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Animation Sync</label>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Size</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-size-value muk_particles-slider" type="range" value="3" step='0.1' min="0" max="500" />
+										  <span class="muk_particles-slider-value">3</span>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-size-random muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Random</label>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="opacity"
+										data-icon-class="fa fa-eye">
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-opacity-anim-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Opacity Animation</label>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Animation Speed</label>
+										<div class="muk_range-slider">
+										  	<input class="muk_particles-opacity-anim-speed muk_particles-slider" type="range" value="1" step='0.1' min="0" max="10" />
+										  	<span class="muk_particles-slider-value">1</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Animation Min. Opacity</label>
+										<div class="muk_range-slider">
+										  	<input class="muk_particles-opacity-anim-opacity_min muk_particles-slider" type="range" value="0.1" step='0.1' min="0" max="1" />
+										  	<span class="muk_particles-slider-value">0.1</span>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-opacity-anim-sync muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Animation Sync</label>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Size</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-opacity-value muk_particles-slider" type="range" value="0.5" step='0.1' min="0" max="1" />
+										  <span class="muk_particles-slider-value">0.5</span>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-opacity-random muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Random</label>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="line"
+										data-icon-class="fa fa-bars">
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-line_linked-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Enable Auto</label>
+  										</div>
+  										<label class="muk_particles-slider-label muk_particles-label">Line Distance</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-line_linked-distance muk_particles-slider" type="range" value="150" step='1' min="0" max="2000" />
+										  <span class="muk_particles-slider-value">150</span>
+										</div>
+										<label class="muk_particles-color-label muk_particles-label">Line Color</label>
+										<div class="muk_color-picker">
+											<input class="muk_particles-line_linked-color muk_particles-color-picker" type="color" value="#ffffff"/>
+											<span class="muk_particles-color-picker-value">#ffffff</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Line Opacity</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-line_linked-opacity muk_particles-slider" type="range" value="0" step='0.1' min="0" max="1" />
+										  <span class="muk_particles-slider-value">0.4</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Line Width</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-line_linked-witdh muk_particles-slider" type="range" value="0" step='0.1' min="0" max="20" />
+										  <span class="muk_particles-slider-value">1</span>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="move"
+										data-icon-class="fa fa-random">
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-move-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Enable Move</label>
+  										</div>
+										<label class="muk_particles-select-label muk_particles-label">Direction</label>
+  										<div class="muk_select">
+											<select class="muk_particles-move-direction muk_particles-select">
+											  <option value="none">None</option>
+											  <option value="top">Top</option>
+											  <option value="top-right">Top-Right</option>
+											  <option value="right">Right</option>
+											  <option value="bottom-right">Bottom-Right</option>
+											  <option value="bottom">Bottom</option>
+											  <option value="bottom-left">Bottom-Left</option>
+											  <option value="left">Left</option>
+											  <option value="top-left">Top-Left</option>
+											</select>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-move-random muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Random</label>
+  										</div>
+  										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-move-straigth muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Straight</label>
+  										</div>
+  										<label class="muk_particles-slider-label muk_particles-label">Speed</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-move-speed muk_particles-slider" type="range" value="6" step='0.1' min="0" max="200" />
+										  <span class="muk_particles-slider-value">6</span>
+										</div>
+										<label class="muk_particles-select-label muk_particles-label">Mode</label>
+										<div class="muk_select">
+											<select class="muk_particles-move-out_mode muk_particles-select">
+											  <option value="out">Out</option>
+											  <option value="bounce">Bounce</option>
+											</select>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_particles-move-attract-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Attract</label>
+  										</div>
+  										<label class="muk_particles-slider-label muk_particles-label">RotateX</label>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-move-attract-rotateX muk_particles-slider" type="range" value="600" step='1' min="0" max="10000" />
+										  <span class="muk_particles-slider-value">600</span>
+										</div>
+										<div class="muk_range-slider">
+										  <input class="muk_particles-move-attract-rotateY muk_particles-slider" type="range" value="1200" step='1' min="0" max="10000" />
+										  <span class="muk_particles-slider-value">1200</span>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="interactivity"
+										data-icon-class="fa fa-hand-paper-o">
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_interactivity-events-onhover-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Hover</label>
+  										</div>
+										<label class="muk_particles-select-label muk_particles-label">Mode</label>
+  										<div class="muk_select">
+											<select class="muk_interactivity-events-onhover-mode muk_particles-select">
+											  <option value="grab">Grab</option>
+											  <option value="bubble">Bubble</option>
+											  <option value="repulse">Repulse</option>
+											</select>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_interactivity-events-onclick-enable muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Click</label>
+  										</div>
+										<label class="muk_particles-select-label muk_particles-label">Mode</label>
+  										<div class="muk_select">
+											<select class="muk_interactivity-events-onclick-mode muk_particles-select">
+											  <option value="push">Push</option>
+											  <option value="bubble">Bubble</option>
+											  <option value="repulse">Repulse</option>
+											</select>
+										</div>
+										<div class="muk_checkbox-opt">
+											<input type="checkbox" class="muk_retina_detect muk_particles-checkbox" />
+  											<label class="muk_particles-checkbox-label muk_particles-label">Retina Detect</label>
+  										</div>
+										<label class="muk_particles-select-label muk_particles-label">Detect</label>
+  										<div class="muk_select">
+											<select class="muk_interactivity-detect_on muk_particles-select">
+											  <option value="window">Window</option>
+											  <option value="canvas">Canvas</option>
+											</select>
+										</div>
+									</div>
+									<div class="muk_particle_section tab-pane" data-name="interactivity"
+										data-icon-class="fa fa-cogs">
+										<label class="muk_particles-slider-label muk_particles-label">Grab Distance</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-modes-grab-distance muk_particles-slider" type="range" value="400" step='1' min="0" max="1500" />
+										  <span class="muk_particles-slider-value">400</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Grab Opacity</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-modes-grab-line_linked-opacity muk_particles-slider" type="range" value="1" step='0.1' min="0" max="1" />
+										  <span class="muk_particles-slider-value">1</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Bubble Distance</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-bubble-distance muk_particles-slider" type="range" value="40" step='0.1' min="0" max="500" />
+										  <span class="muk_particles-slider-value">40</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Bubble Size</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-bubble-size muk_particles-slider" type="range" value="1" step='1' min="0" max="1" />
+										  <span class="muk_particles-slider-value">1</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Bubble Duration</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-bubble-duration muk_particles-slider" type="range" value="2" step='0.1' min="0" max="10" />
+										  <span class="muk_particles-slider-value">2</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Bubble Opacity</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-bubble-opacity muk_particles-slider" type="range" value="1" step='0.1' min="0" max="1" />
+										  <span class="muk_particles-slider-value">1</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Repulse Distance</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-repulse-distance muk_particles-slider" type="range" value="200" step='1' min="0" max="1000" />
+										  <span class="muk_particles-slider-value">200</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Repulse Duration</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-repulse-duration muk_particles-slider" type="range" value="0.4" step='0.1' min="0" max="1" />
+										  <span class="muk_particles-slider-value">0.4</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Repulse Duration</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-push-particles_nb muk_particles-slider" type="range" value="4" step='1' min="0" max="10" />
+										  <span class="muk_particles-slider-value">4</span>
+										</div>
+										<label class="muk_particles-slider-label muk_particles-label">Repulse Duration</label>
+										<div class="muk_range-slider">
+										  <input class="muk_interactivity-remove-particles_nb muk_particles-slider" type="range" value="2" step='1' min="0" max="10" />
+										  <span class="muk_particles-slider-value">2</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</div>
+	</xpath>
+</template>
+
+</odoo>

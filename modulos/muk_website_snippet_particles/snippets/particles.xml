@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--     
+	Copyright (C) 2017 MuK IT GmbH
+	
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+-->
+
+<odoo>
+
+<template id="snippet_particles" name="Particles">
+	<section class="snippet_particles bg-epsilon">
+		<div class="particles" 
+			particles-number-value="80"
+			particles-number-density-enable="true"
+			particles-number-density-value_area="800"
+			particles-color-value="#ffffff" 
+			particles-shape-type="circle"
+			particles-shape-stroke-width="0"
+			particles-shape-stroke-color="#000000"
+			particles-shape-polygon-nb_sides="5"
+			particles-shape-image-src=""
+			particles-shape-image-width="100"
+			particles-shape-image-height="100" 
+			particles-opacity-value="0.5"
+			particles-opacity-random="false"
+			particles-opacity-anim-enable="false"
+			particles-opacity-anim-speed="1"
+			particles-opacity-anim-opacity_min="0.1"
+			particles-opacity-anim-sync="false" 
+			particles-size-value="3"
+			particles-size-random="true" 
+			particles-size-anim-enable="false"
+			particles-size-anim-speed="40"
+			particles-size-anim-size_min="0.1"
+			particles-size-anim-sync="false"
+			particles-line_linked-enable="true"
+			particles-line_linked-distance="150"
+			particles-line_linked-color="#ffffff"
+			particles-line_linked-opacity="0.4"
+			particles-line_linked-witdh="1" 
+			particles-move-enable="true"
+			particles-move-speed="6" 
+			particles-move-direction="none"
+			particles-move-random="false" 
+			particles-move-straigth="false"
+			particles-move-out_mode="out" 
+			particles-move-bounce="false"
+			particles-move-attract-enable="false"
+			particles-move-attract-rotateX="600"
+			particles-move-attract-rotateY="1200" 
+			interactivity-detect_on="canvas"
+			interactivity-events-onhover-enable="true"
+			interactivity-events-onhover-mode="repulse"
+			interactivity-events-onclick-enable="true"
+			interactivity-events-onclick-mode="push"
+			interactivity-modes-grab-distance="400"
+			interactivity-modes-grab-line_linked-opacity="1"
+			interactivity-bubble-distance="400"
+			interactivity-bubble-size="40"
+			interactivity-bubble-duration="2"
+			interactivity-bubble-opacity="8"
+			interactivity-bubble-speed="3"
+			interactivity-repulse-distance="200"
+			interactivity-repulse-duration="0.4"
+			interactivity-push-particles_nb="4"
+			interactivity-remove-particles_nb="2"
+			retina_detect="true" />
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6 mt64 mb64 bg-black-25" style="padding: 25px 40px;">
+                    <h2 style="font-size:62px">Headline</h2>
+                    <h4>With a great subtitle</h4>
+                    <p>Write one or two paragraphs describing your product, services or a specific
+                     feature. To be successful your content needs to be useful to your readers.</p>
+                </div>
+            </div>
+        </div>
+	</section>
+</template>
+
+<template id="snippet_particles_bar" inherit_id="website.snippets" name="Particles Bar">
+  <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+    <t t-snippet="muk_website_snippet_particles.snippet_particles"
+       t-thumbnail="/muk_website_snippet_particles/static/src/img/block.png"/>
+  </xpath>
+</template>
+
+</odoo>
