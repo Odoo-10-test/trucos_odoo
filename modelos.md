@@ -9,6 +9,24 @@ except ImportError:
  ```  
  
  
+ # Parametros
+ ```
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="0">
+    	<record id="login_form_disable_footer" model="ir.config_parameter">
+            <field name="key">login_form_disable_footer</field>
+            <field name="value">False</field>
+        </record>
+    </data>
+</odoo>
+ ```  
+```
+change_background = ast.literal_eval(param_obj.get_param('login_form_change_background_by_hour')) or False
+config_login_timezone = param_obj.get_param('login_form_change_background_timezone')
+ ```  
+ 
+ 
 # Herencia en el modelo
 ```
 class SaleOrderNotCopy(models.Model):
