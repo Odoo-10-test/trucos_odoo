@@ -22,6 +22,10 @@ except ImportError:
 </odoo>
  ```  
 ```
+cr = request.cr
+uid = odoo.SUPERUSER_ID
+param_obj = request.env['ir.config_parameter']
+
 change_background = ast.literal_eval(param_obj.get_param('login_form_change_background_by_hour')) or False
 config_login_timezone = param_obj.get_param('login_form_change_background_timezone')
  ```  
