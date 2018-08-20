@@ -40,6 +40,14 @@ config_login_timezone = param_obj.get_param('login_form_change_background_timezo
  ```  
  
  
+ # Error
+```
+from odoo.exceptions import ValidationError
+raise ValidationError(_("Importante! Por favor defina los tags"))
+ ```  
+ 
+ 
+ 
 # Herencia en el modelo
 ```
 class SaleOrderNotCopy(models.Model):
