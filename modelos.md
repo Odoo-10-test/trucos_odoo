@@ -6,7 +6,14 @@ try:
     import pysftp
 except ImportError:
     raise ImportError('This module needs pysftp to automaticly write backups to the FTP through SFTP. Please install pysftp on your system. (sudo pip install pysftp)')
- ```  
+ ``` 
+ 
+ # Fecha - Today
+```
+from datetime import datetime
+a = datetime.today()
+ ``` 
+ 
  
  # Redefiniendo Métodos
 ```
