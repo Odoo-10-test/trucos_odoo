@@ -5,6 +5,28 @@ obj_stock_move = self.env['stock.move'].search([('state', '=', 'confirmed')])
                 print id.name
 ```
 
+# Creando Valores
+```
+from odoo.exceptions import ValidationError
+
+
+
+            for id in self.tag_mrp_ids:
+                contador += 1
+                vals = {
+                    'template_id': self.product_id.id,
+                    'name': id.name,
+                    'tag_date': datetime.today(),
+                }
+                print vals
+                insert = self.env['tag.list'].create(vals)
+
+            if contador != self.product_qty:
+                raise ValidationError(_("Importante! La cantidad de tags no es igual a los productos a producir"))
+```
+
+
+
  # Creando Valores
 ```
   vals = {
