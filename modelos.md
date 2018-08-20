@@ -8,6 +8,15 @@ except ImportError:
     raise ImportError('This module needs pysftp to automaticly write backups to the FTP through SFTP. Please install pysftp on your system. (sudo pip install pysftp)')
  ```  
  
+ # Redefiniendo Métodos
+```
+ @api.multi
+    def button_mark_done(self):
+        if not self.tag_mrp_ids:
+            raise ValidationError(_("Importante! Por favor defina los tags"))
+        res = super(MrpProduction, self).do_transfer()
+        return res
+  ``` 
  
  # Parametros
  ```
