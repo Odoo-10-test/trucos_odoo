@@ -1,5 +1,10 @@
 # Trucos con los modelos
 
+# Crear como admin
+```
+insert = self.env['tag.list'].sudo().create(vals)
+```
+
 # Tratando de Importar una libreria
 ```
 try:
