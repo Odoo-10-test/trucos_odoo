@@ -35,6 +35,11 @@ def all_equal(a, b, c):
 return a == b == c
 ```
 
+# Uniendo Lista
+```
+result_list = ['True', 'False', 'File not found']
+result_string = ''.join(result_list)
+```
 
 
 
