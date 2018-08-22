@@ -22,6 +22,19 @@ is_generic_name = name in ('Tom', 'Dick', 'Harry')
 is_generic_name = name in ('Tom', 'Dick', 'Harry')
 ```
 
+# Recorriendo Lista
+```
+my_list = ['Larry', 'Moe', 'Curly']
+  for element in my_list:
+  print(element)
+```
+
+# Variable iguales
+```
+def all_equal(a, b, c):
+return a == b == c
+```
+
 
 
 
