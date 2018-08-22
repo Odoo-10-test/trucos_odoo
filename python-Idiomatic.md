@@ -1,4 +1,4 @@
-# Buenas practicas
+# PYTHON IDIOMATIC
 
 
 # IF en una sola linea
