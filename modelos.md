@@ -1,8 +1,14 @@
 # Trucos con los modelos
 
+
+# Campos tipo moneda
+```
+amount_total = fields.Monetary('Total')
+```
+
 # Log en campos de estados
 ```
-state = fields.Selection([('pending', 'Pendiente'), ('done', 'Recibido'), ('error', 'Errores')], 'Estado', required=True, track_visibility='onchange')
+state = fields.Selection([('pending', 'Pendiente'), ('error', 'Errores')], 'Estado', required=True, track_visibility='onchange')
 ```
 
 # Crear como admin
