@@ -3,6 +3,29 @@
 <tree colors="Red:total_presupuesto==0; Blue:estado=='3'; Green:estado=='5';" decoration-muted="estado=='8'">
 ``` 
 
+
+# Filtros
+```
+
+<record id="sii_invoice_search_view" model="ir.ui.view">
+        <field name="name">sii.invoice.search.view</field>
+        <field name="model">sii.invoice</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number_folio"/>
+                <field name="partner_id"/>
+                <field name="document_number"/>
+                <field name="document_class_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <filter name="pending" string="Pendiente" domain="[('state', '=', 'pending')]"/>
+                <filter name="groupby_partner" string="Partner" context="{'group_by': 'partner_id'}" />
+                <filter name="groupby_document_class" string="Tipo de Documento" context="{'group_by': 'document_class_id'}" />
+            </search>
+        </field>
+    </record>
+``` 
+
 # Mensajes
 ```
 <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
