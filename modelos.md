@@ -1,5 +1,10 @@
 # Trucos con los modelos
 
+# Log en campos de estados
+```
+state = fields.Selection([('pending', 'Pendiente'), ('done', 'Recibido'), ('error', 'Errores')], 'Estado', required=True, track_visibility='onchange')
+```
+
 # Crear como admin
 ```
 insert = self.env['tag.list'].sudo().create(vals)
