@@ -39,6 +39,7 @@ actualizar(){
 }
 ```
 
+# Borrando los .pyc
 ```
 rm **/**/*.pyc
 rm **/*.pyc
