@@ -24,6 +24,7 @@ odoo_actualizar(){
 
 ```
 /root/.profile
+source .profile
 ```
 
 # Actualizar
