@@ -26,3 +26,17 @@ odoo_actualizar(){
 /root/.profile
 ```
 
+# Actualizar
+```
+actualizar(){
+  for i in /home/marlon/Documents/odoo-10.0/extra-addons/*
+  do
+    echo Actualizando $i
+    git -C $i pull
+  done
+  echo Finalizado
+}
+```
+
+
+
