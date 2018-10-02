@@ -1,6 +1,14 @@
 # Trucos con los modelos
 
-
+# Importar Correctamente una Libreria PY
+```
+try:
+	import barcode
+	from barcode.writer import ImageWriter
+except ImportError as exc:
+	_logger.error('Faltan dependencias: %s', exc)
+```    
+    
 # Campos tipo moneda
 ```
 amount_total = fields.Monetary('Total')
