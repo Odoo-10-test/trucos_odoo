@@ -1,3 +1,10 @@
+# Borrar BD
+```
+sudo su postgres
+dropdb db10-chile-sii
+```
+
+
 # Listar las BD
 ```
 \l
