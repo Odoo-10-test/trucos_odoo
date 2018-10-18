@@ -2,6 +2,10 @@
 ```
 sudo su postgres
 dropdb db10-chile-sii
+
+
+psql
+dropdb 'db10-chile-sii'
 ```
 
 
