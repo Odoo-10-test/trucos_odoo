@@ -1,5 +1,10 @@
 # Trucos con los modelos
 
+# Utilizacion de Mappeed
+```
+stock = sum(locations.with_context({'template_id': record.id}).mapped('virtual_available'))
+```
+
 # Importar Correctamente una Libreria PY
 ```
 try:
