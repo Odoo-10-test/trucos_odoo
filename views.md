@@ -1,3 +1,31 @@
+# Evitar Editar o Borrar
+```
+<record id="account_check_deposit_form_view" model="ir.ui.view">
+        <field name="name">Check Deposit Form View</field>
+        <field name="model">account.check.deposit</field>
+        <field name="arch" type="xml">
+            <form string="Depósito de Cheques" create="0" delete="0" > <!-- edit="0"  -->
+                <field name="currency_id" invisible="1"/>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="move_id"/>
+                            <field name="date"/>
+                            <field name="total" widget="monetary"/>
+                        </group>
+                    </group>
+                    <field name="check_ids"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+# Colores en la vista Tree
+
+``` 
 # Colores en la vista Tree
 ```
 <tree colors="Red:total_presupuesto==0; Blue:estado=='3'; Green:estado=='5';" decoration-muted="estado=='8'">
