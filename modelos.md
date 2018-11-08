@@ -1,5 +1,10 @@
 # Trucos con los modelos
 
+# Parametros
+```
+limit_day = self.env['ir.config_parameter'].sudo().get_param('cancel.sale.order')
+```
+
 # Utilizacion de Mappeed
 ```
 stock = sum(locations.with_context({'template_id': record.id}).mapped('virtual_available'))
