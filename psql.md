@@ -36,4 +36,23 @@ sudo -u postgres psql -d db10-chile-sii
 UPDATE res_users SET password='x1234567890', password_crypt='HASH' WHERE login='admin';
 ```
 
+# Borrar Facturas en Borrador
+```
+sudo su - postgres
+psql
+\c db10-chile-sii
+DELETE FROM account_invoice WHERE state = 'cancel';
+```
+
+# Borrar Pagos en Draft
+```
+sudo su - postgres
+psql
+\c db10-chile-sii
+DELETE FROM account_payment WHERE state = 'draft';
+```
+
+
+
+
 
