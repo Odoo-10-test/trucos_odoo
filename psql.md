@@ -1,11 +1,8 @@
 # Borrar BD
 ```
-sudo su postgres
-dropdb db10-chile-sii
-
-
-psql
-dropdb 'db10-chile-sii'
+sudo -u postgres psql
+\l
+DROP DATABASE "db10";
 ```
 
 
