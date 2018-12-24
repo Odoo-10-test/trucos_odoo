@@ -1,4 +1,4 @@
-# Consultas rápidas a Odoo
+# Consultas en Odoo
 ```
 sale_id = fields.Many2one('sale.order', string='Orden de Venta', compute='calcular_saleorder')
 
