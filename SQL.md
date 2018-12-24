@@ -1,5 +1,20 @@
 # Consultas rápidas a Odoo
 ```
+sale_id = fields.Many2one('sale.order', string='Orden de Venta', compute='calcular_saleorder')
+
+    @api.one
+    @api.depends('origin')
+    def calcular_saleorder(self):
+        if self.origin:
+            obj_sale_order = self.env['sale.order'].search([('name', '=', self.origin)], limit=1)
+            if obj_sale_order:
+                self.sale_id = obj_sale_order[0]
+
+```
+
+
+# Consultas rápidas a Odoo
+```
 obj_stock_move = self.env['stock.move'].search([('state', '=', 'confirmed')])
         for id in obj_stock_move:
                 print id.name
