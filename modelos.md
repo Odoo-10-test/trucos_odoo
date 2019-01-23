@@ -37,7 +37,7 @@ from datetime import datetime, timedelta
             else:
                 self.del_mes = True
         else:
-            self.del_mes = Fals
+            self.del_mes = False
 ```
     
 # Campos tipo moneda
