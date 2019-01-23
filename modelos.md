@@ -17,7 +17,28 @@ try:
 	from barcode.writer import ImageWriter
 except ImportError as exc:
 	_logger.error('Faltan dependencias: %s', exc)
-```    
+``` 
+
+# Trabajos con Fechas
+```
+from datetime import datetime, timedelta
+
+@api.one
+    @api.depends('desde_date', 'hasta_date')
+    def _calcular_si_es_mes(self):
+        hoy = datetime.now().date()
+        desde = self.desde_date
+        fecha_desde = datetime.strptime(str(desde), '%Y-%m-%d')
+        if str(fecha_desde) < str(hoy):
+            if self.hasta_date:
+                hasta_date = datetime.strptime(str(self.hasta_date), '%Y-%m-%d')
+                if str(hasta_date) > str(hoy):
+                    self.del_mes = True
+            else:
+                self.del_mes = True
+        else:
+            self.del_mes = Fals
+```
     
 # Campos tipo moneda
 ```
