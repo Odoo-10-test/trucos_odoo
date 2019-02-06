@@ -1,5 +1,15 @@
 # Trucos con los modelos
 
+# Colocando secuencia a una vista tree
+```
+sequence = fields.Integer(compute='_compute_sequence')
+
+    @api.multi
+    def _compute_sequence(self):
+        for i, record in enumerate(self.sorted('id', reverse=True), 1):
+            record.sequence = i
+```	    
+	    
 # Parametros
 ```
 limit_day = self.env['ir.config_parameter'].sudo().get_param('cancel.sale.order')
