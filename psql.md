@@ -5,6 +5,10 @@ sudo -u postgres psql
 DROP DATABASE "db10";
 ```
 
+# Listar BD
+```
+sudo -u postgres psql -c "\l+"
+```
 
 # Listar las BD
 ```
