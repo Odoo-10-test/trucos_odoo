@@ -1,14 +1,6 @@
 # Trucos con los modelos
 
-# Raise
-```
-from odoo.exceptions import UserError
-
-raise UserError(_('%s no tiene contrato para el periodo %s - %s') % (employee.display_name, date_from, date_to))
-
-raise UserError(_('El monto por préstamos no coincide:\nCuotas por pagar: %f\nMonto préstamo en nómina: %s') % (round(total_cuotas), round(total_prestamos)))
-
-```	    
+ 
 
 # Colocando secuencia a una vista tree
 ```
@@ -64,6 +56,17 @@ from datetime import datetime, timedelta
 ```
 amount_total = fields.Monetary('Total')
 ```
+
+
+# Raise
+```
+from odoo.exceptions import UserError
+
+raise UserError(_('%s no tiene contrato para el periodo %s - %s') % (employee.display_name, date_from, date_to))
+
+raise UserError(_('El monto por préstamos no coincide:\nCuotas por pagar: %f\nMonto préstamo en nómina: %s') % (round(total_cuotas), round(total_prestamos)))
+
+```	
 
 # Log en campos de estados
 ```
