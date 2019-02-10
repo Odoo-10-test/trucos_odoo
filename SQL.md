@@ -13,6 +13,17 @@ sale_id = fields.Many2one('sale.order', string='Orden de Venta', compute='calcul
 ```
 
 
+
+# Consultas rápidas a Odoo
+```
+obj_product_product = self.env['product.product'].search([('active', '=', True)])
+        for id in obj_product_product:
+            # print id.name
+            default_code = "-"
+            if id.default_code:
+                default_code = id.default_code
+ ```               
+                
 # Consultas rápidas a Odoo
 ```
 obj_stock_move = self.env['stock.move'].search([('state', '=', 'confirmed')])
