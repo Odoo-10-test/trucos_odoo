@@ -1,4 +1,12 @@
 # Evitar Editar o Borrar
+
+# Campos condicionales
+```
+<field name="serv_begin_date" attrs="{
+                                                      'invisible':[('ind_service','==','0')],
+                                                      'readonly': [('state','!=','draft')]}"/>
+   ```                                                   
+                                                      
 ```
 <record id="account_check_deposit_form_view" model="ir.ui.view">
         <field name="name">Check Deposit Form View</field>
