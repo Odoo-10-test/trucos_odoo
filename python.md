@@ -1,6 +1,14 @@
 # Buenas practicas
 
 
+# for
+```
+for i, elemento in enumerate(elementos):
+for i, elemento in enumerate(elementos, 5):
+
+```
+
+
 # IF en una sola linea
 ```
 str(p.indicadores_id.mutualidad_id.codigo) if p.indicadores_id.mutualidad_id else '00',
