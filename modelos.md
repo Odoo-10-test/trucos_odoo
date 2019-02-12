@@ -3,6 +3,16 @@
 # Evita Borrar si tiene valores
 ```
 alarm_ids = fields.Many2many('calendar.alarm', 'calendar_alarm_calendar_event_rel', string='Reminders', ondelete="restrict", copy=False)
+
+CASCADE: Delete the Course record with matching student_id when Student is deleted
+
+RESTRICT: Cannot delete the Student as long as it is related to a Course.
+
+NO ACTION: similar, but is a deferred check: You can delete the Student but you have to make sure that the integrity is OK when the transaction is committed.
+
+SET DEFAULT: uses openerp default definition (see _defaults dict in the python model definition)
+
+SET NULL: when a Student gets deleted, the student_id becomes NULL in the DB.
  
 ```
 
