@@ -1,6 +1,11 @@
 # Trucos con los modelos
 
+# Evita Borrar si tiene valores
+```
+alarm_ids = fields.Many2many('calendar.alarm', 'calendar_alarm_calendar_event_rel', string='Reminders', ondelete="restrict", copy=False)
  
+```
+
 
 # Colocando secuencia a una vista tree
 ```
