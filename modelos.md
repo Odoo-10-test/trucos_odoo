@@ -1,5 +1,10 @@
 # Trucos con los modelos
 
+# Delete
+```
+alarm_ids = fields.Many2many('calendar.alarm', 'calendar_alarm_calendar_event_rel', string='Reminders', ondelete="restrict", copy=False)
+```
+
 # Evita Borrar si tiene valores
 ```
 alarm_ids = fields.Many2many('calendar.alarm', 'calendar_alarm_calendar_event_rel', string='Reminders', ondelete="restrict", copy=False)
