@@ -1,5 +1,10 @@
 # Evitar Editar o Borrar
 
+```
+<field name="property_id" options="{'no_create_edit': True}" required="1"/>
+```
+
+
 # Campos condicionales
 ```
 <field name="serv_begin_date" attrs="{
