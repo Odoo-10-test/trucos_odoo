@@ -26,3 +26,29 @@ while inicio < fin:
 2018-12-20
 2019-01-20    
 ```
+
+# Rango de Fechas
+
+```
+# -*- coding: utf-8 -*-
+
+from datetime import date
+from datetime import timedelta
+
+hoy = date.today()
+
+for i in range(7):
+    print hoy
+    hoy += timedelta(days=1)
+    
+```
+
+```
+2019-02-27
+2019-02-28
+2019-03-01
+2019-03-02
+2019-03-03
+2019-03-04
+2019-03-05
+```
