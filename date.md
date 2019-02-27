@@ -1,3 +1,10 @@
+
+# Fecha de Entrada
+```
+from datetime import datetime
+entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime.today()) 
+```
+
 # Rango de Fechas
 
 ```
