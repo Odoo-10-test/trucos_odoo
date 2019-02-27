@@ -3,6 +3,12 @@
 ```
 from datetime import datetime
 entry_date = fields.Datetime('Fecha de Entrada', default = lambda self: datetime.today())
+```
+
+# Fecha de entrada
+```
+start_date = fields.Date('Fecha Inicio', default=_get_default_start_date, help='Ingrese la fecha inicio del periodo')
+end_date = fields.Date('Fecha Fin', default=_get_default_end_date, help='Ingrese la fecha fin del periodo')
 
 @api.model
 def _get_default_start_date(self):
@@ -17,12 +23,6 @@ def _get_default_end_date(self):
     end_of_month = monthrange(date.year, date.month)[1]
     end = '%s-%s-%s' % (date.year, str(date.month).zfill(2), end_of_month)
     return end
-```
-
-# Fecha de entrada
-```
-start_date = fields.Date('Fecha Inicio', default=_get_default_start_date, help='Ingrese la fecha inicio del periodo')
-end_date = fields.Date('Fecha Fin', default=_get_default_end_date, help='Ingrese la fecha fin del periodo')
 ```
 # Rango de Fechas
 
