@@ -1,5 +1,12 @@
 # Trucos con los modelos
 
+# Cadenas
+```
+cadena = cadena + u" Socio de Negocio: %s \n"%(socio_negocio)
+cadena = notas + '\n' + u" NV: %s \n" % (nv)
+```
+
+
 # Delete
 ```
 alarm_ids = fields.Many2many('calendar.alarm', 'calendar_alarm_calendar_event_rel', string='Reminders', ondelete="restrict", copy=False)
