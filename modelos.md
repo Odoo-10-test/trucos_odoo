@@ -1,5 +1,8 @@
 # Trucos con los modelos
 
+# Fecha actual
+date = fields.Date('Fecha contable', default=fields.Date.today)
+
 # Cadenas
 ```
 cadena = cadena + u" Socio de Negocio: %s \n"%(socio_negocio)
