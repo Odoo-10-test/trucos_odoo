@@ -1,7 +1,9 @@
 # Trucos con los modelos
 
 # Fecha actual
+```
 date = fields.Date('Fecha contable', default=fields.Date.today)
+```
 
 # Cadenas
 ```
