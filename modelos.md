@@ -1,5 +1,20 @@
 # Trucos con los modelos
 
+# Estados
+```
+RO_STATES = {'draft': [('readonly', False)]}
+
+class HrHourReport(models.Model):
+    _name = 'hr.hour.report'
+    _description = 'Hoja de Bonos RRHH'
+    _inherit = ['mail.thread']
+    _order = 'date_issue desc, name desc, id desc'
+    
+    line_ids = fields.One2many('hr.bonus.line', 'sheet_id', 'Bonos', readonly=True, states=RO_STATES)
+```
+
+
+
 # Fecha actual
 ```
 date = fields.Date('Fecha contable', default=fields.Date.today)
