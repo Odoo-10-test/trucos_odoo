@@ -1,3 +1,8 @@
+# Consultas en una línea
+```
+discount = self.product_id.discount_id.discount_ids.filtered(lambda d: d.qty <= self.product_uom_qty).sorted('qty')
+```
+
 # Consultas en Odoo
 ```
 sale_id = fields.Many2one('sale.order', string='Orden de Venta', compute='calcular_saleorder')
