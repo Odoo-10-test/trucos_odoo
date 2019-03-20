@@ -5,6 +5,21 @@
 ```
 
 
+# Regresa la vista del modelo
+
+```
+return {
+            'name': 'Facturas creadas',
+            'type': 'ir.actions.act_window',
+            'res_model': 'account.invoice',
+            'view_mode': 'tree,form',
+            'view_type': 'form',
+            'domain': [('id', 'in', ids)]
+        }
+```
+
+
+
 # Campos condicionales
 ```
 <field name="serv_begin_date" attrs="{
