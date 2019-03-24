@@ -1,5 +1,11 @@
 # Consultas en una línea
 ```
+doc_class_ref_id = doc_class.search([('sii_code', '=', 'OTROS')], limit=1)
+```
+
+
+# Consultas en una línea
+```
 discount = self.product_id.discount_id.discount_ids.filtered(lambda d: d.qty <= self.product_uom_qty).sorted('qty')
 ```
 
