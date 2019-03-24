@@ -16,6 +16,23 @@ return {
             'view_type': 'form',
             'domain': [('id', 'in', ids)]
         }
+        
+        
+wizard_id = self.wizard_id.id
+        self.wizard_id.final_line_ids = [(0, 0, {
+            'apu_template_id': record.apu_template_id.id,
+            'qty': self.wizard_id.capitulo_id.apu_ids.filtered(lambda a: a.apu_tmpl_id.id == record.apu_template_id.id).qty or 1
+        }) for record in self if not record.added]
+        self.unlink()
+        return {
+            'name': 'Buscar APU',
+            'type': 'ir.actions.act_window',
+            'res_model': 'load.apu.wizard',
+            'target': 'new',
+            'res_id': wizard_id,
+            'view_mode': 'form',
+        }
+
 ```
 
 
