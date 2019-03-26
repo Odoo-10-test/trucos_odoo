@@ -1,3 +1,12 @@
+# Estados
+
+```
+RO_STATES = {'done': [('readonly', True)], 'paid': [('readonly', True)]}
+
+order_ids = fields.Many2many('purchase.order', states=RO_STATES)
+```
+
+
 # Evitar Editar o Borrar
 
 ```
