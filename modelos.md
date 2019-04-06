@@ -1,5 +1,19 @@
 # Trucos con los modelos
 
+
+# One2many or Many2many 
+```
+ 
+ Agregar
+ [(4, line.product_id.supplier_taxes_id.id)]
+ 
+ 
+ Remplazar
+ [(6,0,[line.product_id.supplier_taxes_id.id])]
+ 
+```
+
+
 # Estados
 ```
 RO_STATES = {'draft': [('readonly', False)]}
