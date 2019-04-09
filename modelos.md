@@ -1,6 +1,20 @@
 # Trucos con los modelos
 
 
+# Parametros
+
+```
+advance_payment = fields.Boolean(compute='_compute_giveme_advance_payment')
+
+    @api.multi
+    def _compute_giveme_advance_payment(self):
+        adv_var = self.env['ir.config_parameter'].sudo().get_param('advance.payment')
+        if adv_var == 'True':
+            self.advance_payment  = True
+        else:
+            self.advance_payment = False
+```
+
 # One2many or Many2many 
 ```
  
