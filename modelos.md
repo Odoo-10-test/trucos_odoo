@@ -1,5 +1,12 @@
 # Trucos con los modelos
-
+```
+        if period:
+            period_name = fields.Date.from_string(str(period.name))
+            hasta_date = fields.Date.from_string(str(vals['date']))
+            if period.do_not_settle and period_name >= hasta_date:
+                raise UserError('No puede asentar un Asiento en una fecha que esta cerrada contablemente !!!')
+        return super(AccountMove, self).create(vals)
+```
 
 # Parametros
 
