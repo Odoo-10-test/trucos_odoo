@@ -22,7 +22,9 @@ git merge nombreramma
 ```
 
 nano ~/.bashrc
+```
 
+```
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
