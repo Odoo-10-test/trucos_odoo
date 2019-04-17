@@ -51,7 +51,7 @@ unset color_prompt force_color_prompt
 ```
 
 
-ssh
+## ssh
 ```
 nano ~/.ssh/config
 
