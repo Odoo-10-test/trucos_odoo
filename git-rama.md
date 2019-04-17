@@ -49,3 +49,28 @@ else
 fi
 unset color_prompt force_color_prompt
 ```
+
+
+ssh
+```
+nano ~/.ssh/config
+
+
+
+# Servidores de prueba
+Host rio
+    HostName 122.114.253.252
+    User root
+    Port 22222
+
+Host arquipunto-prod
+    HostName ec2-18-222-132-167.us-east-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile ~/.pem/arquipunto.pem
+```
+
+```
+ssh-copy-id
+```
+
+
