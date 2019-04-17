@@ -1,4 +1,4 @@
-# Trucos con los modelos
+# Ramas
 ```
 # Miro las ramas (la activa es verde *)
 git branch
@@ -71,6 +71,11 @@ Host arquipunto-prod
 
 ```
 ssh-copy-id
+```
+
+
+```
+rsync -avt script_rules_orpak.py rio:/opt/odoo
 ```
 
 
