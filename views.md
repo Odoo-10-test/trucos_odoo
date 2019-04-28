@@ -1,3 +1,22 @@
+# Formulario de Busqueda
+
+```
+<record id="view_historic_res_partner_filter" model="ir.ui.view">
+            <field name="name">account.res_partner.select</field>
+            <field name="model">historic.res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                    <field name="name" string="Nombre"/>
+                    <field name="document_number" />
+                    <field name="street" />
+                    <field name="email" />
+                </search>
+            </field>
+        </record>
+```
+
+
+
 # Estados
 
 ```
