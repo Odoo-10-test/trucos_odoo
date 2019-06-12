@@ -1,3 +1,7 @@
+```
+options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"
+```
+
 # Formulario de Busqueda
 
 ```
