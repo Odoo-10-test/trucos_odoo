@@ -1,3 +1,8 @@
+# Cantidad de stock en una Ubicación
+```
+available_qty = product.with_context({'location' : self.source_location.id}).qty_‌ available
+```
+
 # Trucos con los modelos
 ```
         if period:
