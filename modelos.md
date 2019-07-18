@@ -1,3 +1,18 @@
+# Enviar un mensaje a un canal en odoo
+```  
+  
+  def send_to_channel(self,body):
+        ch_obj = self.env['mail.channel']
+        ch = ch_obj.sudo().search([('name','ilike','general')])
+
+        body_ok = body
+
+        ch.message_post( attachment_ids=[], body=body_ok,
+                         content_subtype='html', message_type='comment',
+                         partner_ids=[], subtype='mail.mt_comment')
+        return True
+```  
+
 # Cantidad de stock en una Ubicación
 ```
 available_qty = product.with_context({'location' : self.source_location.id}).qty_‌ available
