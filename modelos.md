@@ -1,3 +1,11 @@
+# Saber si un modulo esta instalado
+```  
+
+if 'mrp' in self.env.registry._init_modules:
+                            if self.product_id.bom_count > 0:
+```  
+
+
 # Enviar un mensaje a un canal en odoo
 ```  
   
