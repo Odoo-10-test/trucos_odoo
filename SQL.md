@@ -1,3 +1,21 @@
+# Busqueda de Repetidos
+```  
+  for record in self:
+            if record.hasta_date and record.desde_date > record.hasta_date:
+                raise ValidationError(_('Fecha inicio en %s no puede ser mayor a fecha fin.') % record.name.desc)
+
+            if record.monto <= 0:
+                raise ValidationError(_('Monto en %s debe ser mayor a 0.') % record.name.desc)
+
+            if record.hasta_date:
+                repetidos = self.search_count([
+                    ('id', '!=', record.id),
+                    ('name', '=', record.name.id),
+                    ('desde_date', '<=', record.hasta_date),
+                    ('hasta_date', '>=', record.desde_date),
+                    ('employee_id', '=', record.employee_id.id)])
+```  
+
 # Consultas en una línea
 ```
 doc_class_ref_id = doc_class.search([('sii_code', '=', 'OTROS')], limit=1)
