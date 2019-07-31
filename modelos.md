@@ -1,3 +1,9 @@
+
+# Many2One Valor por defecto
+```  
+default= lambda s: s.env['modelo'].search([], limit=1)
+```  
+
 # Saber si un modulo esta instalado
 ```  
 
