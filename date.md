@@ -1,3 +1,10 @@
+# Sumar Dias a una Fechas
+```
+import datetime
+date_1 = datetime.datetime.strptime(start_date, "%m/%d/%y")
+end_date = date_1 + datetime.timedelta(days=10)
+```
+
 
 # Fecha de Entrada
 ```
