@@ -52,6 +52,13 @@ psql
 \c db10-chile-sii
 DELETE FROM account_payment WHERE state = 'draft';
 ```
+# Borrar Cola
+```
+sudo su - postgres
+psql
+\c db10-chile-sii
+DELETE FROM sii_process_queue;
+```
 
 
 
