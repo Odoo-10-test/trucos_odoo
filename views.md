@@ -1,3 +1,14 @@
+# Colores
+
+```
+<tree editable="bottom"
+                                          colors="red:subtotal&lt;=0;"
+                                          decoration-danger="expired"
+                                          decoration-info="retry == False"
+                                          decoration-muted="retry == True">
+```
+
+
 ```
 options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"
 ```
