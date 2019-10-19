@@ -1,3 +1,18 @@
+# Mensajes Odoo 12
+```
+_inherit = "mail.thread"
+_order = 'id desc'
+    
+    
+</sheet>
+  <div class="oe_chatter">
+       <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+       <field name="message_ids" widget="mail_thread"/>
+    </div>
+```
+
+
+
 # Colores Tree
 
 ```
