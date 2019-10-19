@@ -2,6 +2,9 @@
 ```
 _inherit = "mail.thread"
 _order = 'id desc'
+
+
+ track_visibility='always',
     
     
 </sheet>
