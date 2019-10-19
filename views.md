@@ -5,6 +5,9 @@
 decoration-danger="expired"  decoration-info="retry == False" decoration-muted="retry == True">
 ```
 
+```
+options='{"no_create": 1, "no_open": 1}'
+```
 
 ```
 options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"
