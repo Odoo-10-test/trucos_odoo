@@ -1,11 +1,8 @@
-# Colores
+# Colores Tree
 
 ```
-<tree editable="bottom"
-                                          colors="red:subtotal&lt;=0;"
-                                          decoration-danger="expired"
-                                          decoration-info="retry == False"
-                                          decoration-muted="retry == True">
+<tree editable="bottom"   colors="red:subtotal&lt;=0;"
+decoration-danger="expired"  decoration-info="retry == False" decoration-muted="retry == True">
 ```
 
 
