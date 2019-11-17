@@ -1,3 +1,9 @@
+# Format RUT
+```  
+def format_rut(rut):
+    rut = rut.replace(".","").replace(",","").replace("-","")
+    return rut[:-7] +"." + rut[-7:-4] +"." +  rut[-4:-1] +"-" + rut[-1:]
+```  
 
 # Many2One Valor por defecto
 ```  
