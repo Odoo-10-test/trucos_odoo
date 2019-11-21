@@ -15,3 +15,33 @@ Para que los cambios se apliquen, ahí mismo en modo shell escribes:
 env.cr.commit()
 Y listo, ya podrás salir con CTRL+D
 ```
+
+
+# Paso1 Eliminar cuentas de clientes
+```
+odoo-bin shell -d ofinubeas-hergo-hergo002-667745
+partners=env['res.partner'].search([])
+partners.write({'property_account_receivable_id': False, 'property_account_payable_id': False})
+env.cr.commit()
+
+#CC
+env['account.account'].search([]).unlink()
+
+for account in env['account.account'].search([]):
+    try:
+        account.unlink()
+    except:
+        pass
+
+```
+Actualizar
+```
+odoo-bin -d db10-chile-sii -d
+```
+```
+for account in accounts:
+    try:
+        account.unlink()
+        print('borrado')
+    except:
+        print('no pudo borrar')```
