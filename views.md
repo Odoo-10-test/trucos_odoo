@@ -1,3 +1,13 @@
+ # Trabajando con xpath
+```
+ <xpath expr="//group/group[2]/div[1]" position="after">
+                   <label for="min_packing"/>
+                        <div>
+                            <field name="min_packing" class="oe_inline"/>
+                        </div>
+            </xpath>
+```
+
 # Mensajes Odoo 12
 ```
 _inherit = "mail.thread"
