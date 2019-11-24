@@ -5,6 +5,21 @@ def format_rut(rut):
     return rut[:-7] +"." + rut[-7:-4] +"." +  rut[-4:-1] +"-" + rut[-1:]
 ```  
 
+# Modificando el Validar de la Factura
+```  
+    @api.multi
+    def action_invoice_open(self):
+        ''' Herencia de metodo original de validacion de facturas.'''
+        res = super(AccountInvoice, self).action_invoice_open()
+
+        # Actualiza estatus de facturacion del pedido de compra relacionado a una factura
+        if self.type == 'in_invoice':
+            for line in self.invoice_line_ids:
+                if line.product_id:
+                    if line.product_id.
+        return res
+        ```  
+
 # Many2One Valor por defecto
 ```  
 default= lambda s: s.env['modelo'].search([], limit=1)
