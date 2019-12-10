@@ -9,7 +9,7 @@ rsync -avt *.sql root@157.230.8.181:/root
 ```
 
 ```
-rsync --info=progress2 -e "ssh -i odoo.pem" ubuntu@ec2-18-212-135-201.us-east-2.compute.amazonaws.com:/opt/odoo/backups/27_08_2018_03_12_01_db12-chile-sii.zip /home/marlon/MEGA/CLIENTES/M/AWS
+rsync --info=progress2 -e "ssh -i fu.pem" ubuntu@ec2-52-14-123-58.us-east-2.compute.amazonaws.com:/opt/odoo/backups/06_13_2019_01_49_55_1le.zip .
 ```
 
 
