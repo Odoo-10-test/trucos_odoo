@@ -8,4 +8,8 @@ Una de las ventajas mas interesantes de este comando es que puede comprobar las 
 rsync -avt *.sql root@157.230.8.181:/root
 ```
 
+```
+rsync --info=progress2 -e "ssh -i odoo.pem" ubuntu@ec2-18-212-135-201.us-east-2.compute.amazonaws.com:/opt/odoo/backups/27_08_2018_03_12_01_db12-chile-sii.zip /home/marlon/MEGA/CLIENTES/M/AWS
+```
+
 
