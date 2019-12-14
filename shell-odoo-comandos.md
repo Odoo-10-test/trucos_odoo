@@ -1,3 +1,4 @@
+```
 python3 /opt/odoo/server/odoo-bin shell -c /etc/odoo/odoo.conf -d db12-chile-sii
 products=env['product.template'].search([('type', '=', 'consu')])
 for product in products:
@@ -9,3 +10,4 @@ for product in products:
         print('error')
 
 env.cr.commit()
+```
