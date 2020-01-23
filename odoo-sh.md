@@ -1,0 +1,4 @@
+# Reiniciar SH
+```
+odoosh-restart
+```
