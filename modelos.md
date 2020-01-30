@@ -5,6 +5,35 @@ def format_rut(rut):
     return rut[:-7] +"." + rut[-7:-4] +"." +  rut[-4:-1] +"-" + rut[-1:]
 ```  
 
+# Valores por defecto en campos
+```  
+@api.model
+    def default_get(self, fields):
+        rec = super(SiiConsultDocument, self).default_get(fields)
+        context = dict(self._context or {})
+        active_model = context.get('active_model',False)
+        if active_model:
+            active_ids = context.get('active_ids')
+            record = self.env[active_model].browse(active_ids)
+            if record:
+                if any(record.sii_result in ['waiting','not_sent'] for inv in record):
+                    raise UserError(_("Solo puede consultar documentos enviados"))
+                rec.update({
+                    'from_inv': True,
+                    'invoice': True if active_model == 'account.invoice' else False,
+                    'folio': str(int(record.number_folio)),
+                    'sii_code': record.document_class_id.sii_code,
+                    'track_id': record.sii_send_ident,
+                    'invoice_id': record.id if active_model == 'account.invoice' else False,
+                    'picking_id': record.id if active_model == 'stock.picking' else False,
+                    'partner_id': record.partner_id.id,
+                    'date': record.date_invoice if active_model == 'account.invoice' else record.min_date[:10],
+                    'amount': int(record.amount_total) if active_model == 'account.invoice' else int(record.sale_id and record.sale_id.amount_total or 0),
+                })
+        return rec
+``` 	
+	
+
 # Modificando el Validar de la Factura
 ```  
     @api.multi
