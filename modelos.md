@@ -931,6 +931,47 @@ ignore_startup_parameters = extra_float_digits
 server_idle_timeout = 240
 admin_users = dbadmin
 stats_users = dbadmin
- ```                                    
-                                
+ ```       
+ 
+ 
+ # Codigo Lindos
+ ```
+ # coding: utf-8
+from odoo import api, fields, models
+
+
+class StockMove(models.Model):
+    _inherit = 'stock.move'
+
+    amount_total = fields.Float('Monto total', compute='_compute_amount_total')
+
+    @api.depends('product_id', 'product_uom_qty', 'picking_id.sale_id', 'picking_id.picking_type_id.code')
+    def _compute_amount_total(self):
+        po_line_obj = self.env['purchase.order.line']
+        for move in self:
+            if move.picking_id.picking_type_id.code == 'incoming':
+                order_line = po_line_obj.search([('order_id.name', '=', move.picking_id.origin), ('product_id', '=', move.product_id.id)], limit=1)
+            elif move.picking_id.sale_id:
+                order_line = move.picking_id.sale_id.order_line.filtered(lambda ol: ol.product_id == move.product_id)
+                if len(order_line) > 1:
+                    order_line = order_line[0]
+            else:
+                order_line = po_line_obj
+            # order_line.price_subtotal  = Precios Netos
+            # order_line.price_total  = Precios Brutos
+            qty_field = 'product_qty' if move.picking_id.picking_type_id.code == 'incoming' else 'product_uom_qty'
+            move.amount_total = getattr(order_line, qty_field, False) and (order_line.price_subtotal / getattr(order_line, qty_field) * move.product_uom_qty) or 0
+
+
+class StockPicking(models.Model):
+    _inherit = 'stock.picking'
+
+    amount_total = fields.Float('Monto total', compute='_compute_amount_total')
+
+    @api.depends('move_lines.amount_total')
+    def _compute_amount_total(self):
+        for pick in self:
+            pick.amount_total = sum(pick.move_lines.mapped('amount_total'))
+
+    ```                            
   
