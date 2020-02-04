@@ -1,3 +1,7 @@
+# Buscar un Valor con un SELF
+```  
+picking_type = self.env['stock.picking.type'].browse(picking_type_id)
+```  
 
 # Enviar un email
 ```  
