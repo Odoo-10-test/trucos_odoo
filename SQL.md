@@ -1,3 +1,9 @@
+# Buscar el Primer elemento en una factura
+```  
+sii_description =  self.invoice_line_ids[0].account_id.name
+```  
+
+
 # Busqueda de Repetidos
 ```  
   for record in self:
