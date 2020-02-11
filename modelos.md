@@ -1,5 +1,15 @@
 # Buscar un Valor con un SELF
 ```  
+
+@api.depends('variant_seller_ids')
+    def _compute_purchase_price(self):
+        for record in self:
+            record.purchase_price = record.variant_seller_ids and record.variant_seller_ids[0].price
+```      
+
+
+# Buscar un Valor con un SELF
+```  
 picking_type = self.env['stock.picking.type'].browse(picking_type_id)
 ```  
 
