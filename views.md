@@ -1,4 +1,24 @@
- # Trabajando con xpath
+# Trabajando con xpath en el Partner
+```
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_field" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/field[@name='website']" position="after">
+                        <field name="birthdate"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+```
+
+# Trabajando con xpath
 ```
  <xpath expr="//group/group[2]/div[1]" position="after">
                    <label for="min_packing"/>
