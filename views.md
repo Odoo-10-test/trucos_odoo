@@ -1,3 +1,7 @@
+# Colores Odoo 11
+<?decoration-danger="state != 'done' and quantity_done &gt; reserved_availability and show_reserved_availability" decoration-muted="scrapped == True or state == 'cancel' or (state == 'done' and is_locked == True)" string="Stock Moves" editable="bottom">
+
+
 # Trabajando con xpath en el Partner
 ```
 <?xml version="1.0" encoding="utf-8"?>
