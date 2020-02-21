@@ -14,6 +14,6 @@ rsync --info=progress2 -e "ssh -i fu.pem" ubuntu@ec2-52-14-123-58.us-east-2.comp
 
 # subiendo
 ```
-rsync --info=progress2 revisar_clientes.py  root@167.71.93.101:/opt/odoo/revisar_clientes.py
+rsync --info=progress2 revisar_clientes.py  root@167.12.93.111:/opt/odoo/revisar_clientes.py
 ```
 
