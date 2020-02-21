@@ -1,3 +1,11 @@
+# Atributos en la Vista
+```
+<field name="partner_id" position="after" >
+                <field name="stock_cancel_reason_id"
+                       attrs="{'invisible': [('is_cancel', '=', False)],'required': [('is_cancel','!=',False)]}"/>
+```
+
+
 # Colores Odoo 11
 ```
 <?decoration-danger="state != 'done' and quantity_done &gt; reserved_availability and show_reserved_availability" decoration-muted="scrapped == True or state == 'cancel' or (state == 'done' and is_locked == True)" string="Stock Moves" editable="bottom">
