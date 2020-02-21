@@ -113,5 +113,6 @@ self.amount = total_advance > 0 and total_advance or self.sale_id.residual
 # Exponer una carpeta
 ```
 python -m SimpleHTTPServer
+python3 -m http.server
 ```
 
