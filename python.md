@@ -110,3 +110,8 @@ value_p = id.fixed_price
 self.amount = total_advance > 0 and total_advance or self.sale_id.residual
 ```
 
+# Exponer una carpeta
+```
+python -m SimpleHTTPServer
+```
+
