@@ -1,3 +1,14 @@
+# Restart Fechas
+```
+@api.multi
+    def _compute_giveme_day_from(self):
+        for record in self:
+            fecha1 = datetime.now()
+            fecha2 = datetime.strptime(record.entry_date,"%Y-%m-%d %H:%M:%S")
+            record.day_from_begin = abs(fecha1 - fecha2).days
+ ```
+
+
 # Sumar Dias a una Fechas
 ```
 import datetime
