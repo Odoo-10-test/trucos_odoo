@@ -1,3 +1,12 @@
+# SQl
+```  
+_sql_constraints = [
+        ('sale_prefix_uniq', 'unique(sale_prefix)',
+         "A backend with the same sale prefix already exists")
+    ]
+    
+    ``` 
+
 # Help
 ```  
 sale_prefix = fields.Char(
