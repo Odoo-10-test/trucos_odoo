@@ -1,3 +1,30 @@
+# Try
+
+```  
+from odoo.exceptions import UserError
+
+
+@api.multi
+    def synchronize_metadata(self):
+        try:
+            for backend in self:
+                for model_name in ('magento.website',
+                                   'magento.store',
+                                   'magento.storeview'):
+                    # import directly, do not delay because this
+                    # is a fast operation, a direct return is fine
+                    # and it is simpler to import them sequentially
+                    self.env[model_name].import_batch(backend)
+            return True
+        except Exception as e:
+            _logger.error(ustr(e))
+            raise UserError(
+                _("Check your configuration, we can't get the data. "
+                  "Here is the error:\n%s") %
+                ustr(e))
+```  
+
+
 # Buscar un Valor con un SELF
 ```  
 
