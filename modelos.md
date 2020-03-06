@@ -1,3 +1,15 @@
+# Help
+```  
+sale_prefix = fields.Char(
+        string='Sale Prefix',
+        help="A prefix put before the name of imported sales orders.\n"
+             "For instance, if the prefix is 'mag-', the sales "
+             "order 100000692 in Magento, will be named 'mag-100000692' "
+             "in Odoo.",
+    )
+    
+```  
+
 # Try
 
 ```  
