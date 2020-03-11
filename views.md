@@ -1,3 +1,8 @@
+# Enviar email a seguidores
+```
+${','.join(object.message_follower_ids.mapped('partner_id.email'))}
+```
+
 # Atributos en la Vista
 ```
 <field name="partner_id" position="after" >
