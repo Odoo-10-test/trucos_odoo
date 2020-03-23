@@ -13,4 +13,5 @@ Marlon Falcón Hernández | Madrid, España
 ![Alt text](https://github.com/falconsoft3d/instalar-odoo-10/blob/master/img/logo-ynext.png?raw=true "Ynext")
 
 
- 1 | [Trucos en los Modelos](https://github.com/Odoo-10-test/trucos_odoo/blob/master/modelos.md)
+[Trucos en los Modelos](https://github.com/Odoo-10-test/trucos_odoo/blob/master/modelos.md)
+[Trucos en los Vistas](https://github.com/Odoo-10-test/trucos_odoo/blob/master/views.md)
