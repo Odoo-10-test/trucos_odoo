@@ -15,3 +15,11 @@ Marlon Falcón Hernández | Madrid, España
 
 - [Trucos en los Modelos](https://github.com/Odoo-10-test/trucos_odoo/blob/master/modelos.md)
 - [Trucos en los Vistas](https://github.com/Odoo-10-test/trucos_odoo/blob/master/views.md)
+
+- Actualizar
+```  
+service odoo stop
+su - odoo -s /bin/bash
+python3 /usr/bin/odoo -c /etc/odoo/odoo.conf -d db13-bim -u all --stop-after-init --logfile=/dev/stdout
+service odoo start
+```  
