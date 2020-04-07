@@ -23,3 +23,6 @@ su - odoo -s /bin/bash
 python3 /usr/bin/odoo -c /etc/odoo/odoo.conf -d db13-bim -u all --stop-after-init --logfile=/dev/stdout
 service odoo start
 ```  
+```  
+python /opt/odoo/server/odoo-bin -c /etc/odoo/odoo.conf -d db10-chile-sii -u all --stop-after-init
+```  
