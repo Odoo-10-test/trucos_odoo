@@ -1,3 +1,8 @@
+# Escribir un campo onchange que es solo lectura.
+```
+<field name="type" readonly="1" force_save="1"/>
+```
+
 # Enviar email a seguidores
 ```
 ${','.join(object.message_follower_ids.mapped('partner_id.email'))}
