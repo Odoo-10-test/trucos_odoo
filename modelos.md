@@ -1,3 +1,8 @@
+```  
+cost = sum(x.rule * x.list_price for x in apu.apu_template_lines if x.product_template_id.resource_type == 'M')
+```  
+
+
 # SQl
 ```  
 _sql_constraints = [
