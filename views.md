@@ -2,6 +2,23 @@
 ```
 <field name="type" readonly="1" force_save="1"/>
 ```
+# Adjuntos
+```
+comprobante_01_name = fields.Char("Adjunto")
+    comprobante_01 = fields.Binary(
+        string=('Adjunto'),
+        copy=False,
+        attachment=True,
+        help='Comprobante 01')
+```
+
+```
+<field name="comprobante_01_name"  invisible="1" /> <!--  class="oe_read_only" -->
+<field name="comprobante_01"  widget="binary" filename="comprobante_01_name"/>
+```
+
+
+
 
 # Enviar email a seguidores
 ```
