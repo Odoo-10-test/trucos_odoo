@@ -1,3 +1,22 @@
+# Color
+```
+<tree decoration-danger="age &lt;= 20" decoration-success="age &gt; 20" default_order="nationality desc">
+  <field name="name"/>
+  <field name="age"/>
+</tree>
+                
+decoration-muted: records will be light grey
+decoration-danger: records will be light red
+decoration-success: records will be light green
+decoration-primary: records will be light purple  
+decoration-info: records will be light blue 
+decoration-warning: records will be light brown
+decoration-bf: records will be bold
+Decoration-it: records will be italic
+```
+
+
+
 # Escribir un campo onchange que es solo lectura.
 ```
 <field name="type" readonly="1" force_save="1"/>
