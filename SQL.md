@@ -1,3 +1,8 @@
+```  
+env['mail.activity'].search([('res_model', '=', 'crm.lead')]).unlink()
+env.cr.commit()
+```  
+
 # Buscar el Primer elemento en una factura
 ```  
 sii_description =  self.invoice_line_ids[0].account_id.name
