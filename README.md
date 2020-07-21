@@ -22,7 +22,17 @@ service odoo stop
 su - odoo -s /bin/bash
 python3 /usr/bin/odoo -c /etc/odoo/odoo.conf -d db13-bim -u all --stop-after-init --logfile=/dev/stdout
 service odoo start
-```  
+``` 
+
 ```  
 python /opt/odoo/server/odoo-bin -c /etc/odoo/odoo.conf -d db10-chile-sii -u all --stop-after-init
 ```  
+
+```  
+--conf=/opt/odoo13/odoo/debian/odoo.conf -u full_mobile_service_shop
+``` 
+
+``` 
+erppeek --server="http://localhost:8069" -d db10-chile-sii -u admin -p x1234567890
+client.upgrade('direct_credit_note')
+``` 
