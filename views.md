@@ -1,3 +1,9 @@
+# invisible
+```
+<field name="is_a_parts" invisible="context.get('no_parts', 1)"/>
+```
+
+
 # Color
 ```
 <tree decoration-danger="age &lt;= 20" decoration-success="age &gt; 20" default_order="nationality desc">
