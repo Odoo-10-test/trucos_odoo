@@ -1,3 +1,14 @@
+# Log
+```  
+import logging
+_logger = logging.getLogger(__name__)
+
+
+_logger.info('Not be found data to update the currency %s!', currency.name)
+    
+```   
+  
+  
   ```  
   try:
   	droplet.create()
