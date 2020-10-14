@@ -7,7 +7,12 @@ _logger = logging.getLogger(__name__)
 _logger.info('Not be found data to update the currency %s!', currency.name)
     
 ```   
-  
+
+# Compras
+```  
+obj_purchase = self.env['purchase.order.line'].search([('state', '=', 'purchase'),('product_id', '=', record.product_id.id)])
+purchase_sum = sum(item.product_qty for item in obj_purchase)
+```    
   
   ```  
   try:
