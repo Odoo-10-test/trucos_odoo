@@ -1,3 +1,13 @@
+# Notificaciones de Odoo ERP
+```  
+@api.model
+    def create(self, vals):
+        res = super(CrmPhonecall, self).create(vals)
+        if res.called:
+            res.user_id.notify_warning(res.name,res.partner_phone, False)
+        return res
+```  
+
 # Log
 ```  
 import logging
