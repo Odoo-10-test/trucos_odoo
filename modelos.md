@@ -1,7 +1,7 @@
 # Notificaciones de Odoo ERP
 ``` 
 1- Mensaje
-2- Titulo
+2- Título
 3- Si es True se queda pegado
 
 @api.model
