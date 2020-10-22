@@ -1,6 +1,6 @@
 # Notificaciones de Odoo ERP
 ``` 
-1 - Mensaje
+1- Mensaje
 2- Titulo
 3- Si es True se queda pegado
 
