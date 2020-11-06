@@ -10,7 +10,14 @@
         if res.called:
             res.user_id.notify_warning(res.name,res.partner_phone, False)
         return res
-```  
+``` 
+
+# Sql Constraints
+``` 
+_sql_constraints = [
+        ('qty_positive', 'check (product_qty > 0)', 'The quantity to produce must be positive!'),
+    ]
+``` 
 
 # Log
 ```  
