@@ -1,3 +1,10 @@
+# attrs OR AND
+```
+attrs="{'invisible':['|',('filed_name_1','=',False),('fieled_name_2','=',False)]}"   for OR
+attrs="{'invisible':['&',('filed_name_1','=',False),('fieled_name_2','=',False)]}"  for AND
+<field name="is_a_parts" invisible="context.get('no_parts', 1)"/>
+```
+
 # invisible
 ```
 <field name="is_a_parts" invisible="context.get('no_parts', 1)"/>
