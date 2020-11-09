@@ -1,3 +1,33 @@
+ # Sumar Dias Laborables
+ ```
+from odoo import api, fields, models
+from datetime import datetime
+import logging
+_logger = logging.getLogger(__name__)
+from dateutil.relativedelta import relativedelta
+try:
+    import pandas as pd
+    from pandas.tseries.offsets import BDay
+except ImportError as exc:
+	_logger.error('Faltan dependencias: %s', exc)
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+    days_receive = fields.Integer("Days to Receive it")
+
+class PurchaseOrder(models.Model):
+    _inherit = 'purchase.order'
+
+    @api.onchange('partner_id','order_line')
+    def onchange_partner_date(self):
+        if self.state == 'draft':
+            if self.partner_id and self.partner_id.days_receive > 0:
+                days_partner = self.partner_id.days_receive
+                self.date_planned = datetime.today() + BDay(days_partner)
+            else:
+                self.date_planned = False
+ ```
+
 # Restart Fechas
 ```
 @api.multi
