@@ -1,4 +1,4 @@
- # Sumar Dias Laborables
+ # Sumar Días Laborables
  ```
 from odoo import api, fields, models
 from datetime import datetime
