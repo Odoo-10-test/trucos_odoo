@@ -13,11 +13,11 @@ import urllib2
 import requests
 
 
-HOST='gc.123odoo.com'
+HOST='g1.123odoo.com'
 PORT=8069
-DB='db11-spain'
+DB='db11-12'
 USER='admin'
-PASS='bJ0YP38QS6W4'
+PASS='BLUE'
 url ='http://%s:%d/xmlrpc/' % (HOST,PORT)
 
 common_proxy = xmlrpclib.ServerProxy(url+'common')
