@@ -1,4 +1,4 @@
-# categorias.
+# categorías.
 ```  
 'category': 'Manufacturing/Manufacturing',
 'category': 'Accounting/Accounting',
