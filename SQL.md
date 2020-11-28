@@ -5,7 +5,8 @@ account_obj = record.env['account.move'].search([('invoice_payment_state', '!=',
                                                                ('partner_id', '=', record.id),
                                                                ('state', 'in', ['posted']),
                                                                ('type', '=', 'out_invoice')])
-                amount_credit_use = sum(item.amount_total_signed for item in account_obj)
+
+amount_credit_use = sum(item.amount_total_signed for item in account_obj)
 
 ``` 
 # Eliminación
