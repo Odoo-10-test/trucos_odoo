@@ -7,7 +7,9 @@ account_obj = record.env['account.move'].search([('invoice_payment_state', '!=',
                                                                ('type', '=', 'out_invoice')])
                 amount_credit_use = sum(item.amount_total_signed for item in account_obj)
 
-```  
+``` 
+# Eliminación
+``` 
 env['mail.activity'].search([('res_model', '=', 'crm.lead')]).unlink()
 env.cr.commit()
 ```  
