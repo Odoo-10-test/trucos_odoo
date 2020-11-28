@@ -1,3 +1,12 @@
+
+# Suma SQL
+``` 
+account_obj = record.env['account.move'].search([('invoice_payment_state', '!=', 'paid'),
+                                                               ('partner_id', '=', record.id),
+                                                               ('state', 'in', ['posted']),
+                                                               ('type', '=', 'out_invoice')])
+                amount_credit_use = sum(item.amount_total_signed for item in account_obj)
+
 ```  
 env['mail.activity'].search([('res_model', '=', 'crm.lead')]).unlink()
 env.cr.commit()
