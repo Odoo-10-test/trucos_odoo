@@ -1,3 +1,12 @@
+# Domain, States
+``` 
+partner_id = fields.Many2one(
+        'res.partner', string='Customer', readonly=True,
+        states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
+        required=True, change_default=True, index=True, tracking=1,
+        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]", )
+	``` 
+
 # Notificaciones de Odoo ERP
 ``` 
 1- Mensaje
