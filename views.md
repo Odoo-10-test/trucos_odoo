@@ -1,11 +1,8 @@
-# Picking Type
-```
-stock_asig_id = fields.Many2one('stock.picking',
-                                    'Picking Asignado',
-                                    domain="[('picking_type_code', '=', 'incoming')]",
-                                    copy=False)
-                                    ```
 
+# Widget
+```
+widget="many2one_clickable"
+```
 
 
 # attrs OR AND
