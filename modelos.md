@@ -1,3 +1,12 @@
+# Picking Type
+```
+stock_asig_id = fields.Many2one('stock.picking',
+                                    'Picking Asignado',
+                                    domain="[('picking_type_code', '=', 'incoming')]",
+                                    copy=False)
+``` 
+
+
 # Domain, States
 ``` 
 partner_id = fields.Many2one(
