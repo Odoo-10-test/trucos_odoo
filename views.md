@@ -1,3 +1,8 @@
+# Widget
+```
+widget="many2one_clickable"
+```
+
 # attrs OR AND
 ```
 attrs="{'invisible':['|',('filed_name_1','=',False),('fieled_name_2','=',False)]}"   for OR
