@@ -1,3 +1,10 @@
+# String
+```
+<xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="attributes">
+                    <attribute name="string">Ud. Medida</attribute>
+                </xpath>
+```                
+
 
 # Widget
 ```
