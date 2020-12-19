@@ -13,3 +13,7 @@ odoo-bin -u modulo -d base_datos
 tail -f logs/odoo.log
 ```
 
+# Addons
+```
+/src/user
+```
