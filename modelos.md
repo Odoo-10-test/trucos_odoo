@@ -1,3 +1,16 @@
+ # get_param
+```
+ email_exchange_system = fields.Char(
+        "Exchange System Email Address",
+        help="The first time you send a PEC to SDI, you must use the address "
+             "sdi01@pec.fatturapa.it . The system, with the first response "
+             "or notification, communicates the PEC address to be used for "
+             "future messages",
+        default=lambda self: self.env['ir.config_parameter'].get_param(
+            'sdi.pec.first.address')
+    )
+```
+
 # Many2one
 ```
 company_id = fields.Many2one(
