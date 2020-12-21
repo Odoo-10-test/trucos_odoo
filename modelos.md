@@ -1,3 +1,24 @@
+# One2many
+```
+child_ids = fields.One2many(
+        string='Children Categories',
+        comodel_name='medical.pathology.category',
+        inverse_name='parent_id',
+        domain="[('code_type_id', '=', code_type_id)]",
+    )
+```
+
+# _check_recursion
+```
+@api.multi
+    @api.constrains('parent_id')
+    def _check_parent_id(self):
+        if not self._check_recursion():
+            raise ValidationError(_(
+                'You are attempting to create a recursive category.'
+            ))```
+
+
 # Picking Type
 ```
 stock_asig_id = fields.Many2one('stock.picking',
