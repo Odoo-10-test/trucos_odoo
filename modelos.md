@@ -16,7 +16,8 @@ child_ids = fields.One2many(
         if not self._check_recursion():
             raise ValidationError(_(
                 'You are attempting to create a recursive category.'
-            ))```
+            ))
+```
 
 
 # Picking Type
