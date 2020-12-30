@@ -1,4 +1,9 @@
- # get_param
+# Saber si un módulo esta Instalado.
+```
+if 'l10n_es_aeat_sii' in self.env.registry._init_modules:
+```
+
+# get_param
 ```
  email_exchange_system = fields.Char(
         "Exchange System Email Address",
