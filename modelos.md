@@ -1,3 +1,15 @@
+# Campos Default Funciones
+```
+    def _get_default(self):
+        line = self.env['sale.order.line'].search([('id', '=', self._context.get('active_id'))])
+        product_id = line.product_id.product_tmpl_id.id
+        partner_id = self.env['product.supplierinfo'].search([('product_tmpl_id', '=', product_id)], limit=1).name.id
+        return partner_id
+
+    partner_id = fields.Many2one('res.partner', 'Proveedor', required=True ,default=_get_default)
+```
+
+
 # Saber si un módulo esta Instalado.
 ```
 if 'l10n_es_aeat_sii' in self.env.registry._init_modules:
