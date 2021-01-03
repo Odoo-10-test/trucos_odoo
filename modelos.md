@@ -1167,8 +1167,17 @@ class StockPicking(models.Model):
 
  ```
     
- # coding: utf-8
+ # Exportar a XLS Excell
  ```
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
+import xlwt
+from datetime import datetime, timedelta, date
+import base64
+import re
+import io
+
+
      @api.multi
     def action_download(self):
         for record in self:
