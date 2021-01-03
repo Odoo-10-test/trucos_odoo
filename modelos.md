@@ -1165,5 +1165,131 @@ class StockPicking(models.Model):
         for pick in self:
             pick.amount_total = sum(pick.move_lines.mapped('amount_total'))
 
-    ```                            
+ ```
+    
+ # coding: utf-8
+ ```
+     @api.multi
+    def action_download(self):
+        for record in self:
+            stock_ob = self.env['stock.picking'].search([('esbo_simple_id', '=', record.id)])
+            """Limpiamos"""
+            if stock_ob:
+                for clear in stock_ob:
+                    clear.esbo_simple_id = False
+            """Agregamos el Stock"""
+            row_index = 0
+
+            """Download"""
+            workbook = xlwt.Workbook(encoding="utf-8")
+            style_title = xlwt.easyxf(
+                "font:height 200; font: name Liberation Sans, bold on,color black; align: horiz center")
+            currency = xlwt.easyxf('font: height 180; align: wrap yes, horiz right', num_format_str='$#0')
+            percent = xlwt.easyxf('font: height 180; align: wrap yes, horiz right', num_format_str='#0%')
+            budget_name = "Reporte de Esbo"
+            budget_name2 = "Reporte de Esbo"
+            today = datetime.today().strftime("%d-%m-%Y")
+            worksheet = workbook.add_sheet(budget_name)
+            k = 0;
+            j = 0
+            """cabecera"""
+            worksheet.write_merge(k, k, j, j, 'Numero de Albaran', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Codigo Cliente', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Nombre', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Direccion', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Municipio', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'CP', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Pais', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Provincia', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Contacto', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Teléfono', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Codigo Artículo', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Unidades', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'Correo', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'STOCK', style_title);j += 1
+            worksheet.write_merge(k, k, j, j, 'EMPRESA', style_title);j += 1
+            """línea"""
+
+
+            for line in record.line_ids:
+                line.stock_id.esbo_simple_id = record.id
+                record.message_post(body=_("Download: %s") % record.name)
+                j = 0
+                row_index += 1
+                for line_product in line.stock_id.move_lines:
+                    worksheet.write(row_index, j, str(line.stock_id.name), );j += 1
+                    worksheet.write(row_index, j, "-", );j += 1
+                    worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.name), );j += 1
+                    worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.street), );j += 1
+                    worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.city), );j += 1
+                    worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.zip), );j += 1
+                    if line.stock_id.sale_info_id.partner_id.country_id.name:
+                        worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.country_id.name), );j += 1
+                    else:
+                        worksheet.write(row_index, j, "-", );j += 1
+
+                    if line.stock_id.sale_info_id.partner_id.state_id.name:
+                        worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.state_id.name), );j += 1
+                    else:
+                        worksheet.write(row_index, j, "-", );j += 1
+
+                    worksheet.write(row_index, j, "-", );j += 1
+
+                    if line.stock_id.sale_info_id.partner_id.mobile:
+                        worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.mobile), );j += 1
+                    else:
+                        worksheet.write(row_index, j, "-", );j += 1
+
+                    if line_product.product_id.old_sku:
+                        worksheet.write(row_index, j, str(line_product.product_id.old_sku), );j += 1
+                    else:
+                        worksheet.write(row_index, j, "-", );j += 1
+
+                    worksheet.write(row_index, j, str(line_product.product_uom_qty), );j += 1
+                    if line.stock_id.sale_info_id.partner_id.email:
+                        worksheet.write(row_index, j, str(line.stock_id.sale_info_id.partner_id.email), );j += 1
+                    else:
+                        worksheet.write(row_index, j, "-", );j += 1
+
+                    worksheet.write(row_index, j, "-", );j += 1
+                    company_id = line.stock_id.company_id.id
+                    if company_id == 4:
+                        worksheet.write(row_index, j, "M", );j += 1
+                    elif company_id == 1:
+                        worksheet.write(row_index, j, "G", );j += 1
+                    else:
+                        worksheet.write(row_index, j, "O", );j += 1
+
+
+
+
+
+
+
+
+
+            worksheet.col(1).width = 5000
+            fp = io.BytesIO()
+            workbook.save(fp)
+            fp.seek(0)
+            data = fp.read()
+            fp.close()
+            data_b64 = base64.encodestring(data)
+            doc = self.env['ir.attachment'].create({
+                'name': '%s.xls' % (budget_name2),
+                'datas': data_b64,
+                'datas_fname': '%s.xls' % (budget_name2),
+            })
+            return {
+                'type': "ir.actions.act_url",
+                'url': "web/content/?model=ir.attachment&id=" + str(
+                    doc.id) + "&filename_field=datas_fname&field=datas&download=true&filename=" + str(doc.name),
+                'target': "self",
+                'no_destroy': False,
+            }
+
+
+            record.state = 'done' 
+     
+      ``` 
   
