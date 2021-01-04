@@ -1,3 +1,30 @@
+# Search
+```
+<?xml version="1.0"?>
+<search string="Search Sales Order">
+                    <field name="name" string="Sales Order" filter_domain="['|',('name','ilike',self),('client_order_ref','ilike',self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id"/>
+                    <field name="section_id" string="Sales Team" groups="base.group_multi_salesteams"/>
+                    <field name="project_id"/>
+                    <field name="product_id"/>
+                    <filter string="My" domain="[('user_id','=',uid)]" name="my_sale_orders_filter"/>
+                    <separator/>
+                    <filter string="Quotations" name="draft" domain="[('state','in',('draft','sent'))]" help="Sales Order that haven't yet been confirmed"/>
+                    <filter string="Sales" name="sales" domain="[('state','in',('manual','progress'))]"/>
+                    <filter string="To Invoice" domain="[('state','=','manual')]" help="Sales Order ready to be invoiced"/>
+                    <filter string="Done" domain="[('state','=','done')]" help="Sales Order done"/>
+                    <separator/>
+                    <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Salesperson" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Order Month" domain="[]" context="{'group_by':'date_order'}"/>
+                    </group>
+               </search>
+               ```
+               
+
 # String
 ```
 <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="attributes">
