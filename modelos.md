@@ -1,3 +1,10 @@
+# Lista de de Dominios de Operadores.
+```
+List of Domain operators: ! (Not), | (Or), & (And)
+
+List of Term operators: '=', '!=', '<=', '<', '>', '>=', '=?', '=like', '=ilike', 'like', 'not like', 'ilike', 'not ilike', 'in', 'not in', 'child_of'
+```
+
 # Campos Default Funciones
 ```
     def _get_default(self):
