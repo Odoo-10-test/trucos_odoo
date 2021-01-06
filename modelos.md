@@ -1,3 +1,21 @@
+# Vals
+# Lista de de Dominios de Operadores.
+```
+    @api.model
+    def create(self, vals):
+        if 'sale_api_origin' in vals:
+            sale_api_obj = self.env['sale.api'].search([('id', '=', vals['sale_api_origin'])])
+            vals['company_id'] = sale_api_obj.company_id.id
+            if vals.get('name', _('New')) == _('New'):
+                if 'company_id' in vals:
+                    vals['name'] = self.env['ir.sequence'].with_context(force_company=sale_api_obj.company_id.id).next_by_code(
+                        'sale.order') or _('New')
+                else:
+                    vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
+        result = super(SaleOrder, self).create(vals)
+        return result
+```
+
 # Lista de de Dominios de Operadores.
 ```
 List of Domain operators: ! (Not), | (Or), & (And)
