@@ -1,3 +1,13 @@
+# Notificación
+```
+@api.multi
+    def button_validate(self):
+        self.env.user.notify_warning('Por favor, revisa que las cantidades son las correctas.')
+        res = super(StockPicking, self).button_validate()
+        return res
+```
+
+
 # Vals
 # Lista de de Dominios de Operadores.
 ```
