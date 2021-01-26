@@ -1,3 +1,9 @@
+# Domain OR + AND + OR
+```
+['|', ('user_id', '=', uid), '&', ('lang', '!=', 'fr_FR'), '|', ('phone', '=', False), ('email', '=', False)].
+```
+
+
 # Notificación
 ```
 @api.multi
