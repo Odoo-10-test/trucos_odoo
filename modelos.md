@@ -1,3 +1,13 @@
+# AttributeError: 'NoneType' object has no attribute 'something'
+```
+# you can avoid some of these error by adding this kind of check
+if(x1 is not None):
+    ... Do something here
+else:
+    print("X1 variable is Null or None")
+```
+
+
 # Domain OR + AND + OR
 ```
 ['|', ('user_id', '=', uid), '&', ('lang', '!=', 'fr_FR'), '|', ('phone', '=', False), ('email', '=', False)].
