@@ -1,3 +1,54 @@
+search
+```
+# -*- encoding: utf-8 -*-
+
+from odoo import models, fields, api, _
+import logging
+_logger = logging.getLogger(__name__)
+from odoo.osv import expression
+
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    @api.model
+    def search(self, args, offset=0, limit=None, order=None, count=False):
+        args = expression.normalize_domain(args)
+        for arg in args:
+            if isinstance(arg, (list, tuple)) and (
+                    arg[0] == "name" or arg[0] == "display_name"
+            ):
+                index = args.index(arg)
+                args = (
+                        args[:index] + ["|", ("origin", arg[1], arg[2])] + args[index:]
+                )
+                break
+        return super().search(
+            args, offset=offset, limit=limit, order=order, count=count
+        )
+```
+
+name_search
+```
+from odoo import models, fields, api, _
+import logging
+_logger = logging.getLogger(__name__)
+
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    @api.model
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
+        args = args or []
+        recs = self.browse()
+        if name:
+            recs = self.search([('origin', operator, name)] + args, limit=limit)
+        if not recs:
+            recs = self.search([('name', operator, name)] + args, limit=limit)
+        return recs.name_get()
+```
+
+
+
 # AttributeError: 'NoneType' object has no attribute 'something'
 ```
 # you can avoid some of these error by adding this kind of check
