@@ -1,4 +1,4 @@
-search
+# search
 ```
 # -*- encoding: utf-8 -*-
 
@@ -27,7 +27,7 @@ class SaleOrder(models.Model):
         )
 ```
 
-name_search
+# name_search
 ```
 from odoo import models, fields, api, _
 import logging
