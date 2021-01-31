@@ -1,3 +1,13 @@
+
+# Create
+```
+@api.model
+    def create(self, values):
+        res = super().create(values)
+        sale = self.create_sale_orders(values, res.id)
+        return res
+```
+
 # search
 ```
 # -*- encoding: utf-8 -*-
