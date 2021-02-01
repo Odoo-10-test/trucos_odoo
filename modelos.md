@@ -1,3 +1,28 @@
+# Compute Inverse
+```
+seller_price = fields.Float("Precio Compra", compute='_compute_seller_price', inverse='_inverse_seller_price')
+
+    @api.depends('variant_seller_ids')
+    def _compute_seller_price(self):
+        for record in self:
+            seller_price = 0
+            cont = 0
+            obl_line = record.env['product.supplierinfo'].search([('product_id', '=', record.id)],limit=1)
+            if obl_line:
+                for line in obl_line:
+                    if cont == 0:
+                        seller_price = line.price
+                    cont += 1
+                record.seller_price = seller_price
+
+    def _inverse_seller_price(self):
+        for record in self:
+            obl_line = record.env['product.supplierinfo'].search([('product_id', '=', record.id)],limit=1)
+            if obl_line:
+                obl_line.price = record.seller_price
+```
+
+
 # Action show_form_product
 ```
 <field name="product_template_attribute_value_ids" position="after">
