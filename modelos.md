@@ -1,3 +1,22 @@
+# Action show_form_product
+```
+<field name="product_template_attribute_value_ids" position="after">
+                <button name="show_form_product" string="Show" class="oe_highlight" type="object"/>
+            </field>
+	    
+	    
+	    
+    def show_form_product(self):
+        action = self.env["ir.actions.actions"]._for_xml_id("product.product_normal_action_sell")
+        form_view = [(self.env.ref('product.product_normal_form_view').id, 'form')]
+        if 'views' in action:
+            action['views'] = form_view + [(state, view) for state, view in action['views'] if view != 'form']
+        else:
+            action['views'] = form_view
+        action['res_id'] = self.id
+        action['views'] = form_view
+        return action	    
+```
 
 # Create
 ```
