@@ -1,3 +1,8 @@
+# Atributo track_visibility por tracking True|False.
+```
+attributable_to_state = fields.Float(string='[65] % attributable to State', default=100, tracking=True)
+```
+
 # Buscar el ultimo día del mes anterior
 ```
 import datetime as dt
