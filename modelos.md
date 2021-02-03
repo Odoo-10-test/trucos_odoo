@@ -1,3 +1,9 @@
+# Buscar el ultimo día del mes anterior
+```
+import datetime as dt
+creation_date = fields.Date(string="Created On", default= dt.date.today().replace(day=1)+dt.timedelta(days=-1))
+```
+
 # creation_date
 ```
 creation_date = fields.Date(string="Created On", default=fields.Date.context_today)
