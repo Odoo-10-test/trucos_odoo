@@ -1,3 +1,8 @@
+# creation_date
+```
+creation_date = fields.Date(string="Created On", default=fields.Date.context_today)
+```
+
 # Compute Inverse
 ```
 seller_price = fields.Float("Precio Compra", compute='_compute_seller_price', inverse='_inverse_seller_price')
