@@ -9,11 +9,11 @@ import xmlrpclib
 import re
 
 
-HOST='34.203.209.230'
+HOST='127.0.0.1'
 PORT=8069
-DB='aloprint'
-USER='admin'
-PASS='aloprintodoo123'
+DB='love'
+USER='demo'
+PASS='demo'
 url ='http://%s:%d/xmlrpc/' % (HOST,PORT)
 
 common_proxy = xmlrpclib.ServerProxy(url+'common')
