@@ -1,3 +1,9 @@
+# Saber si un modulo esta instalado
+```
+if 'point_of_sale' in self.env.registry._init_modules:
+```
+
+
 # Atributo track_visibility por tracking True|False.
 ```
 attributable_to_state = fields.Float(string='[65] % attributable to State', default=100, tracking=True)
