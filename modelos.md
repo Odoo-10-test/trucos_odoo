@@ -1,3 +1,13 @@
+# Default
+```
+@api.model
+    def default_get(self, fields):
+        res = super().default_get(fields)
+        if self.env.user.user_sale_note:
+            res['note'] = res['note'] + self.env.user.user_sale_note
+        return res
+```
+
 # Saber si un modulo esta instalado
 ```
 if 'point_of_sale' in self.env.registry._init_modules:
