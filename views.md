@@ -1,3 +1,21 @@
+# Ocultar menu
+```
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_account_reports_menu" model="res.groups">
+        <field name="name">Ver Menu Informes Contables</field>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!--  CONTABILIDAD/INFORMES  -->
+    <record model="ir.ui.menu" id="account.menu_finance_reports">
+      <field name="groups_id" eval="[(6,0,[ref('account_security_reports.group_account_reports_menu')])]"/>
+    </record>
+
+</odoo>
+```
+
 # Search
 ```
 <?xml version="1.0"?>
