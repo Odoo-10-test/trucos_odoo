@@ -3,6 +3,11 @@
 odoosh-restart
 ```
 
+```
+odoo-bin -u base_bim_2 --stop-after-init
+odoosh-restart
+```
+
 # Actualizar Módulo
 ```
 odoo-bin -u modulo -d base_datos
