@@ -8,6 +8,12 @@
         return res
 ```
 
+# Nunca Hagas esto
+```
+for i in tasks:
+   self.env['res.users'].search([])
+   ```
+
 # Saber si un modulo esta instalado
 ```
 if 'point_of_sale' in self.env.registry._init_modules:
