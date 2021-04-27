@@ -1,3 +1,14 @@
+# Sumando Hijos
+```
+amount_total = fields.Float('Importe' , compute='_compute_amount_total')
+
+    @api.depends('product_ids')
+    def _compute_amount_total(self):
+        for record in self:
+            record.amount_total = sum( i.importe for i in record.product_ids)
+```
+
+
 # Default
 ```
 @api.model
@@ -1115,9 +1126,7 @@ _logger.info('Not be found data to update the currency %s!',currency.name)
         res['url'] = "web/content/?model=ir.attachment&id=" + str(
             doc_id.id) + "&filename_field=datas_fname&field=datas&download=true&filename=" + str(doc_id.name)
         return res
-`
 
-```
 # Campo autocalculados
 ```
     estimado = fields.Float('Estimado')
