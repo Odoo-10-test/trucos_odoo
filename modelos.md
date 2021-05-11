@@ -1,3 +1,26 @@
+```
+    @api.model
+    def default_get(self, fields):
+        res = super().default_get(fields)
+        print(self._context)
+        print(fields)
+        if self._context.get('params'):
+            if self._context.get('params').get('id'):
+                sale = self.env['sale.order'].browse(self._context['params']['id'])
+                res['reseller_id'] = sale.partner_id.reseller_id.id
+        return res
+
+    @api.model
+    def create(self, values):
+        res = super().create(values)
+        print(self.partner_id)
+        return res
+
+    @api.onchange('partner_id')
+    def onchange_partner_pro_id(self):
+        print(self.partner_id)
+```
+
 # Sumando Hijos
 ```
 amount_total = fields.Float('Importe' , compute='_compute_amount_total')
