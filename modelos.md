@@ -1,4 +1,12 @@
 ```
+_sql_constraints = [
+        ('name_uniq', 'unique(variable)',
+         _('La Variable debe ser única')),
+    ]
+```
+
+
+```
     @api.model
     def default_get(self, fields):
         res = super().default_get(fields)
