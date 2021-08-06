@@ -1,4 +1,11 @@
 # Borrado
+
+``` 
+self.env.cr.execute("UPDATE product_product SET purchase_price = '{}' WHERE id = {}".format(line.price_unit,line.product_id.id))
+
+``` 
+
+
 ``` 
 self.env.cr.execute("DELETE FROM credit_work_line WHERE work_id = {}".format(self.id))
 ```
