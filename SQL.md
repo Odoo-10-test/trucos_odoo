@@ -1,3 +1,7 @@
+# Borrado
+``` 
+self.env.cr.execute("DELETE FROM credit_work_line WHERE work_id = {}".format(self.id))
+``` 
 
 # Suma SQL
 ``` 
