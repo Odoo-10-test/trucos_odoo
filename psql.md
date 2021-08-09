@@ -44,6 +44,11 @@ sudo -u postgres psql -d db10-chile-sii
 UPDATE res_users SET password='x1234567890', password_crypt='HASH' WHERE login='admin';
 ```
 
+# Cambiar pass de admin 14
+```
+sudo -u postgres psql -d db10-chile-sii
+update res_users set password='123' where login='admin';
+```
 # Borrar Facturas en Borrador
 ```
 sudo su - postgres
