@@ -5,6 +5,14 @@ _sql_constraints = [
     ]
 ```
 
+# Etiquetas
+```
+category_id = fields.Many2many('res.partner.category', column1='partner_id',
+                                    column2='category_id', string='Tags', default=_default_category)
+				    
+<field name="category_id" optional="hide" widget="many2many_tags" options="{'color_field': 'color'}"/>
+```				    
+
 
 ```
     @api.model
