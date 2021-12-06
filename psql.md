@@ -5,6 +5,13 @@ sudo -u postgres psql
 SELECT pg_database.datname, pg_size_pretty(pg_database_size(pg_database.datname)) AS SIZE FROM pg_database;
 ```
 
+# Paramos los cron
+```
+sudo -u postgres psql -d credit
+UPDATE ir_cron SET active=false;
+SELECT * FROM ir_cron;
+```
+
 # Borrar BD
 ```
 sudo -u postgres psql
