@@ -16,6 +16,38 @@
 </odoo>
 ```
 
+# Poner editable la vista tree con editable="top" y multi_edit="1", poner colores bajo margen.
+```
+<record id="inh_product_product_pricelist_item_tree_view" model="ir.ui.view">
+            <field name="name">inh.product.product.pricelist.item.tree.view</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="arch" type="xml" >
+                 <tree create="0"
+                       string="Líneas de tarifa"
+                       sample="1"
+                       editable="top"
+                       multi_edit="1"
+                       decoration-danger="margin_variant &lt;= 30"
+                       decoration-warning="purchase_price == 0">
+                      <field name="pricelist_id" widget="many2one"/>
+                      <field name="product_id" string="Producto" widget="many2one"/>
+                      <field name="fixed_price"/>
+                      <field name="margin_variant" optional="show"/>
+                      <field name="purchase_price" optional="show"/>
+                      <field name="product_last_price" optional="hide" readonly="1"/>
+                      <field name="product_last_cost" optional="hide" readonly="1"/>
+                      <field name="min_quantity" colspan="4"/>
+                      <field name="date_start" optional="hide"/>
+                      <field name="date_end" optional="hide"/>
+                      <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                      <field name="create_uid" optional="show"/>
+                      <field name="write_uid" optional="hide"/>
+                 </tree>
+            </field>
+        </record>
+```
+
+
 # Search
 ```
 <?xml version="1.0"?>
