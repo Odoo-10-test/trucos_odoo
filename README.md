@@ -1,6 +1,6 @@
 # Trucos de Odoo
 
-Marlon Falcón Hernández | Madrid, España
+Marlon Falcón Hernández | Valencia, España
 - ERP, CRM y Software
 - WhatsApp: +34 662 47 06 45
 - Telegram: falconsoft
