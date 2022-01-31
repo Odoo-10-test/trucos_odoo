@@ -4,7 +4,7 @@ product_price = self.pricelist_id.get_product_price(self.product_id, quantity=1,
                                                                     uom_id=self.product_id.uom_id.id)
 ```
 
-
+# sql_constraints
 ```
 _sql_constraints = [
         ('name_uniq', 'unique(variable)',
