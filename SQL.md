@@ -1,5 +1,9 @@
-# Borrado
+# Actualizar una linea
+``` 
+UPDATE sale_credit_line SET columna_a = columna_b
+``` 
 
+# Borrado
 ``` 
 self.env.cr.execute("UPDATE product_product SET purchase_price = '{}' WHERE id = {}".format(line.price_unit,line.product_id.id))
 
