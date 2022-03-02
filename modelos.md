@@ -1,3 +1,94 @@
+# Crear Albaran
+```
+      def action_create_picking_from_ware_house(self):
+        if not self.sale_id.location_dest_id:
+            raise UserError('You have to define a Temporal Location for this Sale before you receive from Warehouse')
+        moves = []
+        for line in self.lines_ids:
+            if line.product_id.type in ['consu', 'product']:
+                    moves.append((0, 0, {
+                        'product_id': line.product_id.id,
+                        'product_uom_qty': line.qty_to_transfer,
+                        'product_uom': line.product_id.uom_id.id,
+                        'name': line.product_id.name,
+                        'quantity_done': line.qty_to_transfer,
+                    }))
+                    if self.transfer_location_type == 'internal':
+                        line.sale_line_id.internal_warehouse_qty = line.sale_line_id.internal_warehouse_qty - line.qty_to_transfer
+                    else:
+                        line.sale_line_id.external_warehouse_qty = line.sale_line_id.external_warehouse_qty - line.qty_to_transfer
+                    line.sale_line_id.received_qty = line.sale_line_id.received_qty + line.qty_to_transfer
+        if moves:
+            picking_type = self.env['stock.picking.type'].search(
+                [('code', '=', 'internal'), ('company_id', '=', self.sale_id.company_id.id)],
+                limit=1)
+            if self.transfer_location_type == 'internal':
+                whare_house_location = self.env.company.location_dest_internal_id
+            else:
+                whare_house_location = self.env.company.location_dest_external_id
+
+            if not picking_type:
+                raise UserError(
+                    'There is not Internal Operation Types defined for this Company.')
+
+            picking = self.env['stock.picking'].create({
+                'picking_type_id': picking_type.id,
+                'origin': self.sale_id.name,
+                'move_lines': moves,
+                'location_id': whare_house_location.id,
+                'sale_id_for_warehouse': self.sale_id.id,
+                'location_dest_id': self.sale_id.location_dest_id.id,
+                'partner_id': self.sale_id.partner_id.id,
+                'company_id': self.env.user.company_id.id,
+                'scheduled_date': fields.Date.today().strftime('%Y-%m-%d'),
+            })
+            picking.action_confirm()
+            picking.action_assign()
+            picking.button_validate()
+            picking.create_automatic_stock_move_log('Transferencia de salida de Taller', self.sale_id, False)
+            msg = (
+                "Creada Transferencia: {} de producto desde la Ubicación del Taller: {} hacia la Ubicación: {} del pedido: {} por usuario: {}.<br>").format(
+                picking.name, whare_house_location.name, self.sale_id.location_dest_id.name, self.sale_id.name, self.env.user.name)
+            self.sale_id.message_post(body=_(msg))
+```
+
+
+# Crear factura desde venta
+```
+def action_invoice_sale_advanced(self, sale_flow):
+        invoice_obj = self.env['account.move']
+        vals = self._prepare_invoice_sale()
+        invoice = invoice_obj.sudo().create(vals)
+        invoice.sudo().action_post()
+        if sale_flow == 'payment':
+            self.action_payment(invoice)
+
+    def _prepare_invoice_sale(self):
+        self.ensure_one()
+        vals = self._prepare_invoice()
+        for line in self.order_line:
+            account = False
+            try:
+                accounts = line.product_id.product_tmpl_id.get_product_accounts()
+                if type in ('out_invoice', 'out_refund'):
+                    account = accounts['income'].id
+                else:
+                    account = accounts['expense'].id
+            except:
+                pass
+            line_vals = line._prepare_invoice_line()
+            line_vals.update({'account_id': account})
+            vals['invoice_line_ids'].append(
+                (0, 0,line_vals))
+        return vals
+```
+
+# Property
+```
+property_warehouse_id = fields.Many2one('stock.warehouse', company_dependent=True, string="Almacén")
+```
+
+
 # Precio calculado en base a tarifa
 ```
 product_price = self.pricelist_id.get_product_price(self.product_id, quantity=1, self.partner_id,
