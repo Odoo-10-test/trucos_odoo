@@ -1,3 +1,9 @@
+# Mostrar procesos con palabra clave ejemplo: chro
+```
+ps aux | grep chro
+```
+
+
 # Mostrar espacio en disco
 ```
 df -h
