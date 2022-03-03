@@ -1,3 +1,9 @@
+# Saber el nombre de la bd en odoo 14
+```
+ignore_db = fields.Char(default=lambda self: self.env.cr.dbname, string='Ignorar Esta Bd')
+
+```
+
 # Crear Albaran
 ```
       def action_create_picking_from_ware_house(self):
