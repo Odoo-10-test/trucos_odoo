@@ -4,6 +4,19 @@ ignore_db = fields.Char(default=lambda self: self.env.cr.dbname, string='Ignorar
 
 ```
 
+Exportar a exell
+```
+import xlwt
+
+wb = xlwt.Workbook()
+ws = wb.add_sheet('Report')
+ws.write(0,0, '0 here')
+ws.write(43,12, '12 here')
+ws.horz_page_breaks = [(44,0,12),]
+wb.save('sample.xls')
+```
+
+
 # Crear Albaran
 ```
       def action_create_picking_from_ware_house(self):
