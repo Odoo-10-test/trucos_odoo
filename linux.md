@@ -39,3 +39,9 @@ python /opt/odoo/server/odoo-bin -c /etc/odoo/odoo.conf -d test -u all
 ```
 /etc/init.d/odoo restart
 ```
+
+## Ver tamaño de una carpeta
+```
+du -hc
+```
+
