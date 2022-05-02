@@ -21,7 +21,18 @@ ignore_db = fields.Char(default=lambda self: self.env.cr.dbname, string='Ignorar
 
 # Ordenar un filtro en odoo
 ```
-   crossdocking_products = order.order_line.filtered_domain([('product_id.type','=','product'),('display_type','=',False),('product_id.cross_docking_ok','=',True)]).sorted(key=lambda line: line.id)
+    def _rectify_move_product_lines(self):
+        for move in self:
+            product_lines = move.line_ids.filtered_domain([('tax_line_id','=',False),('account_internal_type','=','other')])
+            credit = sum(line.credit for line in product_lines)
+            debit = sum(line.debit for line in product_lines)
+            if move.move_type in ['out_invoice','in_refund']:
+                if credit != move.amount_untaxed:
+                    amount = move.amount_untaxed - credit
+                    move._helper_product_asset_rectification('credit', amount,product_lines)
+            elif move.move_type in ['in_invoice', 'out_refund']:
+                    amount = move.amount_untaxed - debit
+                    move._helper_product_asset_rectification('debit', amount,product_lines)
 ```                 
 
 Exportar a exell
