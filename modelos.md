@@ -4,6 +4,11 @@ ignore_db = fields.Char(default=lambda self: self.env.cr.dbname, string='Ignorar
 
 ```
 
+# Ordenar un filtro en odoo
+```
+   crossdocking_products = order.order_line.filtered_domain([('product_id.type','=','product'),('display_type','=',False),('product_id.cross_docking_ok','=',True)]).sorted(key=lambda line: line.id)
+```                 
+
 Exportar a exell
 ```
 import xlwt
