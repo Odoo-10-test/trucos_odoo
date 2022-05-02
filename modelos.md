@@ -1,3 +1,13 @@
+# Ternario
+```
+move.amount_tax = sign * (total_tax_currency if len(currencies) == 1 else total_tax)
+```
+
+
+# Buscamos en un tipo
+```
+elif line.account_id.user_type_id.type in ('receivable', 'payable'):
+```
 # Sumamos los subtotales
 ```
 afecto = sum(line.price_subtotal for line in move.invoice_line_ids if line.tax_ids)
