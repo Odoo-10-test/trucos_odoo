@@ -1,3 +1,8 @@
+# Sumamos los subtotales
+```
+afecto = sum(line.price_subtotal for line in move.invoice_line_ids if line.tax_ids)
+```
+
 # Saber el nombre de la bd en odoo 14
 ```
 ignore_db = fields.Char(default=lambda self: self.env.cr.dbname, string='Ignorar Esta Bd')
