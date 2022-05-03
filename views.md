@@ -1,7 +1,9 @@
 LLamar una accion desde el codigo
 ```
-<record id="update_account_commercial_and_route" model="ir.actions.server">
-            <field name="name">Actualizar Comercial y Ruta</field>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="update_total" model="ir.actions.server">
+            <field name="name">Recalcular Total</field>
             <field name="model_id" ref="noguero_sale_order_import.model_account_move"/>
             <field name="binding_model_id" ref="account.model_account_move"/>
             <field name="binding_view_types">list,form</field>
@@ -11,6 +13,7 @@ LLamar una accion desde el codigo
                 res = records.action_update_account_commercial_and_route()
             </field>
         </record>
+</odoo>
 ```
 
 # Ocultar menu
