@@ -1,3 +1,45 @@
+# Importar desde excell
+```
+try:
+    import xlrd
+except (ImportError, IOError):
+    plt = False
+    _logger.warning('Missing library xlrd.')
+    
+     def import_excel_file(self):
+        if not self.file:
+            raise UserError("Es necesario un Fichero para Importar")
+        if not self.excel_validator(self.file_name):
+            raise UserError(_("File must contain excel extension"))
+        self.import_lines.unlink()
+        data = base64.b64decode(self.file)
+        work_book = xlrd.open_workbook(file_contents=data)
+        sheet = work_book.sheet_by_index(0)
+        LineObj = self.env['sale.order.import.line']
+        first_row = []
+        last = sheet.nrows
+        row_count = 0
+        for col in range(sheet.ncols):
+            first_row.append(sheet.cell_value(0, col))
+        for count, row in enumerate(range(1, sheet.nrows), 2):
+            row_count += 1
+            val = {}
+            for col in range(sheet.ncols):
+                val[first_row[col]] = sheet.cell_value(row, col)
+            vals = self._prepare_future_order_vals(val)
+            LineObj.create(vals)
+            print("FILA %s DE %s"%(row_count,last))
+    
+    
+    
+    
+@api.model
+    def excel_validator(self, xml_name):
+        name, extension = os.path.splitext(xml_name)
+        return True if extension in ['.xlsx','.xls'] else False
+
+```
+
 # Ternario
 ```
 move.amount_tax = sign * (total_tax_currency if len(currencies) == 1 else total_tax)
