@@ -1,3 +1,18 @@
+LLamar una accion desde el codigo
+```
+<record id="update_account_commercial_and_route" model="ir.actions.server">
+            <field name="name">Actualizar Comercial y Ruta</field>
+            <field name="model_id" ref="noguero_sale_order_import.model_account_move"/>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+            if records:
+                res = records.action_update_account_commercial_and_route()
+            </field>
+        </record>
+```
+
 # Ocultar menu
 ```
 <?xml version="1.0" encoding="utf-8"?>
