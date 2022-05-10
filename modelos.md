@@ -1,3 +1,11 @@
+# Error de Usuario
+```
+from odoo.exceptions import UserError
+if self.state_invoice == 'invoiced':
+	raise UserError('Un albarán facturado no puede modificarse.')
+```
+
+
 # Importar desde excell
 ```
 try:
