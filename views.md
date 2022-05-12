@@ -1,19 +1,32 @@
 LLamar una accion desde el codigo
 ```
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-        <record id="update_total" model="ir.actions.server">
-            <field name="name">Recalcular Total</field>
-            <field name="model_id" ref="noguero_sale_order_import.model_account_move"/>
+    <record id="update_account_move_margin" model="ir.actions.server">
+            <field name="name">Actualizar Margen</field>
+            <field name="model_id" ref="invoice_margin_nombre_modulo.model_account_move"/>
             <field name="binding_model_id" ref="account.model_account_move"/>
             <field name="binding_view_types">list,form</field>
             <field name="state">code</field>
             <field name="code">
             if records:
-                res = records.action_update_account_commercial_and_route()
+                res = records.action_update_margin()
             </field>
         </record>
 </odoo>
+
+from odoo import api, fields, models, _
+from odoo.tools import float_is_zero, float_compare
+from odoo.tools.misc import formatLang
+from odoo.exceptions import UserError, RedirectWarning, ValidationError
+import odoo.addons.decimal_precision as dp
+
+class AccountInvoiceMargin(models.Model):
+    _inherit = 'account.move'
+
+    def action_update_margin(self):
+        for move in self:
+            move.update_margin_invoice()
 ```
 
 # Ocultar menu
