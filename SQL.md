@@ -3,6 +3,10 @@
 UPDATE sale_credit_line SET columna_a = columna_b
 ``` 
 
+# Cambiar secuencia a un dirio
+``` 
+update account_move set name = concat('C000ID',id) where journal_id = 6
+``` 
 # Borrado
 ``` 
 self.env.cr.execute("UPDATE product_product SET purchase_price = '{}' WHERE id = {}".format(line.price_unit,line.product_id.id))
