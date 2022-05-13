@@ -1,3 +1,8 @@
+# Actualizar nombre sale order
+``` 
+UPDATE sale_order set name = old_id where old_id <> 0
+```
+
 # Actualizar una linea
 ``` 
 UPDATE sale_credit_line SET columna_a = columna_b
