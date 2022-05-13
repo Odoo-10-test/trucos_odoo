@@ -7,6 +7,14 @@ UPDATE sale_credit_line SET columna_a = columna_b
 ``` 
 update account_move set name = concat('C000ID',id) where journal_id = 6
 ``` 
+
+# Borrar Tabla
+``` 
+WITH rows AS (SELECT id FROM account_partial_reconcile where max_date < '2022-05-01' ORDER BY ID ASC LIMIT 1000)
+DELETE FROM account_partial_reconcile WHERE id IN (SELECT id FROM rows);
+SELECT MAX(id), MIN(id) FROM account_partial_reconcile WHERE max_date < '2022-05-01';
+``` 
+
 # Borrado
 ``` 
 self.env.cr.execute("UPDATE product_product SET purchase_price = '{}' WHERE id = {}".format(line.price_unit,line.product_id.id))
