@@ -1,3 +1,14 @@
+# Eliminar duplicados
+``` 
+sql_query = """DELETE FROM res_partner_phone
+                    WHERE id IN (SELECT id FROM (SELECT id,
+                    ROW_NUMBER() OVER( PARTITION BY number
+                    ORDER BY  id ) AS row_num
+                    FROM res_partner_phone where partner_id = %s ) t
+                    WHERE t.row_num > 1);"""%partner.id
+            self.env.cr.execute(sql_query)
+``` 
+
 # Actualizar nombre sale order
 ``` 
 UPDATE sale_order set name = old_id where old_id <> 0
