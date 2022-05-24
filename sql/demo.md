@@ -1,5 +1,10 @@
 https://sqliteonline.com/
 
+# Actualizar Factura
+````
+update account_move set name = concat('F',old_id) where old_id <> 0
+````
+
 # Crear tabla
 ````
 CREATE TABLE empleados (
