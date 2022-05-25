@@ -1,5 +1,11 @@
 https://sqliteonline.com/
 
+# Borrado de Factura por id
+````
+delete from account_move where old_id in (22001733,#,#)
+````
+
+
 # Actualizar Factura
 ````
 update account_move set name = concat('F',old_id) where old_id <> 0
