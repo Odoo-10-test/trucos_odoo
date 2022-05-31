@@ -1,3 +1,20 @@
+Filtros
+```
+<record id="view_search_code_res_partner_form" model="ir.ui.view">
+            <field name="name">view.search.code.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+	                <field name="code_customer"/>
+	                <field name="code_supplier"/>
+	                <field name="code_creditor"/>
+	            </xpath>
+            </field>
+        </record>
+   ```     
+        
+
 LLamar una accion desde el codigo
 ```
 <?xml version="1.0" encoding="UTF-8"?>
