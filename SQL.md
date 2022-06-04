@@ -1,3 +1,9 @@
+# Seleccionar los ultimos 100
+``` 
+SELECT name,move_type FROM public.account_move
+ORDER BY id ASC LIMIT 100
+``` 
+
 # Eliminar duplicados
 ``` 
 sql_query = """DELETE FROM res_partner_phone
