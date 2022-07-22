@@ -1,3 +1,7 @@
+```
+self.ensure_one()
+```
+
 # Error de Usuario
 ```
 from odoo.exceptions import UserError
