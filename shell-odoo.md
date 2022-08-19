@@ -16,6 +16,14 @@ env.cr.commit()
 Y listo, ya podrás salir con CTRL+D
 ```
 
+# Borrar mensajes
+```
+su - odoo -s /bin/bash
+python /opt/odoo/server/odoo-bin shell -c /etc/odoo/odoo.conf -d db10-chile-sii
+message=env['mail.message'].search([('date','<','2022-01-01')])
+message.unlink()
+env.cr.commit()
+```
 
 # Paso1 Eliminar cuentas de clientes
 ```
