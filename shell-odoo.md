@@ -23,6 +23,8 @@ python /opt/odoo/server/odoo-bin shell -c /etc/odoo/odoo.conf -d db10-chile-sii
 message=env['mail.message'].search([('date','<','2022-01-01')])
 message.unlink()
 env.cr.commit()
+
+message=env['mail.message'].search([('date','<','2019-08-01'),('model','<>','chile.audit')], limit=100)
 ```
 
 # Paso1 Eliminar cuentas de clientes
