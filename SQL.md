@@ -1,3 +1,12 @@
+# Borrar contactos duplicados
+``` 
+DELETE FROM res_partner_phone
+WHERE id IN (SELECT id
+    FROM (SELECT id,ROW_NUMBER() OVER (partition BY partner_id, number ORDER BY id) 
+      AS rnum FROM res_partner_phone) t WHERE t.rnum > 1);
+``` 
+
+
 # Seleccionar los ultimos 100
 ``` 
 SELECT name,move_type FROM public.account_move
