@@ -1,3 +1,12 @@
+Validando el cargar una libreria
+```
+_logger = logging.getLogger(__name__)
+try:
+    import Crypto
+except (ImportError, IOError):
+    _logger.warning('Missing library Crypto.')
+```
+
 ```
 self.ensure_one()
 ```
