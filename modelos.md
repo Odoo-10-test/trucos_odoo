@@ -1,3 +1,12 @@
+Guardando un Loop en cada ciclo.
+```
+count += 1
+if count == 100:
+_logger.info('100 records created ')
+self.env.cr.commit()
+count = 0
+```
+
 Validando el cargar una libreria
 ```
 _logger = logging.getLogger(__name__)
