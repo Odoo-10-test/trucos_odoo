@@ -1,3 +1,10 @@
+Options
+```
+<xpath expr="//field[@name='source_id']" position="attributes">
+                    <attribute name="options">{"no_create":true,"no_open":true}</attribute>
+                    <attribute name="widget">many2one</attribute>
+                </xpath>
+```
 Filtros
 ```
 <record id="view_search_code_res_partner_form" model="ir.ui.view">
