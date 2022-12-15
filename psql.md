@@ -1,3 +1,10 @@
+# Conectarnos en MAC
+```
+psql postgres
+\l
+\c db14-spain
+```
+
 # Tamaño de la BD
 ```
 sudo -u postgres psql
