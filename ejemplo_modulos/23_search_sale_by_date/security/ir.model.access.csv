@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_create_search_sale_by_date,search.sale.by.date,model_search_sale_by_date,,1,1,1,1

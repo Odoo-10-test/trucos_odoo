@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data>
+            <record id="form_wizard_ftp_upload" model="ir.ui.view">
+            <field name="name">form.wizard.ftp.upload</field>
+            <field name="model">ftp.upload</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="main">
+                        <group name="left">
+                            <field name="file" filename="file_name"/>
+                            <field name="file_name" invisible="1"/>
+                        </group>
+                        </group>
+                    <footer>
+                        <button string="Upload" name="action_upload_ftp" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_upload_ftp" model="ir.actions.act_window">
+            <field name="name">Ftp Upload</field>
+            <field name="res_model">ftp.upload</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="submenu_ftp_upload"
+                  name="Ftp Upload"
+                  action="action_upload_ftp"
+                  parent="stock.menu_stock_inventory_control"
+                  sequence="2"/>
+
+        </data>
+    </odoo>
+
+
+
+
+

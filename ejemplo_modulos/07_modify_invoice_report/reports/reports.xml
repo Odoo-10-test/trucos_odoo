@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- INVOICE -->
+        <report
+            id="account.account_invoices"
+            model="account.move"
+            string="Factura"
+            report_type="qweb-pdf"
+            name="07_modify_invoice_report.invoice_document"
+            file="07_modify_invoice_report.invoice_document"
+            attachment="(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')"
+            print_report_name="(object._get_report_base_filename())"
+            groups="account.group_account_invoice"
+        />
+
+        <record id="custom_invoice_paperformat" model="report.paperformat">
+            <field name="name">Factura</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">85</field>
+            <field name="margin_bottom">50</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">80</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="account.account_invoices" model="ir.actions.report">
+            <field name="paperformat_id" ref="07_modify_invoice_report.custom_invoice_paperformat"/>
+        </record>
+
+
+    </data>
+</odoo>

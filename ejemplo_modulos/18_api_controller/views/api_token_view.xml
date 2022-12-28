@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="api_token_tree" model="ir.ui.view">
+            <field name="name">api.token.tree</field>
+            <field name="model">api.token</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="token"/>
+                    <field name="is_active" widget="boolean_toggle"/>
+                    <field name="create_uid" string="Usuario"/>
+                    <field name="create_date" string="Fecha"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="token_action" model="ir.actions.act_window">
+            <field name="name">Tokens</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">api.token</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <menuitem id="integration_menu"  name="Tokens" parent="base.menu_administration" sequence="10">
+             <menuitem id="token_submenu"  name="Tokens"  action="token_action" sequence="10" />
+         </menuitem>
+
+
+    </data>
+</odoo>

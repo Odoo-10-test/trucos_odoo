@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_view_sale_form" model="ir.ui.view">
+            <field name="name">inherit.view.sale.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@id='action_confirm']" position="replace"/>
+                <xpath expr="//header/button[@name='action_confirm']" position="replace"/>
+                <xpath expr="//header/button[@name='action_cancel']" position="before">
+                    <button name="action_confirm" id="action_confirm"
+                        string="Confirm" class="btn-primary" type="object"
+                        attrs="{'invisible': [('state', '!=', 'sent')]}" groups="14_sale_advance_permissions.group_sale_advanced"/>
+                    <button name="action_confirm"
+                        string="Confirm" type="object"
+                        attrs="{'invisible': [('state', '!=', 'draft')]}" groups="14_sale_advance_permissions.group_sale_advanced"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

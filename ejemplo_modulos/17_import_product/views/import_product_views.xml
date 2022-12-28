@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        
+        <record id="product_import_view_tree" model="ir.ui.view">
+            <field name="name">product.import.view.tree</field>
+            <field name="model">product.import</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_import_view_form" model="ir.ui.view">
+            <field name="name">product.import.view.form</field>
+            <field name="model">product.import</field>
+            <field name="arch" type="xml">
+              <form>
+                <header>
+                    <button name="action_import" type="object"
+                        string="Import" class="oe_highlight"
+                        attrs="{'invisible': [('imported','=',True)]}"/>
+
+                </header>
+                <sheet>
+                    <group name="data">
+                        <field name="imported" invisible="1"/>
+                        <group name="left">
+                             <field name="name" attrs="{'readonly': [('imported','=',True)]}"/>
+                             <field name="type" attrs="{'readonly': [('imported','=',True)]}"/>
+                        </group>
+                        <group name="right">
+                            <field name="file" filename="file_name" widget="binary" class="oe_inline" attrs="{'readonly': [('imported','=',True)]}"/>
+                            <field name="file_name" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+
+        <record id="product_import_view_action" model="ir.actions.act_window">
+            <field name="name">Product Import</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.import</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem id="product_import_view_menu"
+                name="Product Import"
+                parent="stock.menu_stock_inventory_control"
+                action="product_import_view_action"
+                sequence="1"/>
+    </data>
+</openerp>
+

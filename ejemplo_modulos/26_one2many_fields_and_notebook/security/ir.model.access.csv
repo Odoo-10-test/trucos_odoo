@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_main_model,main.model,model_main_model,,1,1,1,1
+access_main_model_line,main.model.line,model_main_model_line,,1,1,1,1

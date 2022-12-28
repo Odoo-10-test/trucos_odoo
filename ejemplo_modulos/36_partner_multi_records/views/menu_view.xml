@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem
+            id="res_partner_phone_source_menu"
+            name="Teléfonos Contacto"
+            parent="contacts.res_partner_menu_config"
+            groups="36_partner_multi_records.group_user_phones"
+            sequence="75"
+        />
+        <menuitem
+                id="res_partner_phone_submenu"
+                name="Teléfonos"
+                action="partner_phone_action"
+                parent="res_partner_phone_source_menu"
+                sequence="1"
+        />
+
+
+</odoo>

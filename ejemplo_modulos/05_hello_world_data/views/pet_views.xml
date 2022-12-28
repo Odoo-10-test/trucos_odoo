@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_pets_form" model="ir.ui.view"> 
+        <field name="name">ej.pets.form</field> 
+        <field name="model">ej.pets</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Pets">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                    </group>
+                     <group>
+                        <field name="color"/>
+                        <field name="type"/>
+                    </group>
+                </group>
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_tree_pets" model="ir.ui.view"> 
+        <field name="name">ej.pets.tree</field> 
+        <field name="model">ej.pets</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="name" optional="show"/>
+                    <field name="age"/>
+                    <field name="color"/>
+                    <field name="type"/>
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_pets"> 
+        <field name="name">pets</field> 
+        <field name="res_model">ej.pets</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="view_id"  ref="view_tree_pets" /> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_pets_menu" name="Pets" web_icon="stock,static/description/icon.png" sequence="10"/> 
+<menuitem id="submenu_ej_pets_menu" name="Pets" sequence="10" parent="ej_pets_menu"/> 
+<menuitem id="submenu_ej_pets_action" name="Pets" sequence="10" parent="submenu_ej_pets_menu" action="act_ej_pets"/> 
+</odoo> 

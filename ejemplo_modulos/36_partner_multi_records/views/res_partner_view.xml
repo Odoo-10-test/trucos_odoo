@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">view.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                    <field name="hide_btn_phones" invisible="1"/>
+                    <button name="action_view_partner_phones"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-phone"
+                                    attrs="{'invisible': [('hide_btn_phones', '=', True)]}"
+                                    groups="36_partner_multi_records.group_user_phones">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">
+                                        <field name="phones_count"/>
+                                    </span>
+                                    <span class="o_stat_text">Teléfonos</span>
+                                </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

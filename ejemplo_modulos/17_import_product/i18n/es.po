@@ -1,0 +1,119 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 17_import_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-24 17:29+0000\n"
+"PO-Revision-Date: 2022-11-24 17:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields.selection,name:17_import_product.selection__product_import__type__csv
+msgid "Csv"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields.selection,name:17_import_product.selection__product_import__type__xls
+msgid "Excel"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__file
+msgid "File"
+msgstr "Fichero"
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__file_name
+msgid "File Name"
+msgstr "Nombre Fichero"
+
+#. module: 17_import_product
+#. odoo-python
+#: code:addons/17_import_product/models/product_import.py:0
+#, python-format
+msgid "File should be CSV extension"
+msgstr "El fichero debe contener la extensión CSV"
+
+#. module: 17_import_product
+#. odoo-python
+#: code:addons/17_import_product/models/product_import.py:0
+#, python-format
+msgid "File should be Excel extension"
+msgstr "El fichero debe contener la extensión Excel"
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__id
+msgid "ID"
+msgstr ""
+
+#. module: 17_import_product
+#: model_terms:ir.ui.view,arch_db:17_import_product.product_import_view_form
+msgid "Import"
+msgstr "Importar"
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__imported
+msgid "Imported"
+msgstr "Importado"
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: 17_import_product
+#: model:ir.actions.act_window,name:17_import_product.product_import_view_action
+#: model:ir.model,name:17_import_product.model_product_import
+#: model:ir.ui.menu,name:17_import_product.product_import_view_menu
+msgid "Product Import"
+msgstr "Importar Productos"
+
+#. module: 17_import_product
+#. odoo-python
+#: code:addons/17_import_product/models/product_import.py:0
+#, python-format
+msgid "There is an error in line"
+msgstr "Hay un error en la línea"
+
+#. module: 17_import_product
+#: model:ir.model.fields,field_description:17_import_product.field_product_import__type
+msgid "Type"
+msgstr "Tipo"

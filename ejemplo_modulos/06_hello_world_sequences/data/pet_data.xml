@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="data_pet_01" model="ej.pets">
+            <field name="name">Coco</field>
+            <field name="age">2</field>
+            <field name="color">blue</field>
+        </record>
+        <record id="data_pet_02" model="ej.pets">
+            <field name="name">Pinki</field>
+            <field name="age">1</field>
+            <field name="color">Black</field>
+        </record>
+    </data>
+</odoo>

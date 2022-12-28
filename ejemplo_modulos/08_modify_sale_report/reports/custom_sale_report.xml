@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--BUSCAMOS EN EL REPORTE ORIGINAL (EN ESTE CASO VENTAS) EL ELEMENTO A HEREDAR O DE REFERENCIA-->
+    <template id="report_saleorder_document_inherit_sale_management" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@name='signature']" position="after">
+                <h4 name="h_optional_products" style="color: red;">
+                    <span>REPORTE MODIFICADO</span>
+                </h4>
+        </xpath>
+    </template>
+</odoo>

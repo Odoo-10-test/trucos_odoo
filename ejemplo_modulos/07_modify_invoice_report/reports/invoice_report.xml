@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_invoice_external_layout">
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <div class="header">
+                <div class="row">
+                    <div class="col col-12 text-right o_txt_size_footer">
+                        <div class="ml-1 mr-1">
+                            <span class="page"/>
+                            de
+                            <span class="topage"/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row ml-1 mr-1">
+                    <div class="col-6 pull-left">
+                        <div class="row">
+                            <div>
+                                <strong><span t-esc="company.name"/></strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left o_txt_size_direction">
+                                <t t-set="partner_shipping" t-value="o.partner_shipping_id"/>
+                                <t t-set="partner_shipping" t-value="o.partner_shipping_id"/>
+                                <t t-set="partner" t-value="o.partner_id"/>
+                                <t t-if="company.street"><span t-esc="company.street"/> <span class="ml-1"
+                                        t-esc="company.street2"/></t>
+                                <t t-if="company.zip"><span class="ml-1" t-esc="company.zip"/></t> <t
+                                    t-if="company.city"><span t-esc="company.city"/></t>
+                                <t t-if="company.state_id"><span
+                                        t-esc="company.state_id.name"/><br/></t>
+                                <t t-if="company.vat">Cif: <span t-esc="company.vat"/><br/></t>
+                                <t t-if="company.phone">Tel. <span
+                                        t-esc="company.phone"/><br/></t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right h-100">
+                        <div class="row">
+                            <div class="col text-center ">
+                                <img t-if="company.logo"
+                                     t-att-src="image_data_uri(company.logo)"
+                                     style="max-height: 100px;" alt="Logo"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ml-1 mr-1">
+                    <div class="col-6 pull-left o_txt_size p-2">
+                        <div class="o_border_top_bottom">
+                            <span>Cliente:</span><br/>
+                            <strong><span t-esc="partner.name"/></strong><br/>
+                            <t t-if="partner.street"><span t-esc="partner.street"/> <span
+                                    t-esc="partner.street2"/><br/></t>
+                            <t t-if="partner.zip"><span t-esc="partner.zip"/></t> <t
+                                t-if="partner.city"><span t-esc="partner.city"/><br/></t>
+                            <t t-if="partner.state_id"><span t-esc="partner.state_id.name"/> </t>
+                            <t t-if="partner.country_id"><span t-esc="partner.country_id.name"/></t>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ml-1 mr-1">
+                    <t t-if="o.move_type in ['out_invoice', 'in_invoice']">
+                        <div class="col col-2 px-1 o_txt_size_table_data">
+                            <h4>FACTURA</h4>
+                        </div>
+                        <div class="col col-10 px-1">
+                            <table style="width:100%;" class="table table-sm table-borderless">
+                                <thead>
+                                    <tr class="text-center o_bordered_table">
+                                        <th>Fecha</th>
+                                        <th>Núm Factura</th>
+                                        <th>DNI/CIF</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center o_bordered_table">
+                                        <td>
+                                            <p t-esc="o.invoice_date.strftime('%d/%m/%Y')"
+                                                    class="m-0"/>
+                                        </td>
+                                        <td><span t-field="o.name"/></td>
+                                        <td><span t-field="o.partner_id.vat"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                    <t t-if="o.move_type in ['out_refund', 'in_refund']">
+                        <div class="col col-3 px-1 o_txt_size_table_data">
+                            <h4>FACTURA RECTIFICATIVA</h4>
+                        </div>
+                        <div class="col col-6 px-1">
+                            <table style="width:100%;" class="table table-sm table-borderless">
+                                <thead>
+                                    <tr class="text-center o_bordered_table">
+                                        <th>Fecha</th>
+                                        <th>Núm Factura</th>
+                                        <th>DNI/CIF</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center o_bordered_table">
+                                        <td>
+                                            <p t-esc="o.invoice_date.strftime('%d/%m/%Y')"
+                                                    class="m-0"/>
+                                        </td>
+                                        <td><span t-field="o.name"/></td>
+                                        <td><span t-field="o.partner_id.vat"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div class="footer last-page">
+                <div class="row size_footer_total ml-1 mr-1">
+                    <div class="col col-6 p-0">
+                        <table class="table table-sm">
+                            <tr class="text-center o_table_header_color_footer">
+                                <th class="o_table_header_color_footer">Importe Bruto</th>
+                            </tr>
+                            <tr class="text-center o_txt_size_table_data">
+                                <td><span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col col-4 p-0">
+                        <table class="table table-sm">
+                            <tr class="text-center o_table_header_color_footer">
+                                <th class="o_table_header_color_footer">BASE I.V.A</th>
+                                <th class="o_table_header_color_footer">I.V.A</th>
+                            </tr>
+                                <tr class="text-center o_txt_size_table_data">
+                                    <td><span t-esc="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                    <td><span t-esc="o.amount_tax"/></td>
+                                </tr>
+                        </table>
+                    </div>
+                    <div class="col col-2 p-0">
+                        <table class="table table-sm">
+                            <tr class="text-center o_table_header_color_footer">
+                                <th class="o_table_header_color_footer">Total</th>
+                            </tr>
+                            <tr class="text-center o_txt_size_table_data">
+                                <td class="text-right"><span t-esc="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="invoice_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="07_modify_invoice_report.custom_invoice_external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <div class="container">
+                                        <div class="row o_txt_size">
+                                            <table class="table table-sm">
+                                                <thead>
+                                                    <tr class="text-center o_table_header_color">
+                                                        <th class="o_table_bordered">CÓDIGO</th>
+                                                        <th class="o_table_bordered">ARTÍCULO</th>
+                                                        <th class="o_table_bordered">CANTIDAD</th>
+                                                        <th class="o_table_bordered">PRECIO</th>
+                                                        <th class="o_table_bordered">DESCUENTO</th>
+                                                        <th class="o_table_bordered">IMP(EUR)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <t t-foreach="o.invoice_line_ids" t-as="line">
+                                                        <t t-if="line.display_type == 'product'">
+                                                            <tr class="o_txt_size_table_data">
+                                                                <th colspan="8">
+                                                                    <div class="row o_txt_size_direction">
+                                                                        <div class="col col-2"><span t-esc="line.product_id.default_code"/></div>
+                                                                        <div class="col col-2"><span t-esc="line.product_id.name"/></div>
+                                                                        <div class="col col-2"><span t-esc="line.quantity"/></div>
+                                                                        <div class="col col-2"><span t-esc="line.price_unit"/></div>
+                                                                        <div class="col col-2"><span t-esc="line.discount"/></div>
+                                                                        <div class="col col-2"><span t-esc="line.price_total"/></div>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                        </t>
+                                                        <t t-else="">
+                                                          <t t-if="line['type']=='line_section'">
+                                                                <tr>
+                                                                    <td colspan="7" class="o_section_color">
+                                                                        <span t-esc="line.name"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <tr>
+                                                                    <td colspan="7">
+                                                                        <span t-esc="line.name"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                            </div>
+                            <div class="oe_structure"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

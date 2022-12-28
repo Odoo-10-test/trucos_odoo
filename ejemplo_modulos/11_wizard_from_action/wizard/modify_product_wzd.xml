@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="form_wizard_modify_product" model="ir.ui.view">
+            <field name="name">form.wizard.modify.product</field>
+            <field name="model">modify.product.wzd</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="main">
+                        <group name="left">
+                            <field name="sale_tax_id" options="{'no_open': True, 'no_create': True}"/>
+                        </group>
+                        <group name="right">
+                            <field name="purchase_tax_id" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="company_id" force_save="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Modify Product" name="action_modify_products" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_modify_product" model="ir.actions.act_window">
+            <field name="name">Modify product</field>
+            <field name="res_model">modify.product.wzd</field>
+            <field name="binding_model_id" ref="product.model_product_template"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+

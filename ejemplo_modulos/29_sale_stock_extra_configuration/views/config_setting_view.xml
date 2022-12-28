@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="config_custom_sale" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='connectors_setting_container']" position="after">
+                    <h2>Sale Extra Config</h2>
+                    <div class="row mt16 o_settings_container" name="sale_extra_config">
+                        <div class="col-6 col-lg-6 o_setting_box" id="sale_extra_config">
+                            <div class="o_setting_left_pane">
+                                <field name="propose_order_validity"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="propose_order_validity"/>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-6 o_setting_box" id="sale_extra_config">
+                            <div class="o_setting_right_pane">
+                                <label for="days_ahead"/>
+                                <field name="days_ahead"/>
+                            </div>
+                        </div>
+                    </div>
+             </xpath>
+        </field>
+    </record>
+
+     <record id="config_custom_stock" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='operations_setting_container']" position="after">
+                    <h2>Stock Extra Config</h2>
+                    <div class="row mt16 o_settings_container" name="stock_extra_config">
+                        <div class="col-6 col-lg-6 o_setting_box" id="stock_extra_config">
+                            <div class="o_setting_right_pane">
+                                <label for="stop_picking_validation"/>
+                                <field name="stop_picking_validation"/>
+                            </div>
+                        </div>
+                    </div>
+             </xpath>
+        </field>
+    </record>
+
+</odoo>

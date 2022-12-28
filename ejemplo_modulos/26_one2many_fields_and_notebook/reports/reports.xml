@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="report_model_with_notebook" model="ir.actions.report">
+            <field name="name">Modelo</field>
+            <field name="model">main.model</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">26_one2many_fields_and_notebook.model_document</field>
+            <field name="report_file">26_one2many_fields_and_notebook.model_document</field>
+            <field name="print_report_name">'Model - %s' % object.name</field>
+            <field name="binding_model_id" ref="model_main_model"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

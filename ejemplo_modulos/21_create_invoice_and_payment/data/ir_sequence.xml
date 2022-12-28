@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="seq_create_invoice" model="ir.sequence">
+            <field name="name">Create Invoice</field>
+            <field name="code">create.invoice.model</field>
+            <field name="prefix">CI/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

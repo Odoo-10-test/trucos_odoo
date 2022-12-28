@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 20_create_move
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-29 13:37+0000\n"
+"PO-Revision-Date: 2022-11-29 13:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 20_create_move
+#: model_terms:ir.ui.view,arch_db:20_create_move.product_template_form_view
+msgid "<span class=\"o_stat_text\">Entries</span>"
+msgstr "<span class=\"o_stat_text\">Asientos</span>"
+
+#. module: 20_create_move
+#: model_terms:ir.ui.view,arch_db:20_create_move.product_template_form_view
+msgid "Are you sure you want to create a move expense for this product?"
+msgstr "¿Está seguro de que desea crear un gasto para este producto?"
+
+#. module: 20_create_move
+#: model_terms:ir.ui.view,arch_db:20_create_move.product_template_form_view
+msgid "Are you sure you want to create a move income for this product?"
+msgstr "¿Está seguro de que desea crear un ingreso para este producto?"
+
+#. module: 20_create_move
+#: model_terms:ir.ui.view,arch_db:20_create_move.product_template_form_view
+msgid "Create Move Expense"
+msgstr "Crear Gasto"
+
+#. module: 20_create_move
+#: model_terms:ir.ui.view,arch_db:20_create_move.product_template_form_view
+msgid "Create Move Income"
+msgstr "Crear Ingreso"
+
+#. module: 20_create_move
+#: model:ir.model.fields,field_description:20_create_move.field_product_product__account_entry_ids
+#: model:ir.model.fields,field_description:20_create_move.field_product_template__account_entry_ids
+msgid "Entries"
+msgstr "Asientos"
+
+#. module: 20_create_move
+#. odoo-python
+#: code:addons/20_create_move/models/product_template.py:0
+#, python-format
+msgid "Please define an %s account for this product."
+msgstr "Por favor defina una cuenta de %s para este producto."
+
+#. module: 20_create_move
+#. odoo-python
+#: code:addons/20_create_move/models/product_template.py:0
+#, python-format
+msgid "Please define an accounting general journal for this company."
+msgstr ""
+"Por favor deifina un diario contable de tipo varios para esta compañía."
+
+#. module: 20_create_move
+#: model:ir.model,name:20_create_move.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: 20_create_move
+#. odoo-python
+#: code:addons/20_create_move/models/product_template.py:0
+#: code:addons/20_create_move/models/product_template.py:0
+#, python-format
+msgid "expense"
+msgstr "gastos"
+
+#. module: 20_create_move
+#. odoo-python
+#: code:addons/20_create_move/models/product_template.py:0
+#: code:addons/20_create_move/models/product_template.py:0
+#, python-format
+msgid "income"
+msgstr "ingresos"
+
+#. module: 20_create_move
+#. odoo-python
+#: code:addons/20_create_move/models/product_template.py:0
+#, python-format
+msgid "You can only execute this action from the product template"
+msgstr "Sólo puede ejecutar esta acción desde la plantilla del producto"

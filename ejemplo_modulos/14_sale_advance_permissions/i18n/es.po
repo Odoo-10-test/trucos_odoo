@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 14_sale_advance_permissions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-30 10:26+0000\n"
+"PO-Revision-Date: 2022-11-30 10:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 14_sale_advance_permissions
+#: model_terms:ir.ui.view,arch_db:14_sale_advance_permissions.inherit_view_sale_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: 14_sale_advance_permissions
+#: model:res.groups,name:14_sale_advance_permissions.group_sale_advanced
+msgid "Sale Advance User"
+msgstr "Usuario Avanzado de Ventas"
+
+#. module: 14_sale_advance_permissions
+#: model:ir.model,name:14_sale_advance_permissions.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"

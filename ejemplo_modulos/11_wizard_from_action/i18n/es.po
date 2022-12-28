@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 11_wizard_from_action
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-30 09:48+0000\n"
+"PO-Revision-Date: 2022-11-30 09:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 11_wizard_from_action
+#: model_terms:ir.ui.view,arch_db:11_wizard_from_action.form_wizard_modify_product
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__id
+msgid "ID"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: 11_wizard_from_action
+#: model:ir.model,name:11_wizard_from_action.model_modify_product_wzd
+#: model_terms:ir.ui.view,arch_db:11_wizard_from_action.form_wizard_modify_product
+msgid "Modify Product"
+msgstr "Modificar Producto"
+
+#. module: 11_wizard_from_action
+#: model:ir.actions.act_window,name:11_wizard_from_action.action_modify_product
+msgid "Modify product"
+msgstr "Modificar producto"
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__purchase_tax_id
+msgid "Purchase Tax"
+msgstr "Impuesto de compras"
+
+#. module: 11_wizard_from_action
+#: model:ir.model.fields,field_description:11_wizard_from_action.field_modify_product_wzd__sale_tax_id
+msgid "Sale Tax"
+msgstr "Impuesto de ventas"
+
+#. module: 11_wizard_from_action
+#. odoo-python
+#: code:addons/11_wizard_from_action/wizard/modify_product.py:0
+#, python-format
+msgid "You must select at least one tax to modify."
+msgstr "Debe al menos seleccionar un impuesto para modificar."

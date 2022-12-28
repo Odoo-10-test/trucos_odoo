@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 04_hello_world_translation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-24 17:15+0000\n"
+"PO-Revision-Date: 2022-11-24 18:16+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2\n"
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields.selection,name:04_hello_world_translation.selection__ej_pets__type__big
+msgid "Big"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__id
+msgid "ID"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model_terms:ir.ui.view,arch_db:04_hello_world_translation.view_ej_pets_form
+msgid "Listado de Pets"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields.selection,name:04_hello_world_translation.selection__ej_pets__type__medium
+msgid "Medium"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.ui.menu,name:04_hello_world_translation.ej_pets_menu
+#: model:ir.ui.menu,name:04_hello_world_translation.submenu_ej_pets_action
+#: model:ir.ui.menu,name:04_hello_world_translation.submenu_ej_pets_menu
+msgid "Pets"
+msgstr "Mascota"
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields.selection,name:04_hello_world_translation.selection__ej_pets__type__small
+msgid "Small"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__age
+msgid "age"
+msgstr "Edad"
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__color
+msgid "color"
+msgstr "Color"
+
+#. module: 04_hello_world_translation
+#: model:ir.model,name:04_hello_world_translation.model_ej_pets
+msgid "ej.pets"
+msgstr ""
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__name
+msgid "name"
+msgstr "Nombre"
+
+#. module: 04_hello_world_translation
+#: model:ir.actions.act_window,name:04_hello_world_translation.act_ej_pets
+msgid "pets"
+msgstr "Macotas"
+
+#. module: 04_hello_world_translation
+#: model:ir.model.fields,field_description:04_hello_world_translation.field_ej_pets__type
+msgid "type"
+msgstr "tipo"

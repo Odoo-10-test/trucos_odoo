@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="form_main_model" model="ir.ui.view">
+            <field name="name">form.main.model</field>
+            <field name="model">main.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group name="main">
+                            <group name="left">
+                                <field name="date"/>
+                            </group>
+                            <group name="right">
+                                <field name="user_id" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Notes">
+                                <field name="notes" placeholder="Add some notes..."/>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_main_model" model="ir.ui.view">
+            <field name="name">form.main.model</field>
+            <field name="model">main.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_main_model" model="ir.actions.act_window">
+            <field name="name">Main Model</field>
+            <field name="res_model">main.model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="main_model_menu_root" name="Main Model" web_icon="26_one2many_fields_and_notebook,static/description/icon.png" sequence="10">
+            <menuitem id="api_sale_order_menu" name="Orders API" action="action_main_model" sequence="1"/>
+        </menuitem>
+
+
+    </data>
+</odoo>
+
+
+
+
+

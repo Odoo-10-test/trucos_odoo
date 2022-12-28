@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 29_sale_stock_extra_configuration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-02 09:37+0000\n"
+"PO-Revision-Date: 2022-12-02 09:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model,name:29_sale_stock_extra_configuration.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model.fields,field_description:29_sale_stock_extra_configuration.field_res_config_settings__days_ahead
+msgid "Days Ahead"
+msgstr "Días Adelante"
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model.fields.selection,name:29_sale_stock_extra_configuration.selection__res_config_settings__stop_picking_validation__no
+msgid "No"
+msgstr ""
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model.fields,field_description:29_sale_stock_extra_configuration.field_res_config_settings__propose_order_validity
+msgid "Propose Order Validity"
+msgstr "Proponer fecha de Expiración"
+
+#. module: 29_sale_stock_extra_configuration
+#: model_terms:ir.ui.view,arch_db:29_sale_stock_extra_configuration.config_custom_sale
+msgid "Sale Extra Config"
+msgstr "Configuración Extra de Ventas"
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model,name:29_sale_stock_extra_configuration.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: 29_sale_stock_extra_configuration
+#: model_terms:ir.ui.view,arch_db:29_sale_stock_extra_configuration.config_custom_stock
+msgid "Stock Extra Config"
+msgstr "Configuración Extra de Stock"
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model.fields,field_description:29_sale_stock_extra_configuration.field_res_config_settings__stop_picking_validation
+msgid "Stop Picking Validation"
+msgstr "Parar Validación de Albarán"
+
+#. module: 29_sale_stock_extra_configuration
+#. odoo-python
+#: code:addons/29_sale_stock_extra_configuration/models/stock_picking.py:0
+#, python-format
+msgid "The current picking validation is stopped."
+msgstr "La validación actual de albarán está parada."
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model,name:29_sale_stock_extra_configuration.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: 29_sale_stock_extra_configuration
+#: model:ir.model.fields.selection,name:29_sale_stock_extra_configuration.selection__res_config_settings__stop_picking_validation__yes
+msgid "Yes"
+msgstr "Sí"

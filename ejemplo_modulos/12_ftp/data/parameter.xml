@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="ftp_host" model="ir.config_parameter">
+        <field name="key">ftp.host</field>
+        <field name="value">127.0.0.1</field>
+    </record>
+    <record id="ftp_user" model="ir.config_parameter">
+        <field name="key">ftp.user</field>
+        <field name="value">one</field>
+    </record>
+     <record id="ftp_password" model="ir.config_parameter">
+        <field name="key">ftp.password</field>
+        <field name="value">1234</field>
+    </record>
+    <record id="ftp_port" model="ir.config_parameter">
+        <field name="key">ftp.port</field>
+        <field name="value">21</field>
+    </record>
+</odoo>

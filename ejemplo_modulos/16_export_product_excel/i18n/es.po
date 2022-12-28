@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 16_export_product_excel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-29 15:48+0000\n"
+"PO-Revision-Date: 2022-11-29 15:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields.selection,name:16_export_product_excel.selection__product_export_excel__product_type__all
+msgid "All"
+msgstr "Todos"
+
+#. module: 16_export_product_excel
+#: model_terms:ir.ui.view,arch_db:16_export_product_excel.form_wizard_product_export_excel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: 16_export_product_excel
+#. odoo-python
+#: code:addons/16_export_product_excel/wizard/product_emport_excel.py:0
+#, python-format
+msgid "Code"
+msgstr "Código"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields.selection,name:16_export_product_excel.selection__product_export_excel__product_type__consu
+msgid "Consumable"
+msgstr "Consumible"
+
+#. module: 16_export_product_excel
+#. odoo-python
+#: code:addons/16_export_product_excel/wizard/product_emport_excel.py:0
+#, python-format
+msgid "Cost"
+msgstr "Coste"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: 16_export_product_excel
+#: model_terms:ir.ui.view,arch_db:16_export_product_excel.form_wizard_product_export_excel
+msgid "Export"
+msgstr "Exportar"
+
+#. module: 16_export_product_excel
+#: model:ir.actions.act_window,name:16_export_product_excel.action_export_product_excel
+#: model:ir.model,name:16_export_product_excel.model_product_export_excel
+#: model:ir.ui.menu,name:16_export_product_excel.submenu_export_product_excel
+msgid "Export Product Excel"
+msgstr "Exportar Productos a Excel"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__id
+msgid "ID"
+msgstr ""
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: 16_export_product_excel
+#. odoo-python
+#: code:addons/16_export_product_excel/wizard/product_emport_excel.py:0
+#, python-format
+msgid "Price"
+msgstr "Precio"
+
+#. module: 16_export_product_excel
+#. odoo-python
+#: code:addons/16_export_product_excel/wizard/product_emport_excel.py:0
+#: code:addons/16_export_product_excel/wizard/product_emport_excel.py:0
+#, python-format
+msgid "Product"
+msgstr "Producto"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields,field_description:16_export_product_excel.field_product_export_excel__product_type
+msgid "Product Type"
+msgstr "Tipo Producto"
+
+#. module: 16_export_product_excel
+#. odoo-python
+#: code:addons/16_export_product_excel/wizard/product_emport_excel.py:0
+#, python-format
+msgid "Products"
+msgstr "Productos"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields.selection,name:16_export_product_excel.selection__product_export_excel__product_type__service
+msgid "Service"
+msgstr "Servicio"
+
+#. module: 16_export_product_excel
+#: model:ir.model.fields.selection,name:16_export_product_excel.selection__product_export_excel__product_type__product
+msgid "Stockable Product"
+msgstr "Almacenable"

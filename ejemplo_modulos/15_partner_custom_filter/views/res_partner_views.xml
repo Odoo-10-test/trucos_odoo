@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="res_partner_view_search_inherit" model="ir.ui.view">
+            <field name="name">res.partner.search.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="before">
+                   <filter string="Sin Nif" name="no_nif" domain="[('vat','=', False)]"/>
+                   <filter string="Con Nif" name="with_nif" domain="[('vat','!=', False)]"/>
+                   <separator/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+	                <field name="city"/>
+	                <field name="zip"/>
+	            </xpath>
+                <group position="inside">
+                    <filter string="Ciudad" name="group_by_city" context="{'group_by':'city'}"/>
+                    <filter string="C.P." name="group_by_zip" context="{'group_by':'zip'}"/>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

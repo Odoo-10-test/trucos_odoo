@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="seq_main_model" model="ir.sequence">
+            <field name="name">Main Model</field>
+            <field name="code">main.model</field>
+            <field name="prefix">MM/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

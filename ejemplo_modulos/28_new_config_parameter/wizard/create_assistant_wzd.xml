@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data>
+            <record id="form_wizard_create_assistant" model="ir.ui.view">
+            <field name="name">form.wizard.create.assistant</field>
+            <field name="model">create.assistant</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="main">
+                        <group name="left">
+                            <field name="name"/>
+                        </group>
+                        <group name="right">
+                            <field name="record_type" force_save="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Create Record" name="action_create_record" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_create_record" model="ir.actions.act_window">
+            <field name="name">Create Record</field>
+            <field name="res_model">create.assistant</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="submenu_create_record"
+                  name="Create Record"
+                  action="action_create_record"
+                  parent="sale.sale_order_menu"
+                  sequence="11"/>
+
+        </data>
+    </odoo>
+
+
+
+
+

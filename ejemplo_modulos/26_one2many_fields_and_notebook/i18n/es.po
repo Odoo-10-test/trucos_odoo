@@ -1,0 +1,178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* 21_create_invoice_and_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-29 12:30+0000\n"
+"PO-Revision-Date: 2022-11-29 12:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model,name:21_create_invoice_and_payment.model_create_invoice_model
+#: model_terms:ir.ui.view,arch_db:21_create_invoice_and_payment.form_create_invoice
+msgid "Create Invoice"
+msgstr "Crear factura"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.actions.act_window,name:21_create_invoice_and_payment.action_create_invoice
+msgid "Create Invoice and Payment"
+msgstr "Crear facturas y pagos"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.ui.menu,name:21_create_invoice_and_payment.submenu_create_invoice
+msgid "Create Invoice/ Payment"
+msgstr "Crear facturas/ pagos"
+
+#. module: 21_create_invoice_and_payment
+#: model_terms:ir.ui.view,arch_db:21_create_invoice_and_payment.form_create_invoice
+msgid "Create Payment"
+msgstr "Crear pago"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields.selection,name:21_create_invoice_and_payment.selection__create_invoice_model__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__id
+msgid "ID"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__invoice_id
+#: model:ir.model.fields.selection,name:21_create_invoice_and_payment.selection__create_invoice_model__state__invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__date_invoice
+msgid "Invoice Date"
+msgstr "Fecha de factura"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__name
+msgid "Name"
+msgstr "Referencia"
+
+#. module: 21_create_invoice_and_payment
+#. odoo-python
+#: code:addons/21_create_invoice_and_payment/models/create_invoice.py:0
+#: code:addons/21_create_invoice_and_payment/models/create_invoice.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__notes
+#: model_terms:ir.ui.view,arch_db:21_create_invoice_and_payment.form_create_invoice
+msgid "Notes"
+msgstr "Notas"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__payment_id
+#: model:ir.model.fields.selection,name:21_create_invoice_and_payment.selection__create_invoice_model__state__payment
+msgid "Payment"
+msgstr "Pago"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__payment_journal_id
+msgid "Payment Journal"
+msgstr "Diario de pago"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__invoice_payment_term_id
+msgid "Payment Terms"
+msgstr "Términos de pago"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields.selection,name:21_create_invoice_and_payment.selection__create_invoice_model__state__reconcile
+msgid "Reconcile"
+msgstr "Conciliado"
+
+#. module: 21_create_invoice_and_payment
+#: model_terms:ir.ui.view,arch_db:21_create_invoice_and_payment.form_create_invoice
+msgid "Reconcile"
+msgstr "Conciliar"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__state
+msgid "State"
+msgstr "Estado"
+
+#. module: 21_create_invoice_and_payment
+#: model:ir.model.fields,field_description:21_create_invoice_and_payment.field_create_invoice_model__price_unit
+msgid "Unit Price"
+msgstr "Precio unitario"

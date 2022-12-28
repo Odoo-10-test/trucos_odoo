@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="search_sale_by_date_wizard" model="ir.ui.view">
+            <field name="name">search.sale.by.date.wizard</field>
+            <field name="model">search.sale.by.date</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="main">
+                        <group name="left">
+                            <field name="date"/>
+                        </group>
+                        <group name="right">
+                            <field name="days_ago"/>
+                        </group>
+
+                    </group>
+                    <footer>
+                        <button string="Search Sales" name="action_search_sales" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_search_sales" model="ir.actions.act_window">
+            <field name="name">Search Sales</field>
+            <field name="res_model">search.sale.by.date</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="submenu_search_sale_menu"
+                  name="Search Sales"
+                  action="action_search_sales"
+                  parent="sale.sale_order_menu"
+                  sequence="10"/>
+
+    </data>
+</odoo>
+
+
+
+
+

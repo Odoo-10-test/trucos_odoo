@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="model_external_layout">
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <div class="header">
+                <div class="row">
+                    <div class="col col-12 text-right o_txt_size_footer">
+                        <div class="ml-1 mr-1">
+                            <span class="page"/>
+                            de
+                            <span class="topage"/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row ml-1 mr-1">
+                    <div class="col-6 pull-left">
+                        <div class="row">
+                            <div>
+                                <strong><span t-esc="company.name"/></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right h-100">
+                        <div class="row">
+                            <div class="col text-center ">
+                                <img t-if="company.logo"
+                                     t-att-src="image_data_uri(company.logo)"
+                                     style="max-height: 100px;" alt="Logo"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ml-1 mr-1">
+                        <div class="col col-2 px-1 o_txt_size_table_data">
+                            <h4>Modelo</h4>
+                        </div>
+                        <div class="col col-10 px-1">
+                            <table style="width:100%;" class="table table-sm table-borderless">
+                                <thead>
+                                    <tr class="text-center o_bordered_table">
+                                        <th>Núm Modelo</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center o_bordered_table">
+                                        <td><span t-esc="o.name"/></td>
+                                        <td>
+                                            <p t-esc="o.date.strftime('%d/%m/%Y')"
+                                                    class="m-0"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+            <div class="footer last-page">
+            </div>
+        </template>
+
+        <template id="model_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="26_one2many_fields_and_notebook.model_external_layout">
+                        <div class="page pt-3">
+                            <div class="oe_structure pt-3"/>
+                                <div class="row o_txt_size">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr class="text-center o_table_header_color">
+                                                <th class="o_table_bordered">Nombre</th>
+                                                <th class="o_table_bordered">Descripción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="o.line_ids" t-as="line">
+                                                <tr>
+                                                    <td>
+                                                        <span t-esc="line.name"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-esc="line.description"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>
