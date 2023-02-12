@@ -3,6 +3,12 @@
 ps -ef | grep postgres
 ```
 
+# Paramos los cron jobs
+```
+psql postgres
+UPDATE ir_cron SET active=false;
+```
+
 # Conectarnos en MAC
 ```
 psql postgres
