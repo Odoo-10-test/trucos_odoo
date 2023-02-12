@@ -1,3 +1,8 @@
+# Procesos con version de PSQL
+```
+ps -ef | grep postgres
+```
+
 # Conectarnos en MAC
 ```
 psql postgres
