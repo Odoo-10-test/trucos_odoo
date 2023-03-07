@@ -1,3 +1,7 @@
+```
+<field name="base_material_id" optional="show"/>
+```
+
 Options
 ```
 <xpath expr="//field[@name='source_id']" position="attributes">
