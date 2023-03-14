@@ -1,3 +1,9 @@
+# Contar lineas
+``` 
+SELECT COUNT(*)
+FROM specification_element;
+``` 
+
 # Borrar contactos duplicados
 ``` 
 DELETE FROM res_partner_phone
