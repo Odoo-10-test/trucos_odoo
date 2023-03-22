@@ -1,5 +1,11 @@
 https://sqliteonline.com/
 
+# Ilike
+````
+SELECT * FROM public.specification_diameter
+WHERE dn2 ILIKE '%"%'
+````
+
 # Borrado de Factura por id
 ````
 delete from account_move where old_id in (22001733,#,#)
