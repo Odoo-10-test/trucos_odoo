@@ -1,3 +1,10 @@
+OnChange
+```
+# onchange date_from
+    @api.onchange('date_from')
+    def onchange_date_from(self):
+        self.date_to = self.date_from
+```
 
 Funciones lambda por defecto
 ```
