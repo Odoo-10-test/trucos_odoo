@@ -1,3 +1,9 @@
+
+Funciones lambda por defecto
+```
+default=lambda self: self.env.company.hourly_cost
+```
+
 Guardando un Loop en cada ciclo.
 ```
 count += 1
