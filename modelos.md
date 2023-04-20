@@ -1,3 +1,18 @@
+Mensajes no bloqueantes
+```
+@api.onchange('confirm_container')
+    def _onchange_confirm_container(self):
+        if self.confirm_container:
+            if self.confirm_container != self.all_container.name:
+                self.confirm_container = False
+                return {
+                    'warning': {
+                        'title': "Error",
+                        'message': "The container is not the same",
+                    }
+                }
+```
+
 OnChange
 ```
 # onchange date_from
