@@ -1,3 +1,18 @@
+Estados dinamicos
+```
+from io import BytesIO
+RO_STATES = {'done': [('readonly', True)], 'paid': [('readonly', True)], 'cancel': [('readonly', True)]}
+
+class MassivePayment(models.Model):
+    _name = 'massive.payment'
+    _description = 'Pago Masivo'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = 'id desc'
+    
+    journal_dest_id = fields.Many2one('account.journal', 'Diario de Transferencia',states=RO_STATES)
+```
+
+
 Mensajes no bloqueantes
 ```
 @api.onchange('confirm_container')
