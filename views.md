@@ -8,7 +8,7 @@
                                      <strong>Error!</strong>  Blocked for quality
                               </div>
                         </div>
-			```
+```
 			
 # widget boolean
 ```
