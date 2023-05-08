@@ -1,3 +1,9 @@
+# widget boolean
+```
+widget="toggle_button"
+widget="boolean_toggle"
+```
+
 ```
 <field name="base_material_id" optional="show"/>
 ```
