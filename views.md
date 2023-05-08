@@ -1,3 +1,15 @@
+
+# Alert in view form
+```
+<div class="alert alert-danger d-flex align-items-center" role="alert"
+                            attrs="{'invisible': [('state', '!=', 'quality')]}"
+                        >
+                              <div>
+                                     <strong>Error!</strong>  Blocked for quality
+                              </div>
+                        </div>
+			```
+			
 # widget boolean
 ```
 widget="toggle_button"
