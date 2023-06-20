@@ -7,3 +7,12 @@
 ```
 <field name="project_id" optional="show"/>
 ```
+
+# Colors en tree view
+```
+<tree
+                    delete="false"
+                    decoration-muted="state == 'cancel'"
+                    decoration-danger="state == 'draft'"
+                >
+```
