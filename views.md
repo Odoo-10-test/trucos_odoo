@@ -1,3 +1,8 @@
+# Button Icon
+```
+<button name="%(base_bim_2.bim_wizard_ite_action)d" type="action" icon="fa-arrow-down"
+                            string="ITE" attrs="{'invisible': [('type','not in',['departure'])]}"/>
+```
 
 # Alert in view form
 ```
