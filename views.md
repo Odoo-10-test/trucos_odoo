@@ -1,3 +1,15 @@
+# Color en la vista tree
+```
+<tree string="Unitary Assembly Order"
+                      decoration-danger="state == 'draft'"
+                      decoration-warning="state == 'begin'"
+                      decoration-primary="state == 'quality'"
+                      decoration-success="state == 'identification'"
+                      decoration-muted="state == 'cancel'"
+                      decoration-info="state == 'done'">
+
+```
+
 # Button Icon
 ```
 <button name="%(base_bim_2.bim_wizard_ite_action)d" type="action" icon="fa-arrow-down"
