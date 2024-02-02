@@ -1,3 +1,10 @@
+Si quiero registrar el estado cuando cambio un campo
+```
+
+ currency_id = fields.Many2one('res.currency', string='Currency', required=True, tracking=True,
+                                    default=lambda self: self.env.company.currency_id.id)
+```
+
 Estados dinamicos
 ```
 from io import BytesIO
