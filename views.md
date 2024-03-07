@@ -1,3 +1,18 @@
+# Alerta 
+```
+<div class="alert alert-danger text-center my-0" role="alert" invisible="not error_type">
+                    <field name="error_type" invisible="1"/>
+                    <field name="lead_type" invisible="1"/>
+                    <span invisible="error_type != 'credits'">
+                        <span>You do not have enough credits to submit this request.
+                            <button name="action_buy_credits" type="object" class="oe_inline p-0 border-0 align-top text-primary">Buy credits.</button>
+                        </span>
+                    </span>
+                    <span invisible="error_type != 'no_result'">Your request did not return any result (no credits were used). Try removing some filters.</span>
+                </div>
+
+```
+
 # Color en la vista tree
 ```
 <tree string="Unitary Assembly Order"
