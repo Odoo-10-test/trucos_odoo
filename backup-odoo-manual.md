@@ -15,4 +15,12 @@ zip -r filestore-basedatos.zip /opt/odoo/.local/share/Odoo/filestore/basedatos
 ```
 sudo -u postgres psql
 CREATE DATABASE nueva_base_de_datos WITH OWNER = odoo;
+ALTER DATABASE soluziono OWNER TO odoo;
+psql -U odoo -d soluziono -f soluziono.dump
+```
+
+
+4. Montamos el filestore
+```
+unzip filestore-soluziono.zip
 ```
