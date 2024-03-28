@@ -24,3 +24,9 @@ psql -U odoo -d soluziono -f soluziono.dump
 ```
 unzip filestore-soluziono.zip
 ```
+
+5. Montamos el filestore
+```
+sudo -u postgres psql
+DELETE FROM ir_attachment WHERE create_date > '2024-03-27';
+```
