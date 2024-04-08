@@ -1,3 +1,13 @@
+# Actualizamos 3 many2one si un valor es igual a un id
+``` 
+UPDATE purchase_order
+SET concep_id = FALSE,
+    project_id = FALSE,
+    budget_id = FALSE
+WHERE expenditure_sub_category_id = 588;
+``` 
+
+
 # Contar lineas
 ``` 
 SELECT COUNT(*)
