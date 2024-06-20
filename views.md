@@ -1,3 +1,11 @@
+# Boton para imprimir desde una accion
+```
+<!-- Boton para imprmir el reporte -->
+                        <button name="%(base_bim_2.action_report_certification_by_line)d" string="Print" type="action" class="oe_highlight"/>
+```
+
+
+
 # Alerta 
 ```
 <div class="alert alert-danger text-center my-0" role="alert" invisible="not error_type">
