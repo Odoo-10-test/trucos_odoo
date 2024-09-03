@@ -1,3 +1,21 @@
+Dominio calculado
+
+```
+def _get_domain_project_id(self):
+        domain = [
+            '&',  # Para combinar las siguientes dos condiciones con un "AND"
+            ('company_id', '=', self.env.company.id),
+            '|',  # Para especificar las dos condiciones alternativas
+            ('requisition_user_ids', 'in', self.env.user.id),
+            ('requisition_user_ids', '=', False)
+        ]
+        return domain
+
+    project_id = fields.Many2one('bim.project', string='Project',
+                                domain= _get_domain_project_id)
+```
+
+
 Si quiero registrar el estado cuando cambio un campo
 ```
 
