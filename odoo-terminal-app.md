@@ -32,6 +32,13 @@ VERSION DE ODOO
 version
 ```
 
+BORRAR PARTNER
+
+```
+unlink --model res.partner --id 579
+```
+
+
 ACTUALIZAR MÓDULO
 
 ```
