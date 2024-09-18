@@ -10,6 +10,15 @@ LISTAR COMANDOS
 help
 ```
 
+LISTA LAS BASES DE DATOS
+```
+dblist
+```
+
+HORA DEL SERVIDOR
+```
+now
+```
 
 LISTAR REGISTROS
 
@@ -17,11 +26,19 @@ LISTAR REGISTROS
 search --model res.partner
 ```
 
+VERSION DE ODOO
+
+```
+version
+```
+
 ACTUALIZAR MÓDULO
 
 ```
 upgrade -m purchase
 ```
+
+
 
 COMANDOS
 
