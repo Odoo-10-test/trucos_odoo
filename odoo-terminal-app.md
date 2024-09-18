@@ -64,7 +64,9 @@ effect - Show effect
 exportfile - Exports the command result to a text/json file
 exportvar - Exports the command result to a browser console variable
 gen - Generate random valuesgenfile - Generate a File object
-help - Print this help or command detailed infoinfo - Get session informationinput - Requests user input
+help - Print this help or command detailed info
+info - Get session information
+input - Requests user input
 install - Install a module
 jobs - Display running jobs
 json - Send POST JSON
