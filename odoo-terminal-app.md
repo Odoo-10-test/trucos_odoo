@@ -4,9 +4,15 @@ URL de DESCARGA de ODOO TERMINAL
 https://chromewebstore.google.com/detail/odooterminal/fdidojpjkbpfplcdmeaaehnjfkgpbhad
 ```
 
-URL de DESCARGA de ODOO TERMINAL
+LISTAR REGISTROS
 
 ```
-https://chromewebstore.google.com/detail/odooterminal/fdidojpjkbpfplcdmeaaehnjfkgpbhad
+search --model res.partner
+```
+
+ACTUALIZAR MÓDULO
+
+```
+upgrade -m purchase
 ```
 
