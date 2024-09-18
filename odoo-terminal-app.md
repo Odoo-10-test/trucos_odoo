@@ -70,8 +70,8 @@ reload - Reload current page
 rollback - Revert recordset changes
 rpc - Execute raw rpc
 run - Run a TraSH script
-search - Search model record/
-ssettings - Open settings page
+search - Search model record/s
+settings - Open settings page
 toggle_term - Toggle terminal visibility
 tour - Launch Tour
 ual - Update apps list
