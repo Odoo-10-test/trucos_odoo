@@ -38,13 +38,18 @@ BORRAR PARTNER
 unlink --model res.partner --id 579
 ```
 
+ACTUALIZAR UN CAMPO
+
+```
+write --model sale.order --id 217 --value {"state": "draft"}
+```
+
 
 ACTUALIZAR MÓDULO
 
 ```
 upgrade -m purchase
 ```
-
 
 
 COMANDOS
