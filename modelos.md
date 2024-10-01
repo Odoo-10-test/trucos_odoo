@@ -10,6 +10,7 @@ Parametros
 ```
 
 ```
+params = self.env['ir.config_parameter'].sudo()
 tools_inventory_movement = params.get_param('tools.inventory.movement')
 ```
 
