@@ -1,3 +1,18 @@
+Parametros
+```
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="bim_decimal_default" model="ir.config_parameter">
+        <field name="key">bim.decimal.default</field>
+        <field name="value">4</field>
+    </record>
+</odoo>
+```
+
+```
+tools_inventory_movement = params.get_param('tools.inventory.movement')
+```
+
 Dominio calculado
 
 ```
